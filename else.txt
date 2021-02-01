@@ -1,0 +1,8 @@
+1把bin写入img:
+ dd if=ipl.bin of=hos.img bs=512 count=1
+2把sys写入img：
+可用poweriso或ultraiso，试用版就够。
+3把c源程序编译为asm文件
+假设你的函数保存在main.c中。 gcc -S main.c -o main.s -S表示assembly 汇编的意思,也就是生成汇编文件
+4nasm不认识instrset
+cpu 486;[INSTRSET "i486p"]
