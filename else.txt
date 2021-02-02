@@ -6,3 +6,5 @@
 假设你的函数保存在main.c中。 gcc -S main.c -o main.s -S表示assembly 汇编的意思,也就是生成汇编文件
 4nasm不认识instrset
 cpu 486;[INSTRSET "i486p"]
+5使用gas把从c语言编译得到的汇编编译成目标文件
+as -o bootpack.obj bootpack.s
