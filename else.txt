@@ -1,3 +1,5 @@
+0创建img
+可用poweriso创建磁盘映像文件img
 1把bin写入img:
  dd if=ipl.bin of=hos.img bs=512 count=1
 2把sys写入img：
