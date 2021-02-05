@@ -90,10 +90,10 @@ clean :
 	-$(DEL) *.bin
 	-$(DEL) *.lst
 	-$(DEL) *.obj
-	-$(DEL) bootpack.map
-	-$(DEL) bootpack.bim
-	-$(DEL) bootpack.hrb
-	-$(DEL) haribote.sys
+	-$(DEL) *.map
+	-$(DEL) *.bim
+	-$(DEL) *.hrb
+	-$(DEL) *.sys
 
 src_only :
 	$(MAKE) clean

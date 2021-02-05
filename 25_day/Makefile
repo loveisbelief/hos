@@ -222,9 +222,9 @@ clean :
 	-$(DEL) *.bin
 	-$(DEL) *.lst
 	-$(DEL) *.obj
-	-$(DEL) bootpack.map
-	-$(DEL) bootpack.bim
-	-$(DEL) bootpack.hrb
+	-$(DEL) *.map
+	-$(DEL) *.bim
+	-$(DEL) *.hrb
 	-$(DEL) haribote.sys
 
 src_only :
