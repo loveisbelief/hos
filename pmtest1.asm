@@ -38,7 +38,7 @@ LABEL_BEGIN:
 	add eax,LABEL_GDT
 	mov dword [GdtPtr+2],eax
 	
-	lgtd [GdtPtr]
+	lgdt [GdtPtr]
 	cli
 	in al,92h
 	or al,00000010b
@@ -53,7 +53,7 @@ LABEL_SEG_CODE32:
 	mov ax,SelectorVideo
 	mov gs,ax
 	mov edi,(80*11+79)*2
-	mov ah,och
+	mov ah,0ch
 	mov al,'p'
 	mov [gs:edi],ax
 	jmp $

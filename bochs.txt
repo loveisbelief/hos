@@ -1,0 +1,23 @@
+Bochs入门
+ Bochs入门丶Java教程网-IT开发者们的技术天堂
+https://www.liangzl.com/get-article-detail-166523.html
+一、Bochs简介
+Bochs（读音同 Box）是完全使用软件模拟PC的开源x86模拟器，与使用虚拟化技术的虚拟机相比，虽然速度慢，但非常适合开发、调试操作系统。 
+二、配置操作系统
+Bochs根据配置文件（扩展名为bxrc）运行操作系统，安装目录有示例文件Bochsrc- sample.txt，一般从https://sourceforge.net/下载的系统映像也带有配置。常见配置如下：
+1、指定内存大小，单位MB，如megs: 16
+2、指定系统BIOS文件，如romp\_w\_picpath: file=../BIOS-Bochs-latest, address=0xf0000
+3、指定显卡BIOS文件，如vgaromp\_w\_picpath: file=../VGABIOS-lgpl-latest
+4、指定软驱映像，可以是任意大小，如floppya: 2_88=test.img, status=inserted或floppyb: 1_44=floppyb.img, status=inserted
+5、指定硬盘映像，如ata0: enabled=1, ioaddr1=0x1f0, ioaddr2=0x3f0, irq=14以及ata0-master: type=disk, path="test.img", cylinders=306, heads=4, spt=17
+6、指定光驱映像，可用光驱盘符表示物理光驱，如ata0-slave: type=cdrom, path="dos.iso", status=inserted  
+7、指定启动设备，如boot: cdrom、boot: c或boot: floppy  
+三、 调试操作系统
+调试操作系统在Bochs控制台进行，而非操作系统显示窗口。调试命令主要分调试控制，运行控制，断点管理，CPU及内存控制四大类。常用命令如下：
+1、help：显示命令列表或某条命令的详细用法
+2、c：继续。  
+3、s：单步执行，s n执行n步。  
+4、b：预置断点，如b 0x7c00。
+5、x：显示内存单元，以字为单位，如x /20 0x7c00.
+6、r：显示寄存器状态
+7、u：反汇编，如u /20 0x7c00
