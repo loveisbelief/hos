@@ -11,3 +11,6 @@ cpu 486;[INSTRSET "i486p"]
 如果没有这句[INSTRSET "i486p"]条纹还显示不出来。day04时。
 5使用gas把从c语言编译得到的汇编编译成目标文件
 as -o bootpack.obj bootpack.s
+6关于保护模式
+GDT,LDT,GDTR,LDTR 详解,包你理解透彻 | 技术部落
+https://www.techbulo.com/708.html
