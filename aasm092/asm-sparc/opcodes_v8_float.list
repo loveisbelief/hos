@@ -1,0 +1,343 @@
+#
+# FLOATING POINT INSTRUCTIONS
+#
+
+###############################################################################
+name		fitos
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x34) | FLD_OPF(0x0c4)
+op_type		OP_FSREG(0) | OP_FSREG(1)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_Rs2Rd
+
+name		fitod
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x34) | FLD_OPF(0x0c8)
+op_type		OP_FSREG(0) | OP_FDREG(1)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_Rs2Rd
+
+name		fitoq
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x34) | FLD_OPF(0x0cc)
+op_type		OP_FSREG(0) | OP_FQREG(1)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_Rs2Rd
+
+###############################################################################
+name		fstoi
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x34) | FLD_OPF(0x0d1)
+op_type		OP_FSREG(1) | OP_FSREG(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_Rs2Rd
+
+name		fdtoi
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x34) | FLD_OPF(0x0d2)
+op_type		OP_FSREG(1) | OP_FDREG(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_Rs2Rd
+
+name		fqtoi
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x34) | FLD_OPF(0x0d3)
+op_type		OP_FSREG(1) | OP_FQREG(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_Rs2Rd
+
+###############################################################################
+name		fstod
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x34) | FLD_OPF(0x0c9)
+op_type		OP_FSREG(0) | OP_FDREG(1)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_Rs2Rd
+
+name		fstoq
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x34) | FLD_OPF(0x0cd)
+op_type		OP_FSREG(0) | OP_FQREG(1)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_Rs2Rd
+
+name		fdtos
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x34) | FLD_OPF(0x0c6)
+op_type		OP_FDREG(0) | OP_FSREG(1)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_Rs2Rd
+
+name		fdtoq
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x34) | FLD_OPF(0x0ce)
+op_type		OP_FDREG(0) | OP_FQREG(1)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_Rs2Rd
+
+name		fqtos
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x34) | FLD_OPF(0x0c7)
+op_type		OP_FQREG(0) | OP_FSREG(1)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_Rs2Rd
+
+name		fqtod
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x34) | FLD_OPF(0x0cb)
+op_type		OP_FQREG(0) | OP_FDREG(1)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_Rs2Rd
+
+###############################################################################
+name		fmovs
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x34) | FLD_OPF(0x001)
+op_type		OP_FSREG(0) | OP_FSREG(1)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_Rs2Rd
+
+###############################################################################
+name		fnegs
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x34) | FLD_OPF(0x005)
+op_type		OP_FSREG(0) | OP_FSREG(1)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_Rs2Rd
+
+###############################################################################
+name		fabss
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x34) | FLD_OPF(0x009)
+op_type		OP_FSREG(0) | OP_FSREG(1)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_Rs2Rd
+
+###############################################################################
+name		fsqrts
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x34) | FLD_OPF(0x029)
+op_type		OP_FSREG(0) | OP_FSREG(1)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_Rs2Rd
+
+name		fsqrtd
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x34) | FLD_OPF(0x02a)
+op_type		OP_FDREG(0) | OP_FDREG(1)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_Rs2Rd
+
+name		fsqrtq
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x34) | FLD_OPF(0x02b)
+op_type		OP_FQREG(0) | OP_FQREG(1)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_Rs2Rd
+
+###############################################################################
+name		fadds
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x34) | FLD_OPF(0x041)
+op_type		OP_FSREG(0) | OP_FSREG(1) | OP_FSREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1Rs2Rd
+
+name		faddd
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x34) | FLD_OPF(0x042)
+op_type		OP_FDREG(0) | OP_FDREG(1) | OP_FDREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1Rs2Rd
+
+name		faddq
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x34) | FLD_OPF(0x043)
+op_type		OP_FQREG(0) | OP_FQREG(1) | OP_FQREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1Rs2Rd
+
+###############################################################################
+name		fsubs
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x34) | FLD_OPF(0x045)
+op_type		OP_FSREG(0) | OP_FSREG(1) | OP_FSREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1Rs2Rd
+
+name		fsubd
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x34) | FLD_OPF(0x046)
+op_type		OP_FDREG(0) | OP_FDREG(1) | OP_FDREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1Rs2Rd
+
+name		fsubq
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x34) | FLD_OPF(0x047)
+op_type		OP_FQREG(0) | OP_FQREG(1) | OP_FQREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1Rs2Rd
+
+###############################################################################
+name		fmuls
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x34) | FLD_OPF(0x049)
+op_type		OP_FSREG(0) | OP_FSREG(1) | OP_FSREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1Rs2Rd
+
+name		fmuld
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x34) | FLD_OPF(0x04a)
+op_type		OP_FDREG(0) | OP_FDREG(1) | OP_FDREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1Rs2Rd
+
+name		fmulq
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x34) | FLD_OPF(0x04b)
+op_type		OP_FQREG(0) | OP_FQREG(1) | OP_FQREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1Rs2Rd
+
+###############################################################################
+name		fsmuld
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x34) | FLD_OPF(0x069)
+op_type		OP_FSREG(0) | OP_FSREG(1) | OP_FDREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1Rs2Rd
+
+name		fdmulq
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x34) | FLD_OPF(0x06e)
+op_type		OP_FDREG(0) | OP_FDREG(1) | OP_FQREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1Rs2Rd
+
+###############################################################################
+name		fdivs
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x34) | FLD_OPF(0x04d)
+op_type		OP_FSREG(0) | OP_FSREG(1) | OP_FSREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1Rs2Rd
+
+name		fdivd
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x34) | FLD_OPF(0x04e)
+op_type		OP_FDREG(0) | OP_FDREG(1) | OP_FDREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1Rs2Rd
+
+name		fdivq
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x34) | FLD_OPF(0x04f)
+op_type		OP_FQREG(0) | OP_FQREG(1) | OP_FQREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1Rs2Rd
+
+###############################################################################
+name		fcmps
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x35) | FLD_OPF(0x051)
+op_type		OP_FSREG(0) | OP_FSREG(1)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_Rs1Rs2
+
+name		fcmpd
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x35) | FLD_OPF(0x052)
+op_type		OP_FDREG(0) | OP_FDREG(1)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_Rs1Rs2
+
+name		fcmpq
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x35) | FLD_OPF(0x053)
+op_type		OP_FQREG(0) | OP_FQREG(1)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_Rs1Rs2
+
+###############################################################################
+name		fcmpes
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x35) | FLD_OPF(0x055)
+op_type		OP_FSREG(0) | OP_FSREG(1)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_Rs1Rs2
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x35) | FLD_OPF(0x055)
+op_type		OP_REGOTHER(0) | OP_FSREG(1) | OP_FSREG(2)
+reg_other	REG_OTHER_FCC
+flags		FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_RdRs1Rs2
+
+name		fcmped
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x35) | FLD_OPF(0x056)
+op_type		OP_FDREG(0) | OP_FDREG(1)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_Rs1Rs2
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x35) | FLD_OPF(0x056)
+op_type		OP_REGOTHER(0) | OP_FDREG(1) | OP_FDREG(2)
+reg_other	REG_OTHER_FCC
+flags		FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_RdRs1Rs2
+
+name		fcmpeq
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x35) | FLD_OPF(0x057)
+op_type		OP_FQREG(0) | OP_FQREG(1)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_Rs1Rs2
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x35) | FLD_OPF(0x057)
+op_type		OP_REGOTHER(0) | OP_FQREG(1) | OP_FQREG(2)
+reg_other	REG_OTHER_FCC
+flags		FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_RdRs1Rs2
+

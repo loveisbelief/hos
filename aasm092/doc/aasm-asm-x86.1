@@ -1,0 +1,268 @@
+.if \n(zZ=1 .ig zZ
+.if \n(zY=1 .ig zY
+.TH aasm 1 "2003 Feb" "aasm-asm-x86(1)"
+
+.de }1
+.ds ]X \&\\*(]B\\
+.nr )E 0
+.if !"\\$1"" .nr )I \\$1n
+.}f
+.ll \\n(LLu
+.in \\n()Ru+\\n(INu+\\n()Iu
+.ti \\n(INu
+.ie !\\n()Iu+\\n()Ru-\w\\*(]Xu-3p \{\\*(]X
+.br\}
+.el \\*(]X\h|\\n()Iu+\\n()Ru\c
+.}f
+..
+
+.de FN
+\fI\|\\$1\|\fP
+..
+.SH "NAME"
+aasm-asm-x86 - X86 assembler module for AASM
+
+.SH "DESCRIPTION"
+.B 
+\fBaasm-asm-x86\fR is an assembler module for \fBaasm\fR(1). This module is designed to produce code for X86 family target processors.
+
+.SH "DIRECTIVES"
+
+.TP
+.BI .mod_asm " " mode " name "
+Set the x86 instruction data and address width mode.
+.I name
+must be
+.B 16bits
+or
+.B 32bits
+to select the 16 bits or 32 bits mode. Mode selection is effective for
+all the following instructions. Default mode is 32 bits.
+
+.TP
+.BI .mod_asm " " cpu " family "
+Declare the target processor family. Use of instruction not
+available on declared processor will generate a warning message. Valid token for
+.I family
+are:
+.B 386
+(default),
+.B 486
+,
+.B 586
+and
+.B 686.
+Target family selection is effective for all the following instructions.
+
+.TP
+.BI .mod_asm " " ext " extension "
+Declare an instruction set extension. Use of instruction part of an
+undeclared extension will generate a warning message. Valid token
+for
+.I extension
+are:
+.B fpu
+,
+.B mmx
+,
+.B 3dnow
+,
+.B mmxext
+,
+.B 3dnowext
+,
+.B see
+,
+.B sse2
+and
+.B none
+(default). Use of
+.B none
+will disable all previously enabled extensions. Selected extensions are effective for all the following instructions.
+
+.SH "REGISTERS"
+
+Here is a list of register names recognised by the
+.B aasm-asm-x86
+module:
+
+32 bits general purpose registers:
+.br
+.B eax eax_ ecx edx ebx esp ebp esi edi
+
+16 bits general purpose registers:
+.br
+.B ax ax_ cx dx bx sp bp si di
+
+8 bits general purpose registers:
+.br
+.B al al_ cl dl bl ah ch dh bh
+
+Segment registers:
+.br
+.B es cs ss ds fs gs
+
+FPU registers:
+.br
+.B st0 st1 st2 st3 st4 st5 st6 st7
+
+MMX registers:
+.br
+.B mm0 mm1 mm2 mm3 mm4 mm5 mm6 mm7
+
+SSE registers:
+.br
+.B xmm0 xmm1 xmm2 xmm3 xmm4 xmm5 xmm6 xmm7
+
+Control registers:
+.br
+.B cr0 cr2 cr3 cr4
+
+Debug registers:
+.br
+.B dr0 dr1 dr2 dr3 dr4 dr5 dr6 dr7
+
+.B eax_ ax_ al_
+are the same registers as
+.B eax ax al
+but are considered as general registers rather than accumulator registers. This has incidence on the generated instruction binary form in some cases.
+
+.SH "INSTRUCTIONS"
+
+Available instruction names and syntaxes are those described in common
+X86 processor specifications and used in most Intel syntax
+assemblers. Operands order is destination first.
+
+A few
+.B aasm-asm-x86
+specific rules are presented in this section.
+
+.TP
+.B Far jump and call
+Far and near call and jump
+instructions have different instructions names and operands. Instructions using a branch offset only (near) are named
+.B call
+and
+.B jmp.
+They need just one operand as in most assemblers:
+
+jmp byte label
+.br
+jmp dword label
+.br
+jmp eax
+.br
+jmp dword [eax]
+
+Instruction using a segment and an offset as branch location (far) are named
+.B callf
+and
+.B jmpf.
+The indirect form take only one operand:
+
+jmpf word [eax]		; jump to word segment : word offset
+.br
+jmpf dword [eax]		; jump to word segment : dword offset
+
+The immediate form take two operands to allow use of separate expressions for segment and offset address parts:
+
+jmpf 0x1234, word 0x5789
+.br
+jmpf 0x1234, dword 0x01234567
+
+.TP
+.B Segment prefix
+Due to use of architecture independent expression engine, operands can
+not contain segment prefix for memory access. Segment prefixes have to
+be added as instruction on line preceding the memory access:
+
+mov eax, es: [ebx]	; NOT VALID with aasm
+
+seges
+.br
+mov eax, [ebx]		; valid segment prefixed memory access
+
+.TP
+.B Shift and rotation
+Each shift and rotation instructions are present under 3 forms: one bit shift/rotation, immediate
+.I n
+bits shift/rotation and register
+.B cl
+bits shift/rotation. Common x86 assembler will recognise the following instructions as the 3 different forms:
+
+shl eax, 1		; (1)
+.br
+shl eax, 2		; (2)
+.br
+shl eax, cl		; (3)
+
+.B aasm-asm-x86
+module considers (1) and (2) as immediate n bits shift operations. The correct instruction to generate the one bit shift operation is:
+
+shl eax
+
+.TP
+.B Accumulator short form
+Some instructions use a special short form when used with accumulator registers
+.B al
+,
+.B ax
+and
+.B eax
+and are available in a longer form when used with other general purpose registers.
+
+add eax, 0x123456		; eax specific short form
+.br
+add ebx, 0x123456		; long form
+
+.B aasm-asm-x86
+allow generation of the long form with
+.B al
+,
+.B ax
+and
+.B eax
+being considered as general purpose registers. Simply use
+.B al_
+,
+.B ax_
+and
+.B eax_
+as register names:
+
+add eax, 0x123456		; eax specific short form
+.br
+add eax_, 0x123456		; long form
+
+.TP
+.B Immediate short form
+Some instruction allow use of byte immediate value with wider operand size:
+
+add ecx, 5			; long form
+.br
+add ecx, dword 5		; long form
+.br
+add ecx, byte 5		; short form
+
+.B aasm-asm-x86
+will not choose the short form if the
+.B byte
+prefix is not present, but will generate an optimisation warning message if requested.
+
+.TP
+.B Memory displacement
+The same notice apply for memory access displacement:
+
+mov eax, [ebx + 5]			; long form
+.br
+mov eax, [ebx + dword 5]		; long form
+.br
+mov eax, [ebx + byte 5]		; short form
+
+.br
+.SH "AUTHORS"
+Alexandre Becoulet,
+.br
+.I alexandre.becoulet@free.fr
+
+

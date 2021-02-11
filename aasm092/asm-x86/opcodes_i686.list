@@ -1,0 +1,245 @@
+name		cmova
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM | OP_TYPE_WORK}
+i_flag		 I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_686 | I_INVERT_DIR
+fix		{0x0f, 0x47}
+instr_asm	&asm_i_2rm
+name		cmovae
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM | OP_TYPE_WORK}
+i_flag		 I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_686 | I_INVERT_DIR
+fix		{0x0f, 0x43}
+instr_asm	&asm_i_2rm
+name		cmovb
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM | OP_TYPE_WORK}
+i_flag		 I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_686 | I_INVERT_DIR
+fix		{0x0f, 0x42}
+instr_asm	&asm_i_2rm
+name		cmovbe
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM | OP_TYPE_WORK}
+i_flag		 I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_686 | I_INVERT_DIR
+fix		{0x0f, 0x46}
+instr_asm	&asm_i_2rm
+name		cmovc
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM | OP_TYPE_WORK}
+i_flag		 I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_686 | I_INVERT_DIR
+fix		{0x0f, 0x42}
+instr_asm	&asm_i_2rm
+name		cmove
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM | OP_TYPE_WORK}
+i_flag		 I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_686 | I_INVERT_DIR
+fix		{0x0f, 0x44}
+instr_asm	&asm_i_2rm
+name		cmovg
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM | OP_TYPE_WORK}
+i_flag		 I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_686 | I_INVERT_DIR
+fix		{0x0f, 0x4f}
+instr_asm	&asm_i_2rm
+name		cmovge
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM | OP_TYPE_WORK}
+i_flag		 I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_686 | I_INVERT_DIR
+fix		{0x0f, 0x4d}
+instr_asm	&asm_i_2rm
+name		cmovl
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM | OP_TYPE_WORK}
+i_flag		 I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_686 | I_INVERT_DIR
+fix		{0x0f, 0x4c}
+instr_asm	&asm_i_2rm
+name		cmovle
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM | OP_TYPE_WORK}
+i_flag		 I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_686 | I_INVERT_DIR
+fix		{0x0f, 0x4e}
+instr_asm	&asm_i_2rm
+name		cmovna
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM | OP_TYPE_WORK}
+i_flag		 I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_686 | I_INVERT_DIR
+fix		{0x0f, 0x46}
+instr_asm	&asm_i_2rm
+name		cmovnae
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM | OP_TYPE_WORK}
+i_flag		 I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_686 | I_INVERT_DIR
+fix		{0x0f, 0x42}
+instr_asm	&asm_i_2rm
+name		cmovnb
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM | OP_TYPE_WORK}
+i_flag		 I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_686 | I_INVERT_DIR
+fix		{0x0f, 0x43}
+instr_asm	&asm_i_2rm
+name		cmovnbe
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM | OP_TYPE_WORK}
+i_flag		 I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_686 | I_INVERT_DIR
+fix		{0x0f, 0x47}
+instr_asm	&asm_i_2rm
+name		cmovnc
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM | OP_TYPE_WORK}
+i_flag		 I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_686 | I_INVERT_DIR
+fix		{0x0f, 0x43}
+instr_asm	&asm_i_2rm
+name		cmovne
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM | OP_TYPE_WORK}
+i_flag		 I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_686 | I_INVERT_DIR
+fix		{0x0f, 0x45}
+instr_asm	&asm_i_2rm
+name		cmovng
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM | OP_TYPE_WORK}
+i_flag		 I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_686 | I_INVERT_DIR
+fix		{0x0f, 0x4e}
+instr_asm	&asm_i_2rm
+name		cmovnge
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM | OP_TYPE_WORK}
+i_flag		 I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_686 | I_INVERT_DIR
+fix		{0x0f, 0x4c}
+instr_asm	&asm_i_2rm
+name		cmovnl
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM | OP_TYPE_WORK}
+i_flag		 I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_686 | I_INVERT_DIR
+fix		{0x0f, 0x4d}
+instr_asm	&asm_i_2rm
+name		cmovnle
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM | OP_TYPE_WORK}
+i_flag		 I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_686 | I_INVERT_DIR
+fix		{0x0f, 0x4f}
+instr_asm	&asm_i_2rm
+name		cmovno
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM | OP_TYPE_WORK}
+i_flag		 I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_686 | I_INVERT_DIR
+fix		{0x0f, 0x41}
+instr_asm	&asm_i_2rm
+name		cmovnp
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM | OP_TYPE_WORK}
+i_flag		 I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_686 | I_INVERT_DIR
+fix		{0x0f, 0x4b}
+instr_asm	&asm_i_2rm
+name		cmovns
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM | OP_TYPE_WORK}
+i_flag		 I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_686 | I_INVERT_DIR
+fix		{0x0f, 0x49}
+instr_asm	&asm_i_2rm
+name		cmovnz
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM | OP_TYPE_WORK}
+i_flag		 I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_686 | I_INVERT_DIR
+fix		{0x0f, 0x45}
+instr_asm	&asm_i_2rm
+name		cmovo
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM | OP_TYPE_WORK}
+i_flag		 I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_686 | I_INVERT_DIR
+fix		{0x0f, 0x40}
+instr_asm	&asm_i_2rm
+name		cmovp
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM | OP_TYPE_WORK}
+i_flag		 I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_686 | I_INVERT_DIR
+fix		{0x0f, 0x4a}
+instr_asm	&asm_i_2rm
+name		cmovpe
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM | OP_TYPE_WORK}
+i_flag		 I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_686 | I_INVERT_DIR
+fix		{0x0f, 0x4a}
+instr_asm	&asm_i_2rm
+name		cmovpo
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM | OP_TYPE_WORK}
+i_flag		 I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_686 | I_INVERT_DIR
+fix		{0x0f, 0x4b}
+instr_asm	&asm_i_2rm
+name		cmovs
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM | OP_TYPE_WORK}
+i_flag		 I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_686 | I_INVERT_DIR
+fix		{0x0f, 0x48}
+instr_asm	&asm_i_2rm
+name		cmovz
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM | OP_TYPE_WORK}
+i_flag		 I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_686 | I_INVERT_DIR
+fix		{0x0f, 0x44}
+instr_asm	&asm_i_2rm
+name		fxrstor
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_1 | I_NO_PREFIXE | I_686
+fix		{0x0f, 0xae, 0x08}
+instr_asm	&asm_i_1rm
+name		fxsave
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_1 | I_NO_PREFIXE | I_686
+fix		{0x0f, 0xae, 0x00}
+instr_asm	&asm_i_1rm
+name		rdpmc
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_686
+fix		{0x0f, 0x33}
+instr_asm	&asm_i_void
+name		sysenter
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_686
+fix		{0x0f, 0x34}
+instr_asm	&asm_i_void
+name		sysexit
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_686
+fix		{0x0f, 0x35}
+instr_asm	&asm_i_void

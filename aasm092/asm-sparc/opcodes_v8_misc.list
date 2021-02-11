@@ -1,0 +1,112 @@
+#
+# MISC INSTRUCTIONS
+#
+
+###############################################################################
+name		swap
+
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x0f)
+op_type		OP_MEM(0) | OP_RREG(1)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_M13Rd
+
+###############################################################################
+name		swapa
+
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x1f)
+op_type		OP_REGMEM(0) | OP_IMM(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1I8Rd
+
+###############################################################################
+name		sethi
+
+opcode
+fix		FLD_OP(0) | FLD_OP2(0x4)
+op_type		OP_IMM(0) | OP_RREG(1)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_I22Rd
+
+###############################################################################
+name		nop
+
+opcode
+fix		FLD_OP(0) | FLD_OP2(0x4)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(0)
+asm_instr	&asm_format_void
+
+###############################################################################
+name		save
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x3c)
+op_type		OP_RREG(0) | OP_RREG(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1Rs2Rd
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x3c)
+flags		FLG_V8 | FLG_V9 | FLG_SYNTHETIC | FLG_OPCOUNT(0)
+asm_instr	&asm_format_void
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x3c) | FLD_IBIT(1)
+op_type		OP_RREG(0) | OP_IMM(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_SYNTHETIC | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1I13Rd
+
+###############################################################################
+name		restore
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x3d)
+op_type		OP_RREG(0) | OP_RREG(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1Rs2Rd
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x3d)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(0)
+asm_instr	&asm_format_void
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x3d) | FLD_IBIT(1)
+op_type		OP_RREG(0) | OP_IMM(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1I13Rd
+
+###############################################################################
+name		stbar
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x28) | FLD_RS1(0x0f)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(0)
+asm_instr	&asm_format_void
+
+name		flush
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x3b)
+op_type		OP_ADDR(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_A13
+
+###############################################################################
+name		cpop1
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x36)
+op_type		OP_IMM(0) | OP_CREG(1) | OP_CREG(2) | OP_CREG(3)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(4)
+asm_instr	&asm_format_I9Rs1Rs2Rd
+
+name		cpop2
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x37)
+op_type		OP_IMM(0) | OP_CREG(1) | OP_CREG(2) | OP_CREG(3)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(4)
+asm_instr	&asm_format_I9Rs1Rs2Rd
+

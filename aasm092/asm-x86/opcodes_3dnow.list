@@ -1,0 +1,168 @@
+name		femms
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_3DNOW
+fix		{0x0f, 0x0e}
+instr_asm	&asm_i_void
+name		pavgusb
+opcode
+i_size		{OP_SIZE_64BITS, OP_SIZE_64BITS}
+i_type		{OP_TYPE_MMX, OP_TYPE_MMX | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_SUFIXE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_3DNOW
+fix		{0x0f, 0x0f, 0, 0xbf}
+instr_asm	&asm_i_2rm
+name		pf2id
+opcode
+i_size		{OP_SIZE_64BITS, OP_SIZE_64BITS}
+i_type		{OP_TYPE_MMX, OP_TYPE_MMX | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_SUFIXE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_3DNOW
+fix		{0x0f, 0x0f, 0, 0x1d}
+instr_asm	&asm_i_2rm
+name		pfacc
+opcode
+i_size		{OP_SIZE_64BITS, OP_SIZE_64BITS}
+i_type		{OP_TYPE_MMX, OP_TYPE_MMX | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_SUFIXE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_3DNOW
+fix		{0x0f, 0x0f, 0, 0xae}
+instr_asm	&asm_i_2rm
+name		pfadd
+opcode
+i_size		{OP_SIZE_64BITS, OP_SIZE_64BITS}
+i_type		{OP_TYPE_MMX, OP_TYPE_MMX | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_SUFIXE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_3DNOW
+fix		{0x0f, 0x0f, 0, 0x9e}
+instr_asm	&asm_i_2rm
+name		pfcmpeq
+opcode
+i_size		{OP_SIZE_64BITS, OP_SIZE_64BITS}
+i_type		{OP_TYPE_MMX, OP_TYPE_MMX | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_SUFIXE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_3DNOW
+fix		{0x0f, 0x0f, 0, 0xb0}
+instr_asm	&asm_i_2rm
+name		pfcmpge
+opcode
+i_size		{OP_SIZE_64BITS, OP_SIZE_64BITS}
+i_type		{OP_TYPE_MMX, OP_TYPE_MMX | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_SUFIXE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_3DNOW
+fix		{0x0f, 0x0f, 0, 0x90}
+instr_asm	&asm_i_2rm
+name		pfcmpgt
+opcode
+i_size		{OP_SIZE_64BITS, OP_SIZE_64BITS}
+i_type		{OP_TYPE_MMX, OP_TYPE_MMX | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_SUFIXE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_3DNOW
+fix		{0x0f, 0x0f, 0, 0xa0}
+instr_asm	&asm_i_2rm
+name		pfmax
+opcode
+i_size		{OP_SIZE_64BITS, OP_SIZE_64BITS}
+i_type		{OP_TYPE_MMX, OP_TYPE_MMX | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_SUFIXE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_3DNOW
+fix		{0x0f, 0x0f, 0, 0xa4}
+instr_asm	&asm_i_2rm
+name		pfmin
+opcode
+i_size		{OP_SIZE_64BITS, OP_SIZE_64BITS}
+i_type		{OP_TYPE_MMX, OP_TYPE_MMX | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_SUFIXE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_3DNOW
+fix		{0x0f, 0x0f, 0, 0x94}
+instr_asm	&asm_i_2rm
+name		pfmul
+opcode
+i_size		{OP_SIZE_64BITS, OP_SIZE_64BITS}
+i_type		{OP_TYPE_MMX, OP_TYPE_MMX | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_SUFIXE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_3DNOW
+fix		{0x0f, 0x0f, 0, 0xb4}
+instr_asm	&asm_i_2rm
+name		pfrcp
+opcode
+i_size		{OP_SIZE_64BITS, OP_SIZE_64BITS}
+i_type		{OP_TYPE_MMX, OP_TYPE_MMX | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_SUFIXE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_3DNOW
+fix		{0x0f, 0x0f, 0, 0x96}
+instr_asm	&asm_i_2rm
+name		pfrcpit1
+opcode
+i_size		{OP_SIZE_64BITS, OP_SIZE_64BITS}
+i_type		{OP_TYPE_MMX, OP_TYPE_MMX | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_SUFIXE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_3DNOW
+fix		{0x0f, 0x0f, 0, 0xa6}
+instr_asm	&asm_i_2rm
+name		pfrcpit2
+opcode
+i_size		{OP_SIZE_64BITS, OP_SIZE_64BITS}
+i_type		{OP_TYPE_MMX, OP_TYPE_MMX | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_SUFIXE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_3DNOW
+fix		{0x0f, 0x0f, 0, 0xb6}
+instr_asm	&asm_i_2rm
+name		pfrsqit1
+opcode
+i_size		{OP_SIZE_64BITS, OP_SIZE_64BITS}
+i_type		{OP_TYPE_MMX, OP_TYPE_MMX | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_SUFIXE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_3DNOW
+fix		{0x0f, 0x0f, 0, 0xa7}
+instr_asm	&asm_i_2rm
+name		pfrsqrt
+opcode
+i_size		{OP_SIZE_64BITS, OP_SIZE_64BITS}
+i_type		{OP_TYPE_MMX, OP_TYPE_MMX | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_SUFIXE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_3DNOW
+fix		{0x0f, 0x0f, 0, 0x97}
+instr_asm	&asm_i_2rm
+name		pfsub
+opcode
+i_size		{OP_SIZE_64BITS, OP_SIZE_64BITS}
+i_type		{OP_TYPE_MMX, OP_TYPE_MMX | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_SUFIXE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_3DNOW
+fix		{0x0f, 0x0f, 0, 0x9a}
+instr_asm	&asm_i_2rm
+name		pfsubr
+opcode
+i_size		{OP_SIZE_64BITS, OP_SIZE_64BITS}
+i_type		{OP_TYPE_MMX, OP_TYPE_MMX | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_SUFIXE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_3DNOW
+fix		{0x0f, 0x0f, 0, 0xaa}
+instr_asm	&asm_i_2rm
+name		pi2fd
+opcode
+i_size		{OP_SIZE_64BITS, OP_SIZE_64BITS}
+i_type		{OP_TYPE_MMX, OP_TYPE_MMX | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_SUFIXE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_3DNOW
+fix		{0x0f, 0x0f, 0, 0x0d}
+instr_asm	&asm_i_2rm
+name		pmulhrw
+opcode
+i_size		{OP_SIZE_64BITS, OP_SIZE_64BITS}
+i_type		{OP_TYPE_MMX, OP_TYPE_MMX | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_SUFIXE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_3DNOW
+fix		{0x0f, 0x0f, 0, 0xb7}
+instr_asm	&asm_i_2rm
+name		prefetch
+opcode
+i_size		{OP_SIZE_MASK}
+i_type		{OP_TYPE_MEM}
+i_flag		I_NO_PREFIXE | I_PREBYTE | I_OP_COUNT_1 | I_3DNOW
+fix		{0x0f, 0x0d}
+instr_asm	&asm_i_1rm
+name		prefetchw
+opcode
+i_size		{OP_SIZE_MASK}
+i_type		{OP_TYPE_MEM}
+i_flag		I_NO_PREFIXE | I_PREBYTE | I_OP_COUNT_1 | I_3DNOW
+fix		{0x0f, 0x0d}
+instr_asm	&asm_i_1rm
+name		syscall
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_3DNOW
+fix		{0x0f, 0x05}
+instr_asm	&asm_i_void
+name		sysret
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_3DNOW
+fix		{0x0f, 0x07}
+instr_asm	&asm_i_void

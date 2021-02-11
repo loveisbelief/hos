@@ -1,0 +1,614 @@
+name		addps
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0x0f, 0x58}
+instr_asm	&asm_i_2rm
+name		addss
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0xf3, 0x0f, 0x58}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_32BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0xf3, 0x0f, 0x58}
+instr_asm	&asm_i_2rm
+name		andnps
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0x0f, 0x55}
+instr_asm	&asm_i_2rm
+name		andps
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0x0f, 0x54}
+instr_asm	&asm_i_2rm
+name		cmpeqps
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE | I_SUFIXE
+fix		{0x0f, 0xc2, 0x00}
+instr_asm	&asm_i_2rm
+name		cmpeqss
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE | I_SUFIXE
+fix		{0xf3, 0x0f, 0xc2, 0x00}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_32BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE | I_SUFIXE
+fix		{0xf3, 0x0f, 0xc2, 0x00}
+instr_asm	&asm_i_2rm
+name		cmpleps
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE | I_SUFIXE
+fix		{0x0f, 0xc2, 0, 0x02}
+instr_asm	&asm_i_2rm
+name		cmpless
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE | I_SUFIXE
+fix		{0xf3, 0x0f, 0xc2, 0, 0x02}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_32BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE | I_SUFIXE
+fix		{0xf3, 0x0f, 0xc2, 0, 0x02}
+instr_asm	&asm_i_2rm
+name		cmpltps
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE | I_SUFIXE
+fix		{0x0f, 0xc2, 0, 0x01}
+instr_asm	&asm_i_2rm
+name		cmpltss
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE | I_SUFIXE
+fix		{0xf3, 0x0f, 0xc2, 0, 0x01}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_32BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE | I_SUFIXE
+fix		{0xf3, 0x0f, 0xc2, 0, 0x01}
+instr_asm	&asm_i_2rm
+name		cmpneqps
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE | I_SUFIXE
+fix		{0x0f, 0xc2, 0, 0x04}
+instr_asm	&asm_i_2rm
+name		cmpneqss
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE | I_SUFIXE
+fix		{0xf3, 0x0f, 0xc2, 0, 0x04}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_32BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE | I_SUFIXE
+fix		{0xf3, 0x0f, 0xc2, 0, 0x04}
+instr_asm	&asm_i_2rm
+name		cmpnleps
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE | I_SUFIXE
+fix		{0x0f, 0xc2, 0, 0x06}
+instr_asm	&asm_i_2rm
+name		cmpnless
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE | I_SUFIXE
+fix		{0xf3, 0x0f, 0xc2, 0, 0x06}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_32BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE | I_SUFIXE
+fix		{0xf3, 0x0f, 0xc2, 0, 0x06}
+instr_asm	&asm_i_2rm
+name		cmpnltps
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE | I_SUFIXE
+fix		{0x0f, 0xc2, 0, 0x05}
+instr_asm	&asm_i_2rm
+name		cmpnltss
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE | I_SUFIXE
+fix		{0xf3, 0x0f, 0xc2, 0, 0x05}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_32BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE | I_SUFIXE
+fix		{0xf3, 0x0f, 0xc2, 0, 0x05}
+instr_asm	&asm_i_2rm
+name		cmpordps
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE | I_SUFIXE
+fix		{0x0f, 0xc2, 0, 0x07}
+instr_asm	&asm_i_2rm
+name		cmpordss
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE | I_SUFIXE
+fix		{0xf3, 0x0f, 0xc2, 0, 0x07}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_32BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE | I_SUFIXE
+fix		{0xf3, 0x0f, 0xc2, 0, 0x07}
+instr_asm	&asm_i_2rm
+name		cmpps
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS, OP_SIZE_8BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE | OP_TYPE_MEM, OP_TYPE_IM}
+i_flag		I_PREBYTE | I_OP_COUNT_3 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0x0f, 0xc2}
+instr_asm	&asm_i_2rm
+name		cmpss
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS, OP_SIZE_8BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE, OP_TYPE_IM}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_3 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0xf3, 0x0f, 0xc2, 0x00}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_32BITS, OP_SIZE_8BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_MEM, OP_TYPE_IM}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_3 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0xf3, 0x0f, 0xc2, 0x00}
+instr_asm	&asm_i_2rm
+name		cmpunordps
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE | I_SUFIXE
+fix		{0x0f, 0xc2, 0, 0x03}
+instr_asm	&asm_i_2rm
+name		cmpunordss
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE | I_SUFIXE
+fix		{0xf3, 0x0f, 0xc2, 0, 0x03}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_32BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE | I_SUFIXE
+fix		{0xf3, 0x0f, 0xc2, 0, 0x03}
+instr_asm	&asm_i_2rm
+name		comiss
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0x0f, 0x2f}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_32BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0x0f, 0x2f}
+instr_asm	&asm_i_2rm
+name		cvtpi2ps
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_64BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_MMX | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0x0f, 0x2a}
+instr_asm	&asm_i_2rm
+name		cvtps2pi
+opcode
+i_size		{OP_SIZE_64BITS, OP_SIZE_64BITS}
+i_type		{OP_TYPE_MMX, OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0x0f, 0x2d}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_64BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_MMX, OP_TYPE_SSE}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0x0f, 0x2d}
+instr_asm	&asm_i_2rm
+name		cvtsi2ss
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_32BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_MEM | OP_TYPE_WORK}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0xf3, 0x0f, 0x2a}
+instr_asm	&asm_i_2rm
+name		cvtss2si
+opcode
+i_size		{OP_SIZE_32BITS, OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0xf3, 0x0f, 0x2d}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_32BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_SSE}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0xf3, 0x0f, 0x2d}
+instr_asm	&asm_i_2rm
+name		cvttps2pi
+opcode
+i_size		{OP_SIZE_64BITS, OP_SIZE_64BITS}
+i_type		{OP_TYPE_MMX, OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0x0f, 0x2c}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_64BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_MMX, OP_TYPE_SSE}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0x0f, 0x2c}
+instr_asm	&asm_i_2rm
+name		cvttss2si
+opcode
+i_size		{OP_SIZE_32BITS, OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0xf3, 0x0f, 0x2c}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_32BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_SSE}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0xf3, 0x0f, 0x2c}
+instr_asm	&asm_i_2rm
+name		divps
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0x0f, 0x5e}
+instr_asm	&asm_i_2rm
+name		divss
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0xf3, 0x0f, 0x5e}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_32BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0xf3, 0x0f, 0x5e}
+instr_asm	&asm_i_2rm
+name		ldmxcsr
+opcode
+i_size		{OP_SIZE_32BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_NO_PREFIXE | I_PREBYTE | I_OP_COUNT_1 | I_SSE
+fix		{0x0f, 0xae, 0x10}
+instr_asm	&asm_i_1rm
+name		maxps
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0x0f, 0x5f}
+instr_asm	&asm_i_2rm
+name		maxss
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0xf3, 0x0f, 0x5f}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_32BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0xf3, 0x0f, 0x5f}
+instr_asm	&asm_i_2rm
+name		minps
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0x0f, 0x5d}
+instr_asm	&asm_i_2rm
+name		minss
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0xf3, 0x0f, 0x5d}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_32BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0xf3, 0x0f, 0x5d}
+instr_asm	&asm_i_2rm
+name		movaps
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0x0f, 0x28}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE | OP_TYPE_MEM, OP_TYPE_SSE}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_SSE
+fix		{0x0f, 0x29}
+instr_asm	&asm_i_2rm
+name		movhlps
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0x0f, 0x12}
+instr_asm	&asm_i_2rm
+name		movhps
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_64BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0x0f, 0x16}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_64BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_MEM, OP_TYPE_SSE}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_SSE
+fix		{0x0f, 0x17}
+instr_asm	&asm_i_2rm
+name		movlhps
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0x0f, 0x16}
+instr_asm	&asm_i_2rm
+name		movlps
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_64BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0x0f, 0x12}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_64BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_MEM, OP_TYPE_SSE}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_SSE
+fix		{0x0f, 0x13}
+instr_asm	&asm_i_2rm
+name		movmskps
+opcode
+i_size		{OP_SIZE_32BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_SSE}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0x0f, 0x50}
+instr_asm	&asm_i_2rm
+name		movntps
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_MEM, OP_TYPE_SSE}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_SSE
+fix		{0x0f, 0x2b}
+instr_asm	&asm_i_2rm
+name		movss
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0xf3, 0x0f, 0x10}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_32BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0xf3, 0x0f, 0x10}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_32BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_MEM, OP_TYPE_SSE}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_SSE
+fix		{0xf3, 0x0f, 0x11}
+instr_asm	&asm_i_2rm
+name		movups
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0x0f, 0x10}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_MEM, OP_TYPE_SSE}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_SSE
+fix		{0x0f, 0x11}
+instr_asm	&asm_i_2rm
+name		mulps
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0x0f, 0x59}
+instr_asm	&asm_i_2rm
+name		mulss
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0xf3, 0x0f, 0x59}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_32BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0xf3, 0x0f, 0x59}
+instr_asm	&asm_i_2rm
+name		orps
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0x0f, 0x56}
+instr_asm	&asm_i_2rm
+name		rcpps
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0x0f, 0x53}
+instr_asm	&asm_i_2rm
+name		rcpss
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0xf3, 0x0f, 0x53}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_32BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0xf3, 0x0f, 0x53}
+instr_asm	&asm_i_2rm
+name		rsqrtps
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0x0f, 0x52}
+instr_asm	&asm_i_2rm
+name		rsqrtss
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0xf3, 0x0f, 0x52}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_32BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0xf3, 0x0f, 0x52}
+instr_asm	&asm_i_2rm
+name		shufps
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS, OP_SIZE_8BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE | OP_TYPE_MEM, OP_TYPE_IM}
+i_flag		I_PREBYTE | I_OP_COUNT_3 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0x0f, 0xc6}
+instr_asm	&asm_i_2rm
+name		sqrtps
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0x0f, 0x51}
+instr_asm	&asm_i_2rm
+name		sqrtss
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0xf3, 0x0f, 0x51}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_32BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0xf3, 0x0f, 0x51}
+instr_asm	&asm_i_2rm
+name		stmxcsr
+opcode
+i_size		{OP_SIZE_32BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_NO_PREFIXE | I_PREBYTE | I_OP_COUNT_1 | I_SSE
+fix		{0x0f, 0xae, 0x18}
+instr_asm	&asm_i_1rm
+name		subps
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0x0f, 0x5c}
+instr_asm	&asm_i_2rm
+name		subss
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0xf3, 0x0f, 0x5c}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_32BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_PREFIXE_SSE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0xf3, 0x0f, 0x5c}
+instr_asm	&asm_i_2rm
+name		ucomiss
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0x0f, 0x2e}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_32BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0x0f, 0x2e}
+instr_asm	&asm_i_2rm
+name		unpckhps
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0x0f, 0x15}
+instr_asm	&asm_i_2rm
+name		unpcklps
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0x0f, 0x14}
+instr_asm	&asm_i_2rm
+name		xorps
+opcode
+i_size		{OP_SIZE_128BITS, OP_SIZE_128BITS}
+i_type		{OP_TYPE_SSE, OP_TYPE_SSE | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_SSE
+fix		{0x0f, 0x57}
+instr_asm	&asm_i_2rm

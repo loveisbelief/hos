@@ -1,0 +1,469 @@
+
+#
+# LOAD/STORE INSTRUCTIONS
+#
+
+###############################################################################
+name		ldsb
+
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x09)
+op_type		OP_MEM(0) | OP_RREG(1)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_M13Rd
+
+###############################################################################
+name		ldsh
+
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x0a)
+op_type		OP_MEM(0) | OP_RREG(1)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_M13Rd
+
+###############################################################################
+name		ldub
+
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x01)
+op_type		OP_MEM(0) | OP_RREG(1)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_M13Rd
+
+###############################################################################
+name		ldstub
+
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x0d)
+op_type		OP_MEM(0) | OP_RREG(1)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_M13Rd
+
+###############################################################################
+name		lduh
+
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x02)
+op_type		OP_MEM(0) | OP_RREG(1)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_M13Rd
+
+###############################################################################
+name		ld
+
+# ld [address], r(n)
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x00)
+op_type		OP_MEM(0) | OP_RREG(1)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_M13Rd
+
+# ld [address], f(n)
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x20)
+op_type		OP_MEM(0) | OP_FSREG(1)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_M13Rd
+
+# ld [address], fsr
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x21)
+op_type		OP_MEM(0) | OP_REGOTHER(1)
+reg_other	REG_OTHER_FSR
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_M13
+
+# ld [address], creg(n)
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x30)
+op_type		OP_MEM(0) | OP_CREG(1)
+flags		FLG_V8 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_M13Rd
+
+# ld [address], csr
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x31)
+op_type		OP_MEM(0) | OP_REGOTHER(1)
+reg_other	REG_OTHER_CSR
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_M13
+
+###############################################################################
+name		ldd
+
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x03)
+op_type		OP_MEM(0) | OP_RREG(1)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_M13Rd
+
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x23)
+op_type		OP_MEM(0) | OP_FDREG(1)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_M13Rd
+
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x33)
+op_type		OP_MEM(0) | OP_CREG(1)
+flags		FLG_V8 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_M13Rd
+
+###############################################################################
+name		ldsba
+
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x19)
+op_type		OP_REGMEM(0) | OP_IMM(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1I8Rd
+
+###############################################################################
+name		ldsha
+
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x1a)
+op_type		OP_REGMEM(0) | OP_IMM(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1I8Rd
+
+###############################################################################
+name		lduba
+
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x11)
+op_type		OP_REGMEM(0) | OP_IMM(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1I8Rd
+
+###############################################################################
+name		ldstuba
+
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x1d)
+op_type		OP_REGMEM(0) | OP_IMM(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1I8Rd
+
+###############################################################################
+name		lduha
+
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x12)
+op_type		OP_REGMEM(0) | OP_IMM(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1I8Rd
+
+###############################################################################
+name		lda
+
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x10)
+op_type		OP_REGMEM(0) | OP_IMM(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1I8Rd
+
+###############################################################################
+name		ldda
+
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x13)
+op_type		OP_REGMEM(0) | OP_IMM(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1I8Rd
+
+###############################################################################
+name		stb
+
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x05)
+op_type		OP_RREG(0) | OP_MEM(1)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_RdM13
+
+name		clrb
+
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x05)
+op_type		OP_MEM(0)
+flags		FLG_V8 | FLG_V9 | FLG_SYNTHETIC | FLG_OPCOUNT(1)
+asm_instr	&asm_format_M13
+
+###############################################################################
+name		sth
+
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x06)
+op_type		OP_RREG(0) | OP_MEM(1)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_RdM13
+
+name		clrh
+
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x06)
+op_type		OP_MEM(0)
+flags		FLG_V8 | FLG_V9 | FLG_SYNTHETIC | FLG_OPCOUNT(1)
+asm_instr	&asm_format_M13
+
+###############################################################################
+name		st
+
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x04)
+op_type		OP_RREG(0) | OP_MEM(1)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_RdM13
+
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x24)
+op_type		OP_FSREG(0) | OP_MEM(1)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_RdM13
+
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x34)
+op_type		OP_CREG(0) | OP_MEM(1)
+flags		FLG_V8 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_RdM13
+
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x25)
+op_type		OP_REGOTHER(0) | OP_MEM(1)
+reg_other	REG_OTHER_FSR
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format__M13
+
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x35)
+op_type		OP_REGOTHER(0) | OP_MEM(1)
+reg_other	REG_OTHER_CSR
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format__M13
+
+name		clr
+
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x04)
+op_type		OP_MEM(0)
+flags		FLG_V8 | FLG_V9 | FLG_SYNTHETIC | FLG_OPCOUNT(1)
+asm_instr	&asm_format_M13
+
+###############################################################################
+name		std
+
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x07)
+op_type		OP_RREG(0) | OP_MEM(1)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_RdM13
+
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x27)
+op_type		OP_FDREG(0) | OP_MEM(1)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_RdM13
+
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x37)
+op_type		OP_CREG(0) | OP_MEM(1)
+flags		FLG_V8 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_RdM13
+
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x36)
+op_type		OP_REGOTHER(0) | OP_MEM(1)
+reg_other	REG_OTHER_CQ
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format__M13
+
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x26)
+op_type		OP_REGOTHER(0) | OP_MEM(1)
+reg_other	REG_OTHER_FQ
+flags		FLG_V8 | FLG_OPCOUNT(2)
+asm_instr	&asm_format__M13
+
+###############################################################################
+name		stba
+
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x15)
+op_type		OP_RREG(0) | OP_REGMEM(1) | OP_IMM(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_RdRs1I8
+
+###############################################################################
+name		stha
+
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x16)
+op_type		OP_RREG(0) | OP_REGMEM(1) | OP_IMM(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_RdRs1I8
+
+###############################################################################
+name		sta
+
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x14)
+op_type		OP_RREG(0) | OP_REGMEM(1) | OP_IMM(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_RdRs1I8
+
+###############################################################################
+name		stda
+
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x17)
+op_type		OP_RREG(0) | OP_REGMEM(1) | OP_IMM(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_RdRs1I8
+
+###############################################################################
+name		rd
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x28)
+op_type		OP_REGOTHER(0) | OP_RREG(1)
+reg_other	REG_OTHER_ASR
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_Rs1Rd
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x29)
+op_type		OP_REGOTHER(0) | OP_RREG(1)
+reg_other	REG_OTHER_PSR
+flags		FLG_V8 | FLG_OPCOUNT(2)
+asm_instr	&asm_format__Rd
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x2a)
+op_type		OP_REGOTHER(0) | OP_RREG(1)
+reg_other	REG_OTHER_WIM
+flags		FLG_V8 | FLG_OPCOUNT(2)
+asm_instr	&asm_format__Rd
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x2b)
+op_type		OP_REGOTHER(0) | OP_RREG(1)
+reg_other	REG_OTHER_TBR
+flags		FLG_V8 | FLG_OPCOUNT(2)
+asm_instr	&asm_format__Rd
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x28)
+op_type		OP_ASRREG(0) | OP_RREG(1)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_Rs1Rd
+
+###############################################################################
+name		wr
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x30)
+op_type		OP_REGOTHER(2) | OP_RREG(0) | OP_RREG(1)
+reg_other	REG_OTHER_ASR
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1Rs2Rd
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x31)
+op_type		OP_REGOTHER(2) | OP_RREG(0) | OP_RREG(1)
+reg_other	REG_OTHER_PSR
+flags		FLG_V8 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1Rs2
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x32)
+op_type		OP_REGOTHER(2) | OP_RREG(0) | OP_RREG(1)
+reg_other	REG_OTHER_WIM
+flags		FLG_V8 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1Rs2
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x33)
+op_type		OP_REGOTHER(2) | OP_RREG(0) | OP_RREG(1)
+reg_other	REG_OTHER_TBR
+flags		FLG_V8 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1Rs2
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x30)
+op_type		OP_ASRREG(2) | OP_RREG(0) | OP_RREG(1)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1Rs2Rd
+
+###############################################################################
+name		mov
+
+# synthetic rd form
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x28)
+op_type		OP_REGOTHER(0) | OP_RREG(1)
+reg_other	REG_OTHER_ASR
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_Rs1Rd
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x29)
+op_type		OP_REGOTHER(0) | OP_RREG(1)
+reg_other	REG_OTHER_PSR
+flags		FLG_V8 | FLG_SYNTHETIC  | FLG_OPCOUNT(2)
+asm_instr	&asm_format__Rd
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x2a)
+op_type		OP_REGOTHER(0) | OP_RREG(1)
+reg_other	REG_OTHER_WIM
+flags		FLG_V8 | FLG_SYNTHETIC  | FLG_OPCOUNT(2)
+asm_instr	&asm_format__Rd
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x2b)
+op_type		OP_REGOTHER(0) | OP_RREG(1)
+reg_other	REG_OTHER_TBR
+flags		FLG_V8 | FLG_SYNTHETIC  | FLG_OPCOUNT(2)
+asm_instr	&asm_format__Rd
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x28)
+op_type		OP_ASRREG(0) | OP_RREG(1)
+flags		FLG_V8 | FLG_V9 | FLG_SYNTHETIC | FLG_OPCOUNT(2)
+asm_instr	&asm_format_Rs1Rd
+
+# synthetic wr form
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x30)
+op_type		OP_REGOTHER(1) | OP_RREG(0)
+reg_other	REG_OTHER_ASR
+flags		FLG_V8 | FLG_V9 | FLG_SYNTHETIC | FLG_OPCOUNT(2)
+asm_instr	&asm_format_Rs2Rd
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x31)
+op_type		OP_REGOTHER(1) | OP_RREG(0)
+reg_other	REG_OTHER_PSR
+flags		FLG_V8 | FLG_SYNTHETIC | FLG_OPCOUNT(2)
+asm_instr	&asm_format_Rs2
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x32)
+op_type		OP_REGOTHER(1) | OP_RREG(0)
+reg_other	REG_OTHER_WIM
+flags		FLG_V8 | FLG_SYNTHETIC | FLG_OPCOUNT(2)
+asm_instr	&asm_format_Rs2
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x33)
+op_type		OP_REGOTHER(1) | OP_RREG(0)
+reg_other	REG_OTHER_TBR
+flags		FLG_V8 | FLG_SYNTHETIC | FLG_OPCOUNT(2)
+asm_instr	&asm_format_Rs2
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x30)
+op_type		OP_ASRREG(1) | OP_RREG(0)
+flags		FLG_V8 | FLG_V9 | FLG_SYNTHETIC | FLG_OPCOUNT(2)
+asm_instr	&asm_format_Rs2Rd
+

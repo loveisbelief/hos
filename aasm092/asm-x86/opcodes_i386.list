@@ -1,0 +1,2180 @@
+name		aaa
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0x37}
+instr_asm	&asm_i_void
+name		aad
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM}
+i_flag		I_OP_COUNT_1 | I_386
+fix		{0xd5}
+instr_asm	&asm_i_1im
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_386
+fix		{0xd5, 0x0a}
+instr_asm	&asm_i_void
+name		aam
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM}
+i_flag		I_OP_COUNT_1 | I_386
+fix		{0xd4}
+instr_asm	&asm_i_1im
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_386
+fix		{0xd4, 0x0a}
+instr_asm	&asm_i_void
+name		aas
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0x3f}
+instr_asm	&asm_i_void
+name		adc
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8_16_32}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0x10, 0x00}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_IM}
+i_flag		I_SELECT_SIZE_OP12 | I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0x82, 0x10}
+instr_asm	&asm_i_1rm1im
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8_16_32}
+i_type		{OP_TYPE_ACCUMULATOR, OP_TYPE_IM}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FLAG_SHORT_IMEDIAT | I_FLAG_W_FIELD | I_386
+fix		{0x14}
+instr_asm	&asm_i_1im
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8_16_32}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_IM}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FLAG_SHORT_IMEDIAT | I_FLAG_W_FIELD | I_386
+fix		{0x80, 0x10}
+instr_asm	&asm_i_1rm1im
+name		add
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8_16_32}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0x00, 0x00}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_IM}
+i_flag		I_SELECT_SIZE_OP12 | I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0x82, 0x00}
+instr_asm	&asm_i_1rm1im
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8_16_32}
+i_type		{OP_TYPE_ACCUMULATOR, OP_TYPE_IM}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FLAG_SHORT_IMEDIAT | I_FLAG_W_FIELD | I_386
+fix		{0x04}
+instr_asm	&asm_i_1im
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8_16_32}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_IM}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FLAG_SHORT_IMEDIAT | I_FLAG_W_FIELD | I_386
+fix		{0x80, 0x00}
+instr_asm	&asm_i_1rm1im
+name		and
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8_16_32}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0x20, 0x00}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_IM}
+i_flag		I_SELECT_SIZE_OP12 | I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0x82, 0x20}
+instr_asm	&asm_i_1rm1im
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8_16_32}
+i_type		{OP_TYPE_ACCUMULATOR, OP_TYPE_IM}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FLAG_SHORT_IMEDIAT | I_FLAG_W_FIELD | I_386
+fix		{0x24}
+instr_asm	&asm_i_1im
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8_16_32}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_IM}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FLAG_SHORT_IMEDIAT | I_FLAG_W_FIELD | I_386
+fix		{0x80, 0x20}
+instr_asm	&asm_i_1rm1im
+name		arpl
+opcode
+i_size		{OP_SIZE_16BITS, OP_SIZE_16BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_WORK}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_PREFIXE | I_NO_DIRECTION_FLAG | I_386
+fix		{0x63}
+instr_asm	&asm_i_2rm
+name		bound
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM}
+i_flag		 I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_386
+fix		{0x62}
+instr_asm	&asm_i_2rm
+name		bsf
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM | OP_TYPE_WORK}
+i_flag		 I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_386 | I_INVERT_DIR
+fix		{0x0f, 0xbc}
+instr_asm	&asm_i_2rm
+name		bsr
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM | OP_TYPE_WORK}
+i_flag		 I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_386 | I_INVERT_DIR
+fix		{0x0f, 0xbd}
+instr_asm	&asm_i_2rm
+name		bt
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_WORK}
+i_flag		I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_386
+fix		{0x0f, 0xa3}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_IM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_386
+fix		{0x0f, 0xba, 0x20}
+instr_asm	&asm_i_1rm1im
+name		btc
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_WORK}
+i_flag		I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_386
+fix		{0x0f, 0xbb}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_IM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_386
+fix		{0x0f, 0xba, 0x38}
+instr_asm	&asm_i_1rm1im
+name		btr
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_WORK}
+i_flag		I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_386
+fix		{0x0f, 0xb3}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_IM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_386
+fix		{0x0f, 0xba, 0x30}
+instr_asm	&asm_i_1rm1im
+name		bts
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_WORK}
+i_flag		I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_386
+fix		{0x0f, 0xab}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_IM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_386
+fix		{0x0f, 0xba, 0x28}
+instr_asm	&asm_i_1rm1im
+name		call
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_386
+fix		{0xff, 0x10}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_IM}
+i_flag		I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0xe8}
+instr_asm	&asm_i_1im
+name		callf
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_386
+fix		{0xff, 0x18}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_16BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_IM, OP_TYPE_IM}
+i_flag		I_OP_COUNT_2 | I_INVERT_DIR | I_386
+fix		{0x9a}
+instr_asm	&asm_i_2im
+name		cbw
+opcode
+i_size		{OP_SIZE_16BITS}
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0x98}
+instr_asm	&asm_i_void
+name		cdq
+opcode
+i_size		{OP_SIZE_32BITS}
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0x99}
+instr_asm	&asm_i_void
+name		clc
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0xf8}
+instr_asm	&asm_i_void
+name		cld
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0xfc}
+instr_asm	&asm_i_void
+name		cli
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0xfa}
+instr_asm	&asm_i_void
+name		clts
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_386
+fix		{0x0f, 0x06}
+instr_asm	&asm_i_void
+name		cmc
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0xf5}
+instr_asm	&asm_i_void
+name		cmp
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8_16_32}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0x38, 0x00}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_IM}
+i_flag		I_SELECT_SIZE_OP12 | I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0x82, 0x38}
+instr_asm	&asm_i_1rm1im
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8_16_32}
+i_type		{OP_TYPE_ACCUMULATOR, OP_TYPE_IM}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FLAG_SHORT_IMEDIAT | I_FLAG_W_FIELD | I_386
+fix		{0x3c}
+instr_asm	&asm_i_1im
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8_16_32}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_IM}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FLAG_SHORT_IMEDIAT | I_FLAG_W_FIELD | I_386
+fix		{0x80, 0x38}
+instr_asm	&asm_i_1rm1im
+name		cmpsb
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{ 0 }
+i_flag		 I_386 | I_FLAG_W_FIELD
+fix		{0xa6}
+instr_asm	&asm_i_void
+name		cmpsd
+opcode
+i_size		{OP_SIZE_32BITS}
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0xa7}
+instr_asm	&asm_i_void
+name		cmpsw
+opcode
+i_size		{OP_SIZE_16BITS}
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0xa7}
+instr_asm	&asm_i_void
+name		cwd
+opcode
+i_size		{OP_SIZE_16BITS}
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0x99}
+instr_asm	&asm_i_void
+name		cwde
+opcode
+i_size		{OP_SIZE_32BITS}
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0x98}
+instr_asm	&asm_i_void
+name		daa
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0x27}
+instr_asm	&asm_i_void
+name		das
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0x2f}
+instr_asm	&asm_i_void
+name		dec
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK}
+i_flag		I_OP_COUNT_1 | I_386 | I_SELECT_SIZE_OP12
+fix		{0x48}
+instr_asm	&asm_i_1r_short
+opcode
+i_size		{OP_SIZE_8_16_32}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_FLAG_W_FIELD | I_386
+fix		{0xfe, 0x08}
+instr_asm	&asm_i_1rm
+name		div
+opcode
+i_size		{OP_SIZE_8_16_32}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_FLAG_W_FIELD | I_386
+fix		{0xf6, 0x30}
+instr_asm	&asm_i_1rm
+name		enter
+opcode
+i_size		{OP_SIZE_16BITS, OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM, OP_TYPE_IM}
+i_flag		I_OP_COUNT_2 | I_386
+fix		{0xc8}
+instr_asm	&asm_i_2im
+name		hlt
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0xf4}
+instr_asm	&asm_i_void
+name		idiv
+opcode
+i_size		{OP_SIZE_8_16_32}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_FLAG_W_FIELD | I_386
+fix		{0xf6, 0x38}
+instr_asm	&asm_i_1rm
+name		imul
+opcode
+i_size		{OP_SIZE_8_16_32}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_FLAG_W_FIELD | I_386
+fix		{0xf6, 0x28}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM | OP_TYPE_WORK}
+i_flag		I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_386 | I_INVERT_DIR
+fix		{0x0f, 0xaf}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM | OP_TYPE_WORK, OP_TYPE_IM}
+i_flag		I_FLAG_OP_SAME_SIZE | I_SELECT_SIZE_OP3 | I_OP_COUNT_3 | I_NO_DIRECTION_FLAG | I_386 | I_INVERT_DIR
+fix		{0x6b}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_16BITS, OP_SIZE_16BITS, OP_SIZE_16BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM | OP_TYPE_WORK, OP_TYPE_IM}
+i_flag		I_FLAG_OP_SAME_SIZE | I_SELECT_SIZE_OP3 | I_OP_COUNT_3 | I_NO_DIRECTION_FLAG | I_386 | I_INVERT_DIR | I_FLAG_SHORT_IMEDIAT
+fix		{0x69}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_32BITS, OP_SIZE_32BITS, OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM | OP_TYPE_WORK, OP_TYPE_IM}
+i_flag		 I_FLAG_OP_SAME_SIZE | I_SELECT_SIZE_OP3 | I_OP_COUNT_3 | I_NO_DIRECTION_FLAG | I_386 | I_INVERT_DIR | I_FLAG_SHORT_IMEDIAT
+fix		{0x69}
+instr_asm	&asm_i_2rm
+name		in
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_16BITS}
+i_type		{OP_TYPE_ACCUMULATOR, OP_TYPE_DATA}
+i_flag		I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0xec}
+instr_asm	&asm_i_inout
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8BITS}
+i_type		{OP_TYPE_ACCUMULATOR, OP_TYPE_IM}
+i_flag		I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0xe4}
+instr_asm	&asm_i_inout
+name		inc
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK}
+i_flag		I_OP_COUNT_1 | I_386 | I_SELECT_SIZE_OP12
+fix		{0x40}
+instr_asm	&asm_i_1r_short
+opcode
+i_size		{OP_SIZE_8_16_32}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_FLAG_W_FIELD | I_386
+fix		{0xfe, 0x00}
+instr_asm	&asm_i_1rm
+name		insb
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0x6c}
+instr_asm	&asm_i_void
+name		insd
+opcode
+i_size		{OP_SIZE_32BITS}
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0x6d}
+instr_asm	&asm_i_void
+name		insw
+opcode
+i_size		{OP_SIZE_16BITS}
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0x6d}
+instr_asm	&asm_i_void
+name		int
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM}
+i_flag		 I_OP_COUNT_1 | I_386
+fix		{0xcd}
+instr_asm	&asm_i_1im
+name		int3
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0xcc}
+instr_asm	&asm_i_void
+name		into
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0xce}
+instr_asm	&asm_i_void
+name		iret
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0xcf}
+instr_asm	&asm_i_void
+name		ja
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_IM}
+i_flag		I_SELECT_SIZE_OP12 | I_FLAG_SHORT_IMEDIAT | I_PREBYTE | I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x0f, 0x87}
+instr_asm	&asm_i_1im
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM}
+i_flag		 I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x77}
+instr_asm	&asm_i_1im
+name		jae
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_IM}
+i_flag		I_SELECT_SIZE_OP12 | I_FLAG_SHORT_IMEDIAT | I_PREBYTE | I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x0f, 0x83}
+instr_asm	&asm_i_1im
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM}
+i_flag		 I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x73}
+instr_asm	&asm_i_1im
+name		jb
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_IM}
+i_flag		I_SELECT_SIZE_OP12 | I_FLAG_SHORT_IMEDIAT | I_PREBYTE | I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x0f, 0x82}
+instr_asm	&asm_i_1im
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM}
+i_flag		 I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x72}
+instr_asm	&asm_i_1im
+name		jbe
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_IM}
+i_flag		I_SELECT_SIZE_OP12 | I_FLAG_SHORT_IMEDIAT | I_PREBYTE | I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x0f, 0x86}
+instr_asm	&asm_i_1im
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM}
+i_flag		 I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x76}
+instr_asm	&asm_i_1im
+name		jc
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_IM}
+i_flag		I_SELECT_SIZE_OP12 | I_FLAG_SHORT_IMEDIAT | I_PREBYTE | I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x0f, 0x82}
+instr_asm	&asm_i_1im
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM}
+i_flag		 I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x72}
+instr_asm	&asm_i_1im
+name		jcxz
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM}
+i_flag		 I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0xe3}
+instr_asm	&asm_i_1im
+name		je
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_IM}
+i_flag		I_SELECT_SIZE_OP12 | I_FLAG_SHORT_IMEDIAT | I_PREBYTE | I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x0f, 0x84}
+instr_asm	&asm_i_1im
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM}
+i_flag		 I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x74}
+instr_asm	&asm_i_1im
+name		jecxz
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM}
+i_flag		 I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0xe3}
+instr_asm	&asm_i_1im
+name		jg
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_IM}
+i_flag		I_SELECT_SIZE_OP12 | I_FLAG_SHORT_IMEDIAT | I_PREBYTE | I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x0f, 0x8f}
+instr_asm	&asm_i_1im
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM}
+i_flag		 I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x7f}
+instr_asm	&asm_i_1im
+name		jge
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_IM}
+i_flag		I_SELECT_SIZE_OP12 | I_FLAG_SHORT_IMEDIAT | I_PREBYTE | I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x0f, 0x8d}
+instr_asm	&asm_i_1im
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM}
+i_flag		 I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x7d}
+instr_asm	&asm_i_1im
+name		jl
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_IM}
+i_flag		I_SELECT_SIZE_OP12 | I_FLAG_SHORT_IMEDIAT | I_PREBYTE | I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x0f, 0x8c}
+instr_asm	&asm_i_1im
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM}
+i_flag		 I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x7c}
+instr_asm	&asm_i_1im
+name		jle
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_IM}
+i_flag		I_SELECT_SIZE_OP12 | I_FLAG_SHORT_IMEDIAT | I_PREBYTE | I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x0f, 0x8e}
+instr_asm	&asm_i_1im
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM}
+i_flag		 I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x7e}
+instr_asm	&asm_i_1im
+name		jmp
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_386
+fix		{0xff, 0x20}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_IM}
+i_flag		I_SELECT_SIZE_OP12 | I_FLAG_SHORT_IMEDIAT | I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0xe9}
+instr_asm	&asm_i_1im
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM}
+i_flag		 I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0xeb}
+instr_asm	&asm_i_1im
+name		jmpf
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_386
+fix		{0xff, 0x28}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_16BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_IM, OP_TYPE_IM}
+i_flag		I_OP_COUNT_2 | I_INVERT_DIR | I_386
+fix		{0xea}
+instr_asm	&asm_i_2im
+name		jna
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_IM}
+i_flag		I_SELECT_SIZE_OP12 | I_FLAG_SHORT_IMEDIAT | I_PREBYTE | I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x0f, 0x86}
+instr_asm	&asm_i_1im
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM}
+i_flag		 I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x76}
+instr_asm	&asm_i_1im
+name		jnae
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_IM}
+i_flag		I_SELECT_SIZE_OP12 | I_FLAG_SHORT_IMEDIAT | I_PREBYTE | I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x0f, 0x82}
+instr_asm	&asm_i_1im
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM}
+i_flag		 I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x72}
+instr_asm	&asm_i_1im
+name		jnb
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_IM}
+i_flag		I_SELECT_SIZE_OP12 | I_FLAG_SHORT_IMEDIAT | I_PREBYTE | I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x0f, 0x83}
+instr_asm	&asm_i_1im
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM}
+i_flag		 I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x73}
+instr_asm	&asm_i_1im
+name		jnbe
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_IM}
+i_flag		I_SELECT_SIZE_OP12 | I_FLAG_SHORT_IMEDIAT | I_PREBYTE | I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x0f, 0x87}
+instr_asm	&asm_i_1im
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM}
+i_flag		 I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x77}
+instr_asm	&asm_i_1im
+name		jnc
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_IM}
+i_flag		I_SELECT_SIZE_OP12 | I_FLAG_SHORT_IMEDIAT | I_PREBYTE | I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x0f, 0x83}
+instr_asm	&asm_i_1im
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM}
+i_flag		 I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x73}
+instr_asm	&asm_i_1im
+name		jne
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_IM}
+i_flag		I_SELECT_SIZE_OP12 | I_FLAG_SHORT_IMEDIAT | I_PREBYTE | I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x0f, 0x85}
+instr_asm	&asm_i_1im
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM}
+i_flag		 I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x75}
+instr_asm	&asm_i_1im
+name		jng
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_IM}
+i_flag		I_SELECT_SIZE_OP12 | I_FLAG_SHORT_IMEDIAT | I_PREBYTE | I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x0f, 0x8e}
+instr_asm	&asm_i_1im
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM}
+i_flag		 I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x7e}
+instr_asm	&asm_i_1im
+name		jnge
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_IM}
+i_flag		I_SELECT_SIZE_OP12 | I_FLAG_SHORT_IMEDIAT | I_PREBYTE | I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x0f, 0x8c}
+instr_asm	&asm_i_1im
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM}
+i_flag		 I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x7c}
+instr_asm	&asm_i_1im
+name		jnl
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_IM}
+i_flag		I_SELECT_SIZE_OP12 | I_FLAG_SHORT_IMEDIAT | I_PREBYTE | I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x0f, 0x8d}
+instr_asm	&asm_i_1im
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM}
+i_flag		 I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x7d}
+instr_asm	&asm_i_1im
+name		jnle
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_IM}
+i_flag		I_SELECT_SIZE_OP12 | I_FLAG_SHORT_IMEDIAT | I_PREBYTE | I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x0f, 0x8f}
+instr_asm	&asm_i_1im
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM}
+i_flag		 I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x7f}
+instr_asm	&asm_i_1im
+name		jno
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_IM}
+i_flag		I_SELECT_SIZE_OP12 | I_FLAG_SHORT_IMEDIAT | I_PREBYTE | I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x0f, 0x81}
+instr_asm	&asm_i_1im
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM}
+i_flag		 I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x71}
+instr_asm	&asm_i_1im
+name		jnp
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_IM}
+i_flag		I_SELECT_SIZE_OP12 | I_FLAG_SHORT_IMEDIAT | I_PREBYTE | I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x0f, 0x8b}
+instr_asm	&asm_i_1im
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM}
+i_flag		 I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x7b}
+instr_asm	&asm_i_1im
+name		jns
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_IM}
+i_flag		I_SELECT_SIZE_OP12 | I_FLAG_SHORT_IMEDIAT | I_PREBYTE | I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x0f, 0x89}
+instr_asm	&asm_i_1im
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM}
+i_flag		 I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x79}
+instr_asm	&asm_i_1im
+name		jnz
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_IM}
+i_flag		I_SELECT_SIZE_OP12 | I_FLAG_SHORT_IMEDIAT | I_PREBYTE | I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x0f, 0x85}
+instr_asm	&asm_i_1im
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM}
+i_flag		 I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x75}
+instr_asm	&asm_i_1im
+name		jo
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_IM}
+i_flag		I_SELECT_SIZE_OP12 | I_FLAG_SHORT_IMEDIAT | I_PREBYTE | I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x0f, 0x80}
+instr_asm	&asm_i_1im
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM}
+i_flag		 I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x70}
+instr_asm	&asm_i_1im
+name		jp
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_IM}
+i_flag		I_SELECT_SIZE_OP12 | I_FLAG_SHORT_IMEDIAT | I_PREBYTE | I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x0f, 0x8a}
+instr_asm	&asm_i_1im
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM}
+i_flag		 I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x7a}
+instr_asm	&asm_i_1im
+name		jpe
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_IM}
+i_flag		I_SELECT_SIZE_OP12 | I_FLAG_SHORT_IMEDIAT | I_PREBYTE | I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x0f, 0x8a}
+instr_asm	&asm_i_1im
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM}
+i_flag		 I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x7a}
+instr_asm	&asm_i_1im
+name		jpo
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_IM}
+i_flag		I_SELECT_SIZE_OP12 | I_FLAG_SHORT_IMEDIAT | I_PREBYTE | I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x0f, 0x8b}
+instr_asm	&asm_i_1im
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM}
+i_flag		 I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x7b}
+instr_asm	&asm_i_1im
+name		js
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_IM}
+i_flag		I_SELECT_SIZE_OP12 | I_FLAG_SHORT_IMEDIAT | I_PREBYTE | I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x0f, 0x88}
+instr_asm	&asm_i_1im
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM}
+i_flag		 I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x78}
+instr_asm	&asm_i_1im
+name		jz
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_IM}
+i_flag		I_SELECT_SIZE_OP12 | I_FLAG_SHORT_IMEDIAT | I_PREBYTE | I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x0f, 0x84}
+instr_asm	&asm_i_1im
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM}
+i_flag		 I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0x74}
+instr_asm	&asm_i_1im
+name		lahf
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0x9f}
+instr_asm	&asm_i_void
+name		lar
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM | OP_TYPE_WORK}
+i_flag		 I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_386 | I_INVERT_DIR
+fix		{0x0f, 0x02}
+instr_asm	&asm_i_2rm
+name		lds
+opcode
+i_size		{OP_SIZE_16BITS, OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM}
+i_flag		I_SELECT_SIZE_OP12 | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_386
+fix		{0xc5}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_32BITS, OP_SIZE_48BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM}
+i_flag		 I_SELECT_SIZE_OP12 | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_386
+fix		{0xc5}
+instr_asm	&asm_i_2rm
+name		lea
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_MASK}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM}
+i_flag		 I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_FLAG_OP_SAME_SIZE | I_386
+fix		{0x8d}
+instr_asm	&asm_i_2rm
+name		leave
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0xc9}
+instr_asm	&asm_i_void
+name		les
+opcode
+i_size		{OP_SIZE_16BITS, OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM}
+i_flag		I_SELECT_SIZE_OP12 | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_386
+fix		{0xc4}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_32BITS, OP_SIZE_48BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM}
+i_flag		 I_SELECT_SIZE_OP12 | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_386
+fix		{0xc4}
+instr_asm	&asm_i_2rm
+name		lfs
+opcode
+i_size		{OP_SIZE_16BITS, OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_SELECT_SIZE_OP12 | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_386
+fix		{0x0f, 0xb4}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_32BITS, OP_SIZE_48BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_SELECT_SIZE_OP12 | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_386
+fix		{0x0f, 0xb4}
+instr_asm	&asm_i_2rm
+name		lgdt
+opcode
+i_size		{OP_SIZE_48BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		 I_PREBYTE | I_OP_COUNT_1 | I_386
+fix		{0x0f, 0x01, 0x10}
+instr_asm	&asm_i_1rm
+name		lgs
+opcode
+i_size		{OP_SIZE_16BITS, OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_SELECT_SIZE_OP12 | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_386
+fix		{0x0f, 0xb5}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_32BITS, OP_SIZE_48BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_SELECT_SIZE_OP12 | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_386
+fix		{0x0f, 0xb5}
+instr_asm	&asm_i_2rm
+name		lidt
+opcode
+i_size		{OP_SIZE_48BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		 I_PREBYTE | I_OP_COUNT_1 | I_386
+fix		{0x0f, 0x01, 0x18}
+instr_asm	&asm_i_1rm
+name		lldt
+opcode
+i_size		{OP_SIZE_16BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_NO_PREFIXE | I_PREBYTE | I_OP_COUNT_1 | I_386
+fix		{0x0f, 0x00, 0x10}
+instr_asm	&asm_i_1rm
+name		lmsw
+opcode
+i_size		{OP_SIZE_16BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_NO_PREFIXE | I_PREBYTE | I_OP_COUNT_1 | I_386
+fix		{0x0f, 0x01, 0x30}
+instr_asm	&asm_i_1rm
+name		lock
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0xf0}
+instr_asm	&asm_i_void
+name		lodsb
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0xac}
+instr_asm	&asm_i_void
+name		lodsd
+opcode
+i_size		{OP_SIZE_32BITS}
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0xad}
+instr_asm	&asm_i_void
+name		lodsw
+opcode
+i_size		{OP_SIZE_16BITS}
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0xad}
+instr_asm	&asm_i_void
+name		loop
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM}
+i_flag		 I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0xe2}
+instr_asm	&asm_i_1im
+name		loope
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM}
+i_flag		 I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0xe1}
+instr_asm	&asm_i_1im
+name		loopne
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM}
+i_flag		 I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0xe0}
+instr_asm	&asm_i_1im
+name		loopnz
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM}
+i_flag		 I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0xe0}
+instr_asm	&asm_i_1im
+name		loopz
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM}
+i_flag		 I_OP_COUNT_1 | I_386 | I_RELATIV_IM
+fix		{0xe1}
+instr_asm	&asm_i_1im
+name		lsl
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM | OP_TYPE_WORK}
+i_flag		 I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_386 | I_INVERT_DIR
+fix		{0x0f, 0x03}
+instr_asm	&asm_i_2rm
+name		lss
+opcode
+i_size		{OP_SIZE_16BITS, OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_SELECT_SIZE_OP12 | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_386
+fix		{0x0f, 0xb2}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_32BITS, OP_SIZE_48BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_SELECT_SIZE_OP12 | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_386
+fix		{0x0f, 0xb2}
+instr_asm	&asm_i_2rm
+name		ltr
+opcode
+i_size		{OP_SIZE_16BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_NO_PREFIXE | I_PREBYTE | I_OP_COUNT_1 | I_386
+fix		{0x0f, 0x00, 0x18}
+instr_asm	&asm_i_1rm
+name		mov
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8_16_32}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0x88, 0x00}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8_16_32}
+i_type		{OP_TYPE_WORK, OP_TYPE_IM}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0xb0, 0x00}
+instr_asm	&asm_i_1r_short
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8_16_32}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_IM}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0xc6, 0x00}
+instr_asm	&asm_i_1rm1im
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_SEG | OP_TYPE_SEG_CS}
+i_flag		I_OP_COUNT_2 | I_386
+fix		{0x8c, 0x00}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_16BITS, OP_SIZE_16BITS}
+i_type		{OP_TYPE_MEM, OP_TYPE_SEG | OP_TYPE_SEG_CS}
+i_flag		I_NO_PREFIXE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_386
+fix		{0x8c, 0x00}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_16BITS, OP_SIZE_16BITS}
+i_type		{OP_TYPE_SEG, OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_NO_PREFIXE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_INVERT_DIR | I_386
+fix		{0x8e, 0x00}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_32BITS, OP_SIZE_32BITS}
+i_type		{OP_TYPE_CONTROL, OP_TYPE_WORK}
+i_flag		I_NO_PREFIXE | I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_INVERT_DIR | I_OP_COUNT_2 | I_386
+fix		{0x0f, 0x22}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_32BITS, OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_CONTROL}
+i_flag		I_NO_PREFIXE | I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_386
+fix		{0x0f, 0x20}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_32BITS, OP_SIZE_32BITS}
+i_type		{OP_TYPE_DEBUG, OP_TYPE_WORK}
+i_flag		I_NO_PREFIXE | I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_INVERT_DIR | I_OP_COUNT_2 | I_386
+fix		{0x0f, 0x23}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_32BITS, OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_DEBUG}
+i_flag		I_NO_PREFIXE | I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_386
+fix		{0x0f, 0x21}
+instr_asm	&asm_i_2rm
+name		movsb
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0xa4}
+instr_asm	&asm_i_void
+name		movsd
+opcode
+i_size		{OP_SIZE_32BITS}
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0xa5}
+instr_asm	&asm_i_void
+name		movsw
+opcode
+i_size		{OP_SIZE_16BITS}
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0xa5}
+instr_asm	&asm_i_void
+name		movsx
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_SELECT_SIZE_OP12 | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_386
+fix		{0x0f, 0xbe}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_32BITS, OP_SIZE_16BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_SELECT_SIZE_OP12 | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_386
+fix		{0x0f, 0xbf}
+instr_asm	&asm_i_2rm
+name		movzx
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_SELECT_SIZE_OP12 | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_386
+fix		{0x0f, 0xb6}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_32BITS, OP_SIZE_16BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_SELECT_SIZE_OP12 | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_386
+fix		{0x0f, 0xb7}
+instr_asm	&asm_i_2rm
+name		mul
+opcode
+i_size		{OP_SIZE_8_16_32}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		 I_OP_COUNT_1 | I_FLAG_W_FIELD | I_386
+fix		{0xf6, 0x20}
+instr_asm	&asm_i_1rm
+name		neg
+opcode
+i_size		{OP_SIZE_8_16_32}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		 I_OP_COUNT_1 | I_FLAG_W_FIELD | I_386
+fix		{0xf6, 0x18}
+instr_asm	&asm_i_1rm
+name		nop
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0x90}
+instr_asm	&asm_i_void
+name		not
+opcode
+i_size		{OP_SIZE_8_16_32}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		 I_OP_COUNT_1 | I_FLAG_W_FIELD | I_386
+fix		{0xf6, 0x10}
+instr_asm	&asm_i_1rm
+name		oio
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_386
+fix		{0x0f, 0xff}
+instr_asm	&asm_i_void
+name		or
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8_16_32}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0x08, 0x00}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_IM}
+i_flag		I_SELECT_SIZE_OP12 | I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0x82, 0x08}
+instr_asm	&asm_i_1rm1im
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8_16_32}
+i_type		{OP_TYPE_ACCUMULATOR, OP_TYPE_IM}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FLAG_SHORT_IMEDIAT | I_FLAG_W_FIELD | I_386
+fix		{0x0c}
+instr_asm	&asm_i_1im
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8_16_32}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_IM}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FLAG_SHORT_IMEDIAT | I_FLAG_W_FIELD | I_386
+fix		{0x80, 0x08}
+instr_asm	&asm_i_1rm1im
+name		out
+opcode
+i_size		{OP_SIZE_16BITS, OP_SIZE_8_16_32}
+i_type		{OP_TYPE_DATA, OP_TYPE_ACCUMULATOR}
+i_flag		I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0xee}
+instr_asm	&asm_i_inout
+opcode
+i_size		{OP_SIZE_8BITS, OP_SIZE_8_16_32}
+i_type		{OP_TYPE_IM, OP_TYPE_ACCUMULATOR}
+i_flag		I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0xe6}
+instr_asm	&asm_i_inout
+name		outsb
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0x6e}
+instr_asm	&asm_i_void
+name		outsd
+opcode
+i_size		{OP_SIZE_32BITS}
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0x6f}
+instr_asm	&asm_i_void
+name		outsw
+opcode
+i_size		{OP_SIZE_16BITS}
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0x6f}
+instr_asm	&asm_i_void
+name		pop
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK}
+i_flag		I_OP_COUNT_1 | I_386
+fix		{0x58}
+instr_asm	&asm_i_1r_short
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_386
+fix		{0x8f}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_16BITS}
+i_type		{OP_TYPE_SEG_OLD}
+i_flag		I_OP_COUNT_1 | I_INVERT_DIR | I_NO_PREFIXE | I_386
+fix		{0x07}
+instr_asm	&asm_i_1r_short
+opcode
+i_size		{OP_SIZE_16BITS}
+i_type		{OP_TYPE_SEG_NEW}
+i_flag		I_OP_COUNT_1 | I_INVERT_DIR | I_NO_PREFIXE | I_PREBYTE | I_386
+fix		{0x0f, 0x81}
+instr_asm	&asm_i_1r_short
+name		popa
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0x61}
+instr_asm	&asm_i_void
+name		popad
+opcode
+i_size		{OP_SIZE_32BITS}
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0x61}
+instr_asm	&asm_i_void
+name		popf
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0x9d}
+instr_asm	&asm_i_void
+name		push
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK}
+i_flag		I_OP_COUNT_1 | I_386
+fix		{0x50}
+instr_asm	&asm_i_1r_short
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_386
+fix		{0xff, 0x30}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_IM}
+i_flag		I_SELECT_SIZE_OP12 | I_OP_COUNT_1 | I_FLAG_SHORT_IMEDIAT | I_386
+fix		{0x68}
+instr_asm	&asm_i_1im
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_IM}
+i_flag		I_OP_COUNT_1 | I_386
+fix		{0x6a}
+instr_asm	&asm_i_1im
+opcode
+i_size		{OP_SIZE_16BITS}
+i_type		{OP_TYPE_SEG_OLD | OP_TYPE_SEG_CS}
+i_flag		I_OP_COUNT_1 | I_INVERT_DIR | I_NO_PREFIXE | I_386
+fix		{0x06}
+instr_asm	&asm_i_1r_short
+opcode
+i_size		{OP_SIZE_16BITS}
+i_type		{OP_TYPE_SEG_NEW}
+i_flag		I_OP_COUNT_1 | I_INVERT_DIR | I_PREBYTE | I_NO_PREFIXE | I_386
+fix		{0x0f, 0x80}
+instr_asm	&asm_i_1r_short
+name		pusha
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0x60}
+instr_asm	&asm_i_void
+name		pushad
+opcode
+i_size		{OP_SIZE_32BITS}
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0x60}
+instr_asm	&asm_i_void
+name		pushf
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0x9c}
+instr_asm	&asm_i_void
+name		rcl
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_COUNTER}
+i_flag		I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0xd2, 0x10}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_8_16_32}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_FLAG_W_FIELD | I_386
+fix		{0xd0, 0x10}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_IM}
+i_flag		 I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0xc0, 0x10}
+instr_asm	&asm_i_1rm1im
+name		rcr
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_COUNTER}
+i_flag		I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0xd2, 0x18}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_8_16_32}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_FLAG_W_FIELD | I_386
+fix		{0xd0, 0x18}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_IM}
+i_flag		 I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0xc0, 0x18}
+instr_asm	&asm_i_1rm1im
+name		rep
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0xf3}
+instr_asm	&asm_i_void
+name		repe
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0xf3}
+instr_asm	&asm_i_void
+name		repne
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0xf2}
+instr_asm	&asm_i_void
+name		repnz
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0xf2}
+instr_asm	&asm_i_void
+name		repz
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0xf3}
+instr_asm	&asm_i_void
+name		ret
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_386
+fix		{0xc3}
+instr_asm	&asm_i_void
+opcode
+i_size		{OP_SIZE_16BITS}
+i_type		{OP_TYPE_IM}
+i_flag		I_NO_PREFIXE | I_OP_COUNT_1 | I_386
+fix		{0xc2}
+instr_asm	&asm_i_1im
+name		retf
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_386
+fix		{0xcb}
+instr_asm	&asm_i_void
+opcode
+i_size		{OP_SIZE_16BITS}
+i_type		{OP_TYPE_IM}
+i_flag		I_NO_PREFIXE | I_OP_COUNT_1 | I_386
+fix		{0xca}
+instr_asm	&asm_i_1im
+name		rol
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_COUNTER}
+i_flag		I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0xd2, 0x00}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_8_16_32}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_FLAG_W_FIELD | I_386
+fix		{0xd0, 0x00}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_IM}
+i_flag		 I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0xc0, 0x00}
+instr_asm	&asm_i_1rm1im
+name		ror
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_COUNTER}
+i_flag		I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0xd2, 0x08}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_8_16_32}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_FLAG_W_FIELD | I_386
+fix		{0xd0, 0x08}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_IM}
+i_flag		 I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0xc0, 0x08}
+instr_asm	&asm_i_1rm1im
+name		sahf
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0x9e}
+instr_asm	&asm_i_void
+name		sal
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_COUNTER}
+i_flag		I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0xd2, 0x20}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_8_16_32}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_FLAG_W_FIELD | I_386
+fix		{0xd0, 0x20}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_IM}
+i_flag		 I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0xc0, 0x20}
+instr_asm	&asm_i_1rm1im
+name		sar
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_COUNTER}
+i_flag		I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0xd2, 0x38}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_8_16_32}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_FLAG_W_FIELD | I_386
+fix		{0xd0, 0x38}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_IM}
+i_flag		 I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0xc0, 0x38}
+instr_asm	&asm_i_1rm1im
+name		sbb
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8_16_32}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0x18, 0x00}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_IM}
+i_flag		I_SELECT_SIZE_OP12 | I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0x82, 0x18}
+instr_asm	&asm_i_1rm1im
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8_16_32}
+i_type		{OP_TYPE_ACCUMULATOR, OP_TYPE_IM}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FLAG_SHORT_IMEDIAT | I_FLAG_W_FIELD | I_386
+fix		{0x1c}
+instr_asm	&asm_i_1im
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8_16_32}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_IM}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FLAG_SHORT_IMEDIAT | I_FLAG_W_FIELD | I_386
+fix		{0x80, 0x18}
+instr_asm	&asm_i_1rm1im
+name		scasb
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0xae}
+instr_asm	&asm_i_void
+name		scasd
+opcode
+i_size		{OP_SIZE_32BITS}
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0xae}
+instr_asm	&asm_i_void
+name		scasw
+opcode
+i_size		{OP_SIZE_16BITS}
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0xae}
+instr_asm	&asm_i_void
+name		segcs
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0x2e}
+instr_asm	&asm_i_void
+name		segds
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0x3e}
+instr_asm	&asm_i_void
+name		seges
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0x26}
+instr_asm	&asm_i_void
+name		segfs
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0x64}
+instr_asm	&asm_i_void
+name		seggs
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0x65}
+instr_asm	&asm_i_void
+name		segss
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0x36}
+instr_asm	&asm_i_void
+name		seta
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_1 | I_386
+fix		{0x0f, 0x97}
+instr_asm	&asm_i_1rm
+name		setae
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_1 | I_386
+fix		{0x0f, 0x93}
+instr_asm	&asm_i_1rm
+name		setb
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_1 | I_386
+fix		{0x0f, 0x92}
+instr_asm	&asm_i_1rm
+name		setbe
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_1 | I_386
+fix		{0x0f, 0x96}
+instr_asm	&asm_i_1rm
+name		setc
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_1 | I_386
+fix		{0x0f, 0x92}
+instr_asm	&asm_i_1rm
+name		sete
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_1 | I_386
+fix		{0x0f, 0x94}
+instr_asm	&asm_i_1rm
+name		setg
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_1 | I_386
+fix		{0x0f, 0x9f}
+instr_asm	&asm_i_1rm
+name		setge
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_1 | I_386
+fix		{0x0f, 0x9d}
+instr_asm	&asm_i_1rm
+name		setl
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_1 | I_386
+fix		{0x0f, 0x9c}
+instr_asm	&asm_i_1rm
+name		setle
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_1 | I_386
+fix		{0x0f, 0x9e}
+instr_asm	&asm_i_1rm
+name		setna
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_1 | I_386
+fix		{0x0f, 0x96}
+instr_asm	&asm_i_1rm
+name		setnae
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_1 | I_386
+fix		{0x0f, 0x92}
+instr_asm	&asm_i_1rm
+name		setnb
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_1 | I_386
+fix		{0x0f, 0x93}
+instr_asm	&asm_i_1rm
+name		setnbe
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_1 | I_386
+fix		{0x0f, 0x97}
+instr_asm	&asm_i_1rm
+name		setnc
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_1 | I_386
+fix		{0x0f, 0x93}
+instr_asm	&asm_i_1rm
+name		setne
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_1 | I_386
+fix		{0x0f, 0x95}
+instr_asm	&asm_i_1rm
+name		setng
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_1 | I_386
+fix		{0x0f, 0x9e}
+instr_asm	&asm_i_1rm
+name		setnge
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_1 | I_386
+fix		{0x0f, 0x9c}
+instr_asm	&asm_i_1rm
+name		setnl
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_1 | I_386
+fix		{0x0f, 0x9d}
+instr_asm	&asm_i_1rm
+name		setnle
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_1 | I_386
+fix		{0x0f, 0x9f}
+instr_asm	&asm_i_1rm
+name		setno
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_1 | I_386
+fix		{0x0f, 0x91}
+instr_asm	&asm_i_1rm
+name		setnp
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_1 | I_386
+fix		{0x0f, 0x9b}
+instr_asm	&asm_i_1rm
+name		setns
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_1 | I_386
+fix		{0x0f, 0x99}
+instr_asm	&asm_i_1rm
+name		setnz
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_1 | I_386
+fix		{0x0f, 0x95}
+instr_asm	&asm_i_1rm
+name		seto
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_1 | I_386
+fix		{0x0f, 0x90}
+instr_asm	&asm_i_1rm
+name		setp
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_1 | I_386
+fix		{0x0f, 0x9a}
+instr_asm	&asm_i_1rm
+name		setpe
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_1 | I_386
+fix		{0x0f, 0x9a}
+instr_asm	&asm_i_1rm
+name		setpo
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_1 | I_386
+fix		{0x0f, 0x9b}
+instr_asm	&asm_i_1rm
+name		sets
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_1 | I_386
+fix		{0x0f, 0x98}
+instr_asm	&asm_i_1rm
+name		setz
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_1 | I_386
+fix		{0x0f, 0x94}
+instr_asm	&asm_i_1rm
+name		sgdt
+opcode
+i_size		{OP_SIZE_48BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		 I_PREBYTE | I_OP_COUNT_1 | I_386
+fix		{0x0f, 0x01, 0x00}
+instr_asm	&asm_i_1rm
+name		shl
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_COUNTER}
+i_flag		I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0xd2, 0x20}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_8_16_32}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_FLAG_W_FIELD | I_386
+fix		{0xd0, 0x20}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_IM}
+i_flag		 I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0xc0, 0x20}
+instr_asm	&asm_i_1rm1im
+name		shld
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_WORK, OP_TYPE_COUNTER}
+i_flag		I_FLAG_OP_SAME_SIZE | I_PREBYTE | I_OP_COUNT_3 | I_386
+fix		{0x0f, 0xa5}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_WORK, OP_TYPE_IM}
+i_flag		 I_FLAG_OP_SAME_SIZE | I_PREBYTE | I_OP_COUNT_3 | I_386
+fix		{0x0f, 0xa4}
+instr_asm	&asm_i_2rm
+name		shr
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_COUNTER}
+i_flag		I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0xd2, 0x28}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_8_16_32}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_FLAG_W_FIELD | I_386
+fix		{0xd0, 0x28}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_IM}
+i_flag		 I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0xc0, 0x28}
+instr_asm	&asm_i_1rm1im
+name		shrd
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_WORK, OP_TYPE_COUNTER}
+i_flag		I_FLAG_OP_SAME_SIZE | I_PREBYTE | I_OP_COUNT_3 | I_386
+fix		{0x0f, 0xad}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_WORK, OP_TYPE_IM}
+i_flag		 I_FLAG_OP_SAME_SIZE | I_PREBYTE | I_OP_COUNT_3 | I_386
+fix		{0x0f, 0xac}
+instr_asm	&asm_i_2rm
+name		sidt
+opcode
+i_size		{OP_SIZE_48BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		 I_PREBYTE | I_OP_COUNT_1 | I_386
+fix		{0x0f, 0x01, 0x08}
+instr_asm	&asm_i_1rm
+name		sldt
+opcode
+i_size		{OP_SIZE_16BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_NO_PREFIXE | I_PREBYTE | I_OP_COUNT_1 | I_386
+fix		{0x0f, 0x00, 0x00}
+instr_asm	&asm_i_1rm
+name		smsw
+opcode
+i_size		{OP_SIZE_16BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_NO_PREFIXE | I_PREBYTE | I_OP_COUNT_1 | I_386
+fix		{0x0f, 0x01, 0x20}
+instr_asm	&asm_i_1rm
+name		stc
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0xf9}
+instr_asm	&asm_i_void
+name		std
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0xfd}
+instr_asm	&asm_i_void
+name		sti
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0xfb}
+instr_asm	&asm_i_void
+name		stosb
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0xaa}
+instr_asm	&asm_i_void
+name		stosd
+opcode
+i_size		{OP_SIZE_32BITS}
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0xab}
+instr_asm	&asm_i_void
+name		stosw
+opcode
+i_size		{OP_SIZE_16BITS}
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0xab}
+instr_asm	&asm_i_void
+name		str
+opcode
+i_size		{OP_SIZE_16BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_NO_PREFIXE | I_PREBYTE | I_OP_COUNT_1 | I_386
+fix		{0x0f, 0x00, 0x08}
+instr_asm	&asm_i_1rm
+name		sub
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8_16_32}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0x28, 0x00}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_IM}
+i_flag		I_SELECT_SIZE_OP12 | I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0x82, 0x28}
+instr_asm	&asm_i_1rm1im
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8_16_32}
+i_type		{OP_TYPE_ACCUMULATOR, OP_TYPE_IM}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FLAG_SHORT_IMEDIAT | I_FLAG_W_FIELD | I_386
+fix		{0x2c}
+instr_asm	&asm_i_1im
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8_16_32}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_IM}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FLAG_SHORT_IMEDIAT | I_FLAG_W_FIELD | I_386
+fix		{0x80, 0x28}
+instr_asm	&asm_i_1rm1im
+name		test
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8_16_32}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_WORK}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0x84, 0x00}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8_16_32}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FLAG_W_FIELD | I_INVERT_DIR | I_NO_DIRECTION_FLAG | I_386
+fix		{0x84, 0x00}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8_16_32}
+i_type		{OP_TYPE_ACCUMULATOR, OP_TYPE_IM}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0xa8}
+instr_asm	&asm_i_1im
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8_16_32}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_IM}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0xf6, 0x00}
+instr_asm	&asm_i_1rm1im
+name		verr
+opcode
+i_size		{OP_SIZE_16BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_NO_PREFIXE | I_PREBYTE | I_OP_COUNT_1 | I_386
+fix		{0x0f, 0x00, 0x20}
+instr_asm	&asm_i_1rm
+name		verw
+opcode
+i_size		{OP_SIZE_16BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_NO_PREFIXE | I_PREBYTE | I_OP_COUNT_1 | I_386
+fix		{0x0f, 0x00, 0x28}
+instr_asm	&asm_i_1rm
+name		wait
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0x9b}
+instr_asm	&asm_i_void
+name		xchg
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_ACCUMULATOR}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_386
+fix		{0x90}
+instr_asm	&asm_i_1r_short
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_ACCUMULATOR, OP_TYPE_WORK}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_1RM_SECOND_OP | I_386
+fix		{0x90}
+instr_asm	&asm_i_1r_short
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8_16_32}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_WORK}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0x86}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8_16_32}
+i_type		{OP_TYPE_WORK, OP_TYPE_MEM}
+i_flag		I_NO_DIRECTION_FLAG | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0x86}
+instr_asm	&asm_i_2rm
+name		xlat
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_386
+fix		{0xd7}
+instr_asm	&asm_i_void
+name		xor
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8_16_32}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_WORK | OP_TYPE_MEM}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0x30, 0x00}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS, OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_IM}
+i_flag		I_SELECT_SIZE_OP12 | I_OP_COUNT_2 | I_FLAG_W_FIELD | I_386
+fix		{0x82, 0x30}
+instr_asm	&asm_i_1rm1im
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8_16_32}
+i_type		{OP_TYPE_ACCUMULATOR, OP_TYPE_IM}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FLAG_SHORT_IMEDIAT | I_FLAG_W_FIELD | I_386
+fix		{0x34}
+instr_asm	&asm_i_1im
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8_16_32}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_IM}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FLAG_SHORT_IMEDIAT | I_FLAG_W_FIELD | I_386
+fix		{0x80, 0x30}
+instr_asm	&asm_i_1rm1im

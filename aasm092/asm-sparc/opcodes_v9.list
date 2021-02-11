@@ -1,0 +1,52 @@
+#
+# FLOATING POINT INSTRUCTIONS
+#
+
+name		fcmps
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x35) | FLD_OPF(0x051)
+op_type		OP_REGOTHER(0) | OP_FSREG(1) | OP_FSREG(2)
+reg_other	REG_OTHER_FCC
+flags		FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_RdRs1Rs2
+
+name		fcmpd
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x35) | FLD_OPF(0x052)
+op_type		OP_REGOTHER(0) | OP_FDREG(1) | OP_FDREG(2)
+reg_other	REG_OTHER_FCC
+flags		FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_RdRs1Rs2
+
+name		fcmpq
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x35) | FLD_OPF(0x053)
+op_type		OP_REGOTHER(0) | OP_FQREG(1) | OP_FQREG(2)
+reg_other	REG_OTHER_FCC
+flags		FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_RdRs1Rs2
+
+#
+# LOAD/STORE INSTRUCTIONS
+#
+
+name		lduw
+
+# lduw [address], r(n)
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x00)
+op_type		OP_MEM(0) | OP_RREG(1)
+flags		FLG_V9 | FLG_OPCOUNT(2)
+asm_instr	&asm_format_M13Rd
+
+name		lduwa
+
+opcode
+fix		FLD_OP(0x3) | FLD_OP3(0x10)
+op_type		OP_REGMEM(0) | OP_IMM(1) | OP_RREG(2)
+flags		FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1I8Rd
+

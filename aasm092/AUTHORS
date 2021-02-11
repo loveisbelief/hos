@@ -1,0 +1,24 @@
+Original authors:
+
+    * Alexandre Becoulet <alexandre.becoulet@free.fr>
+	- initial release developer
+	- base maintainer
+	- in-parser maintainer
+	- asm-x86 maintainer
+	- out-elf maintainer
+	- out-binary maintainer
+	- out-intelhex maintainer
+	- devel maintainer
+
+    * Cedric Bail <cedric.bail@free.fr>
+	- initial release developer
+	- base maintainer
+	- out-elf maintainer
+	- out-src maintainer
+
+Autotoolized by Nicolas Pouillon.
+
+Thanks to: Baptiste Ancey, Christian Camier, Lionel
+Bouchpan-Lerust-Juery, Matthieu Bernard, Maxime Bizon, Vianney
+Rancurel, Yan Denet
+

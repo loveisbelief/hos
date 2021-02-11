@@ -1,0 +1,848 @@
+name		f2xm1
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xd9, 0xf0}
+instr_asm	&asm_i_void
+name		fabs
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xd9, 0xe1}
+instr_asm	&asm_i_void
+name		fadd
+opcode
+i_size		{OP_SIZE_64BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_NO_PREFIXE | I_FPU_MEM_SIZE | I_FPU
+fix		{0xd8, 0x00}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_80BITS, OP_SIZE_80BITS}
+i_type		{OP_TYPE_FPU_TOP, OP_TYPE_FPU}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_1RM_SECOND_OP | I_FPU
+fix		{0xd8, 0xc0}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_80BITS, OP_SIZE_80BITS}
+i_type		{OP_TYPE_FPU, OP_TYPE_FPU_TOP}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FPU
+fix		{0xdc, 0xc0}
+instr_asm	&asm_i_1rm
+name		faddp
+opcode
+i_size		{OP_SIZE_80BITS, OP_SIZE_80BITS}
+i_type		{OP_TYPE_FPU, OP_TYPE_FPU_TOP}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FPU
+fix		{0xde, 0xc0}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xde, 0xc1}
+instr_asm	&asm_i_void
+name		fbld
+opcode
+i_size		{OP_SIZE_80BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_FPU
+fix		{0xdf, 0x20}
+instr_asm	&asm_i_1rm
+name		fbstp
+opcode
+i_size		{OP_SIZE_80BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_FPU
+fix		{0xdf, 0x30}
+instr_asm	&asm_i_1rm
+name		fchs
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xd9, 0xe0}
+instr_asm	&asm_i_void
+name		fclex
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE_INSTR | I_SUFIXE | I_FPU
+fix		{0x9b, 0xdb, 0xe2}
+instr_asm	&asm_i_void
+name		fcmovb
+opcode
+i_size		{OP_SIZE_80BITS, OP_SIZE_80BITS}
+i_type		{OP_TYPE_FPU_TOP, OP_TYPE_FPU}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_1RM_SECOND_OP | I_FPU
+fix		{0xda, 0xc0}
+instr_asm	&asm_i_1rm
+name		fcmovbe
+opcode
+i_size		{OP_SIZE_80BITS, OP_SIZE_80BITS}
+i_type		{OP_TYPE_FPU_TOP, OP_TYPE_FPU}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_1RM_SECOND_OP | I_FPU
+fix		{0xda, 0xd0}
+instr_asm	&asm_i_1rm
+name		fcmove
+opcode
+i_size		{OP_SIZE_80BITS, OP_SIZE_80BITS}
+i_type		{OP_TYPE_FPU_TOP, OP_TYPE_FPU}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_1RM_SECOND_OP | I_FPU
+fix		{0xda, 0xc8}
+instr_asm	&asm_i_1rm
+name		fcmovnb
+opcode
+i_size		{OP_SIZE_80BITS, OP_SIZE_80BITS}
+i_type		{OP_TYPE_FPU_TOP, OP_TYPE_FPU}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_1RM_SECOND_OP | I_FPU
+fix		{0xdb, 0xc0}
+instr_asm	&asm_i_1rm
+name		fcmovnbe
+opcode
+i_size		{OP_SIZE_80BITS, OP_SIZE_80BITS}
+i_type		{OP_TYPE_FPU_TOP, OP_TYPE_FPU}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_1RM_SECOND_OP | I_FPU
+fix		{0xdb, 0xd0}
+instr_asm	&asm_i_1rm
+name		fcmovne
+opcode
+i_size		{OP_SIZE_80BITS, OP_SIZE_80BITS}
+i_type		{OP_TYPE_FPU_TOP, OP_TYPE_FPU}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_1RM_SECOND_OP | I_FPU
+fix		{0xdb, 0xc8}
+instr_asm	&asm_i_1rm
+name		fcmovnu
+opcode
+i_size		{OP_SIZE_80BITS, OP_SIZE_80BITS}
+i_type		{OP_TYPE_FPU_TOP, OP_TYPE_FPU}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_1RM_SECOND_OP | I_FPU
+fix		{0xdb, 0xd8}
+instr_asm	&asm_i_1rm
+name		fcmovu
+opcode
+i_size		{OP_SIZE_80BITS, OP_SIZE_80BITS}
+i_type		{OP_TYPE_FPU_TOP, OP_TYPE_FPU}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_1RM_SECOND_OP | I_FPU
+fix		{0xda, 0xd8}
+instr_asm	&asm_i_1rm
+name		fcom
+opcode
+i_size		{OP_SIZE_64BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_NO_PREFIXE | I_FPU_MEM_SIZE | I_FPU
+fix		{0xd8, 0x10}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_80BITS}
+i_type		{OP_TYPE_FPU}
+i_flag		I_OP_COUNT_1 | I_FPU
+fix		{0xd8, 0xd0}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xd8, 0xd1}
+instr_asm	&asm_i_void
+name		fcomi
+opcode
+i_size		{OP_SIZE_80BITS, OP_SIZE_80BITS}
+i_type		{OP_TYPE_FPU_TOP, OP_TYPE_FPU}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_1RM_SECOND_OP | I_FPU
+fix		{0xdb, 0xf0}
+instr_asm	&asm_i_1rm
+name		fcomip
+opcode
+i_size		{OP_SIZE_80BITS, OP_SIZE_80BITS}
+i_type		{OP_TYPE_FPU_TOP, OP_TYPE_FPU}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_1RM_SECOND_OP | I_FPU
+fix		{0xdf, 0xf0}
+instr_asm	&asm_i_1rm
+name		fcomp
+opcode
+i_size		{OP_SIZE_64BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_NO_PREFIXE | I_FPU_MEM_SIZE | I_FPU
+fix		{0xd8, 0x18}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_80BITS}
+i_type		{OP_TYPE_FPU}
+i_flag		I_OP_COUNT_1 | I_FPU
+fix		{0xd8, 0xd8}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xd8, 0xd9}
+instr_asm	&asm_i_void
+name		fcompp
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xde, 0xd9}
+instr_asm	&asm_i_void
+name		fcos
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xd9, 0xff}
+instr_asm	&asm_i_void
+name		fdecstp
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xd9, 0xf6}
+instr_asm	&asm_i_void
+name		fdiv
+opcode
+i_size		{OP_SIZE_64BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_NO_PREFIXE | I_FPU_MEM_SIZE | I_FPU
+fix		{0xd8, 0x30}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_80BITS, OP_SIZE_80BITS}
+i_type		{OP_TYPE_FPU_TOP, OP_TYPE_FPU}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_1RM_SECOND_OP | I_FPU
+fix		{0xd8, 0xf0}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_80BITS, OP_SIZE_80BITS}
+i_type		{OP_TYPE_FPU, OP_TYPE_FPU_TOP}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FPU
+fix		{0xdc, 0xf8}
+instr_asm	&asm_i_1rm
+name		fdivp
+opcode
+i_size		{OP_SIZE_80BITS, OP_SIZE_80BITS}
+i_type		{OP_TYPE_FPU, OP_TYPE_FPU_TOP}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FPU
+fix		{0xde, 0xf8}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xde, 0xf9}
+instr_asm	&asm_i_void
+name		fdivr
+opcode
+i_size		{OP_SIZE_64BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_NO_PREFIXE | I_FPU_MEM_SIZE | I_FPU
+fix		{0xd8, 0x38}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_80BITS, OP_SIZE_80BITS}
+i_type		{OP_TYPE_FPU_TOP, OP_TYPE_FPU}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_1RM_SECOND_OP | I_FPU
+fix		{0xd8, 0xf8}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_80BITS, OP_SIZE_80BITS}
+i_type		{OP_TYPE_FPU, OP_TYPE_FPU_TOP}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FPU
+fix		{0xdc, 0xf0}
+instr_asm	&asm_i_1rm
+name		fdivrp
+opcode
+i_size		{OP_SIZE_80BITS, OP_SIZE_80BITS}
+i_type		{OP_TYPE_FPU, OP_TYPE_FPU_TOP}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FPU
+fix		{0xde, 0xf0}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xde, 0xf1}
+instr_asm	&asm_i_void
+name		ffree
+opcode
+i_size		{OP_SIZE_80BITS}
+i_type		{OP_TYPE_FPU}
+i_flag		I_OP_COUNT_1 | I_FPU
+fix		{0xdd, 0xc0}
+instr_asm	&asm_i_1rm
+name		fiadd
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_NO_PREFIXE | I_FPU_MEM_SIZE | I_FPU
+fix		{0xda, 0x00}
+instr_asm	&asm_i_1rm
+name		ficom
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_NO_PREFIXE | I_FPU_MEM_SIZE | I_FPU
+fix		{0xda, 0x10}
+instr_asm	&asm_i_1rm
+name		ficomp
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_NO_PREFIXE | I_FPU_MEM_SIZE | I_FPU
+fix		{0xda, 0x18}
+instr_asm	&asm_i_1rm
+name		fidiv
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_NO_PREFIXE | I_FPU_MEM_SIZE | I_FPU
+fix		{0xda, 0x30}
+instr_asm	&asm_i_1rm
+name		fidivr
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_NO_PREFIXE | I_FPU_MEM_SIZE | I_FPU
+fix		{0xda, 0x38}
+instr_asm	&asm_i_1rm
+name		fild
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_SELECT_SIZE_OP12 | I_OP_COUNT_1 | I_NO_PREFIXE | I_FPU_MEM_SIZE | I_FPU
+fix		{0xdb, 0x00}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_64BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_NO_PREFIXE | I_FPU
+fix		{0xdf, 0x28}
+instr_asm	&asm_i_1rm
+name		fimul
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_NO_PREFIXE | I_FPU_MEM_SIZE | I_FPU
+fix		{0xda, 0x08}
+instr_asm	&asm_i_1rm
+name		fincstp
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xd9, 0xf7}
+instr_asm	&asm_i_void
+name		finit
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE_INSTR | I_SUFIXE | I_FPU
+fix		{0x9b, 0xdb, 0xe3}
+instr_asm	&asm_i_void
+name		fist
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_NO_PREFIXE | I_FPU_MEM_SIZE | I_FPU
+fix		{0xdb, 0x10}
+instr_asm	&asm_i_1rm
+name		fistp
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_SELECT_SIZE_OP12 | I_OP_COUNT_1 | I_NO_PREFIXE | I_FPU_MEM_SIZE | I_FPU
+fix		{0xdb, 0x18}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_64BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_NO_PREFIXE | I_FPU
+fix		{0xdf, 0x38}
+instr_asm	&asm_i_1rm
+name		fisub
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_NO_PREFIXE | I_FPU_MEM_SIZE | I_FPU
+fix		{0xda, 0x20}
+instr_asm	&asm_i_1rm
+name		fisubr
+opcode
+i_size		{OP_SIZE_16BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_NO_PREFIXE | I_FPU_MEM_SIZE | I_FPU
+fix		{0xda, 0x28}
+instr_asm	&asm_i_1rm
+name		fld
+opcode
+i_size		{OP_SIZE_64BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_SELECT_SIZE_OP12 | I_OP_COUNT_1 | I_NO_PREFIXE | I_FPU_MEM_SIZE | I_FPU
+fix		{0xd9, 0x00}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_80BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_NO_PREFIXE | I_FPU
+fix		{0xdb, 0x28}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_80BITS}
+i_type		{OP_TYPE_FPU}
+i_flag		I_OP_COUNT_1 | I_FPU
+fix		{0xd9, 0xc0}
+instr_asm	&asm_i_1rm
+name		fld1
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xd9, 0xe8}
+instr_asm	&asm_i_void
+name		fldcw
+opcode
+i_size		{OP_SIZE_16BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_NO_PREFIXE | I_FPU
+fix		{0xd9, 0x28}
+instr_asm	&asm_i_1rm
+name		fldenv
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_NO_PREFIXE | I_FPU
+fix		{0xd9, 0x20}
+instr_asm	&asm_i_1rm
+name		fldl2e
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xd9, 0xea}
+instr_asm	&asm_i_void
+name		fldl2t
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xd9, 0xe9}
+instr_asm	&asm_i_void
+name		fldlg2
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xd9, 0xec}
+instr_asm	&asm_i_void
+name		fldln2
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xd9, 0xed}
+instr_asm	&asm_i_void
+name		fldpi
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xd9, 0xeb}
+instr_asm	&asm_i_void
+name		fldz
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xd9, 0xee}
+instr_asm	&asm_i_void
+name		fmul
+opcode
+i_size		{OP_SIZE_64BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_NO_PREFIXE | I_FPU_MEM_SIZE | I_FPU
+fix		{0xd8, 0x08}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_80BITS, OP_SIZE_80BITS}
+i_type		{OP_TYPE_FPU_TOP, OP_TYPE_FPU}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_1RM_SECOND_OP | I_FPU
+fix		{0xd8, 0xc8}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_80BITS, OP_SIZE_80BITS}
+i_type		{OP_TYPE_FPU, OP_TYPE_FPU_TOP}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FPU
+fix		{0xdc, 0xc8}
+instr_asm	&asm_i_1rm
+name		fmulp
+opcode
+i_size		{OP_SIZE_80BITS, OP_SIZE_80BITS}
+i_type		{OP_TYPE_FPU, OP_TYPE_FPU_TOP}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FPU
+fix		{0xde, 0xc8}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xde, 0xc9}
+instr_asm	&asm_i_void
+name		fnclex
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xdb, 0xe2}
+instr_asm	&asm_i_void
+name		fninit
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xdb, 0xe3}
+instr_asm	&asm_i_void
+name		fnop
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xd9, 0xd0}
+instr_asm	&asm_i_void
+name		fnsave
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_NO_PREFIXE | I_FPU
+fix		{0xdd, 0x30}
+instr_asm	&asm_i_1rm
+name		fnstcw
+opcode
+i_size		{OP_SIZE_16BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_NO_PREFIXE | I_FPU
+fix		{0xd9, 0x38}
+instr_asm	&asm_i_1rm
+name		fnstenv
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_NO_PREFIXE | I_FPU
+fix		{0xd9, 0x30}
+instr_asm	&asm_i_1rm
+name		fnstsw
+opcode
+i_size		{OP_SIZE_16BITS}
+i_type		{OP_TYPE_ACCUMULATOR}
+i_flag		I_NO_PREFIXE | I_OP_COUNT_1 | I_SUFIXE | I_FPU
+fix		{0xdf, 0xe0}
+instr_asm	&asm_i_void
+opcode
+i_size		{OP_SIZE_16BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_NO_PREFIXE | I_FPU
+fix		{0xdd, 0x38}
+instr_asm	&asm_i_1rm
+name		fpatan
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xd9, 0xf3}
+instr_asm	&asm_i_void
+name		fprem
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xd9, 0xf8}
+instr_asm	&asm_i_void
+name		fprem1
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xd9, 0xf5}
+instr_asm	&asm_i_void
+name		fptan
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xd9, 0xf2}
+instr_asm	&asm_i_void
+name		frndint
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xd9, 0xfc}
+instr_asm	&asm_i_void
+name		frstor
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_NO_PREFIXE | I_FPU
+fix		{0xdd, 0x20}
+instr_asm	&asm_i_1rm
+name		fsave
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_PREBYTE_INSTR | I_OP_COUNT_1 | I_NO_PREFIXE | I_FPU
+fix		{0x9b, 0xdd, 0x30}
+instr_asm	&asm_i_1rm
+name		fscale
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xd9, 0xfd}
+instr_asm	&asm_i_void
+name		fsin
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xd9, 0xfe}
+instr_asm	&asm_i_void
+name		fsincos
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xd9, 0xfb}
+instr_asm	&asm_i_void
+name		fsqrt
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xd9, 0xfa}
+instr_asm	&asm_i_void
+name		fst
+opcode
+i_size		{OP_SIZE_64BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_SELECT_SIZE_OP12 | I_OP_COUNT_1 | I_NO_PREFIXE | I_FPU_MEM_SIZE | I_FPU
+fix		{0xd9, 0x10}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_80BITS}
+i_type		{OP_TYPE_FPU}
+i_flag		I_OP_COUNT_1 | I_FPU
+fix		{0xdd, 0xd0}
+instr_asm	&asm_i_1rm
+name		fstcw
+opcode
+i_size		{OP_SIZE_16BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_PREBYTE_INSTR | I_OP_COUNT_1 | I_NO_PREFIXE | I_FPU
+fix		{0x9b, 0xd9, 0x38}
+instr_asm	&asm_i_1rm
+name		fstenv
+opcode
+i_size		{OP_SIZE_8BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_PREBYTE_INSTR | I_OP_COUNT_1 | I_NO_PREFIXE | I_FPU
+fix		{0x9b, 0xd9, 0x30}
+instr_asm	&asm_i_1rm
+name		fstp
+opcode
+i_size		{OP_SIZE_64BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_SELECT_SIZE_OP12 | I_OP_COUNT_1 | I_NO_PREFIXE | I_FPU_MEM_SIZE | I_FPU
+fix		{0xd9, 0x18}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_80BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_NO_PREFIXE | I_FPU
+fix		{0xdb, 0x38}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_80BITS}
+i_type		{OP_TYPE_FPU}
+i_flag		I_OP_COUNT_1 | I_FPU
+fix		{0xdd, 0xd8}
+instr_asm	&asm_i_1rm
+name		fstsw
+opcode
+i_size		{OP_SIZE_16BITS}
+i_type		{OP_TYPE_ACCUMULATOR}
+i_flag		I_NO_PREFIXE | I_OP_COUNT_1 | I_PREBYTE_INSTR | I_SUFIXE | I_FPU
+fix		{0x9b, 0xdf, 0xe0}
+instr_asm	&asm_i_void
+opcode
+i_size		{OP_SIZE_16BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_PREBYTE_INSTR | I_OP_COUNT_1 | I_NO_PREFIXE | I_FPU
+fix		{0x9b, 0xdd, 0x38}
+instr_asm	&asm_i_1rm
+name		fsub
+opcode
+i_size		{OP_SIZE_64BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_NO_PREFIXE | I_FPU_MEM_SIZE | I_FPU
+fix		{0xd8, 0x20}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_80BITS, OP_SIZE_80BITS}
+i_type		{OP_TYPE_FPU_TOP, OP_TYPE_FPU}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_1RM_SECOND_OP | I_FPU
+fix		{0xd8, 0xe0}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_80BITS, OP_SIZE_80BITS}
+i_type		{OP_TYPE_FPU, OP_TYPE_FPU_TOP}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FPU
+fix		{0xdc, 0xe8}
+instr_asm	&asm_i_1rm
+name		fsubp
+opcode
+i_size		{OP_SIZE_80BITS, OP_SIZE_80BITS}
+i_type		{OP_TYPE_FPU, OP_TYPE_FPU_TOP}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FPU
+fix		{0xde, 0xe8}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xde, 0xe9}
+instr_asm	&asm_i_void
+name		fsubr
+opcode
+i_size		{OP_SIZE_64BITS | OP_SIZE_32BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		I_OP_COUNT_1 | I_NO_PREFIXE | I_FPU_MEM_SIZE | I_FPU
+fix		{0xd8, 0x28}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_80BITS, OP_SIZE_80BITS}
+i_type		{OP_TYPE_FPU_TOP, OP_TYPE_FPU}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_1RM_SECOND_OP | I_FPU
+fix		{0xd8, 0xe8}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{OP_SIZE_80BITS, OP_SIZE_80BITS}
+i_type		{OP_TYPE_FPU, OP_TYPE_FPU_TOP}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FPU
+fix		{0xdc, 0xe0}
+instr_asm	&asm_i_1rm
+name		fsubrp
+opcode
+i_size		{OP_SIZE_80BITS, OP_SIZE_80BITS}
+i_type		{OP_TYPE_FPU, OP_TYPE_FPU_TOP}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FPU
+fix		{0xde, 0xe0}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xde, 0xe1}
+instr_asm	&asm_i_void
+name		ftst
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xd9, 0xe4}
+instr_asm	&asm_i_void
+name		fucom
+opcode
+i_size		{OP_SIZE_80BITS, OP_SIZE_80BITS}
+i_type		{OP_TYPE_FPU, OP_TYPE_FPU_TOP}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FPU
+fix		{0xdd, 0xe0}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xdd, 0xe1}
+instr_asm	&asm_i_void
+name		fucomi
+opcode
+i_size		{OP_SIZE_80BITS, OP_SIZE_80BITS}
+i_type		{OP_TYPE_FPU_TOP, OP_TYPE_FPU}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_1RM_SECOND_OP | I_FPU
+fix		{0xdb, 0xe8}
+instr_asm	&asm_i_1rm
+name		fucomip
+opcode
+i_size		{OP_SIZE_80BITS, OP_SIZE_80BITS}
+i_type		{OP_TYPE_FPU_TOP, OP_TYPE_FPU}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_1RM_SECOND_OP | I_FPU
+fix		{0xdf, 0xe8}
+instr_asm	&asm_i_1rm
+name		fucomp
+opcode
+i_size		{OP_SIZE_80BITS, OP_SIZE_80BITS}
+i_type		{OP_TYPE_FPU, OP_TYPE_FPU_TOP}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FPU
+fix		{0xdd, 0xe8}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xdd, 0xe9}
+instr_asm	&asm_i_void
+name		fucompp
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xda, 0xe9}
+instr_asm	&asm_i_void
+name		fwait
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_FPU
+fix		{0x9b}
+instr_asm	&asm_i_void
+name		fxam
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xd9, 0xe5}
+instr_asm	&asm_i_void
+name		fxch
+opcode
+i_size		{OP_SIZE_80BITS, OP_SIZE_80BITS}
+i_type		{OP_TYPE_FPU, OP_TYPE_FPU_TOP}
+i_flag		I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FPU
+fix		{0xd9, 0xc8}
+instr_asm	&asm_i_1rm
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xd9, 0xc9}
+instr_asm	&asm_i_void
+name		fxtract
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xd9, 0xf4}
+instr_asm	&asm_i_void
+name		fyl2x
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xd9, 0xf1}
+instr_asm	&asm_i_void
+name		fyl2xp1
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_FPU
+fix		{0xd9, 0xf9}
+instr_asm	&asm_i_void

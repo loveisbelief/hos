@@ -1,0 +1,46 @@
+
+.obj_name hello
+.obj_desc simple unix x86 hello world
+.obj_copyright GNU public license
+
+.mod_load asm-x86
+
+.section rodata .rodata
+
+	.section_align 4
+
+	.string msg "Hello world !!!\n\0"
+
+.ends
+
+.section code .text
+
+	.section_align 4
+
+	.mod_asm mode 32bits
+	.mod_asm cpu 386
+
+	.extern printf
+
+	.proc main
+		.export main		;export function
+
+		push ebp
+		mov ebp, esp
+
+		sub esp, byte 20
+
+		push dword .rodata:msg	;printf param
+		call dword printf	;printf call
+
+		mov esp, ebp
+		pop ebp
+
+		xor eax, eax
+
+		ret			;function return
+
+	.endp
+
+.ends
+

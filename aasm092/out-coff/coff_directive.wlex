@@ -1,0 +1,79 @@
+/* -*- c -*- */
+/*
+**    This file is part of AASM.
+**
+**    AASM is free software; you can redistribute it and/or modify
+**    it under the terms of the GNU General Public License as published by
+**    the Free Software Foundation; either version 2 of the License, or
+**    (at your option) any later version.
+**
+**    AASM is distributed in the hope that it will be useful,
+**    but WITHOUT ANY WARRANTY; without even the implied warranty of
+**    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+**    GNU General Public License for more details.
+**
+**    You should have received a copy of the GNU General Public License
+**    along with AASM; if not, write to the Free Software
+**    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+**
+**    Copyright Alexandre Becoulet, 2002
+**    contact : alexandre.becoulet@free.fr
+*/
+
+#include <string.h>
+
+#include "aasm/object.h"
+#include "aasm/error.h"
+
+#include "coff.h"
+
+%space \x20 \t
+
+static void
+coff_directive_variant	(struct object_s	*obj,
+			 const char		*param)
+{
+
+  if (obj->out_obj->flag & COFF_VARIANT_MASK)
+    {
+      error(ERRTYP_ERROR, "coff: format variant already defined", 0);
+      return;
+    }
+
+%select param
+%skipspace
+
+%word gnu
+   obj->out_obj->flag |= COFF_VARIANT_GNU;
+ 
+%word microsoft
+   obj->out_obj->flag |= COFF_VARIANT_MS;
+
+%nomatch
+   error(ERRTYP_ERROR, "coff: unknown format variant", 0);
+
+%global
+   return;
+}
+
+void
+out_coff_directive	(struct object_s	*obj,
+			 const char		*param)
+{
+
+%select param
+%skipspace
+
+%word variant
+   coff_directive_variant(obj, param);
+
+%word notime
+   obj->out_obj->flag |= COFF_NOTIME;
+
+%nomatch
+   error(ERRTYP_ERROR, "coff: unknown .mod_out directive", 0);
+
+%global
+   return;
+}
+

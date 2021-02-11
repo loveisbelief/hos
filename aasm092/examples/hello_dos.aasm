@@ -1,0 +1,34 @@
+
+.obj_desc simple msdos hello world
+
+.mod_load asm-x86
+.mod_load out-binary
+
+.obj_base 0x100
+
+.warning The .bin output file must be renamed to .com file for execution
+
+.section code .text
+
+	.section_base 0x100      ; .com file will be loaded at 0x100
+
+	.mod_asm mode 16bits     ; produce 16 bits x86 code
+	.mod_asm cpu 386
+
+	mov dx, .rodata:msg
+	mov ah, 0x09
+	int 0x21                 ; dos print syscall
+
+	mov ah, 0x4c
+	int 0x21                 ; dos exit syscall
+
+.ends
+
+.section rodata .rodata
+
+	.section_base 0x200
+
+	.string msg "Hello world !!!\r$"
+
+.ends
+

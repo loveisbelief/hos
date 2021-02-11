@@ -1,0 +1,63 @@
+name		bswap
+opcode
+i_size		{OP_SIZE_32BITS}
+i_type		{OP_TYPE_WORK}
+i_flag		 I_PREBYTE | I_OP_COUNT_1 | I_486
+fix		{0x0f, 0xc8}
+instr_asm	&asm_i_1r_short
+name		cmpxchg
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8_16_32}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_WORK}
+i_flag		 I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FLAG_W_FIELD | I_486 | I_NO_DIRECTION_FLAG
+fix		{0x0f, 0xb0}
+instr_asm	&asm_i_2rm
+name		cpuid
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_486
+fix		{0x0f, 0xa2}
+instr_asm	&asm_i_void
+name		invd
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_486
+fix		{0x0f, 0x08}
+instr_asm	&asm_i_void
+name		invlpg
+opcode
+i_size		{OP_SIZE_MASK}
+i_type		{OP_TYPE_MEM}
+i_flag		I_NO_PREFIXE | I_PREBYTE | I_OP_COUNT_1 | I_486
+fix		{0x0f, 0x01, 0x38}
+instr_asm	&asm_i_1rm
+name		rsm
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_486
+fix		{0x0f, 0xaa}
+instr_asm	&asm_i_void
+name		wb
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_486
+fix		{0x0f, 0x09}
+instr_asm	&asm_i_void
+name		wbinvd
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_486
+fix		{0x0f, 0x09}
+instr_asm	&asm_i_void
+name		xadd
+opcode
+i_size		{OP_SIZE_8_16_32, OP_SIZE_8_16_32}
+i_type		{OP_TYPE_WORK | OP_TYPE_MEM, OP_TYPE_WORK}
+i_flag		 I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_2 | I_FLAG_W_FIELD | I_486
+fix		{0x0f, 0xc0}
+instr_asm	&asm_i_2rm

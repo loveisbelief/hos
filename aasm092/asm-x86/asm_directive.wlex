@@ -1,0 +1,150 @@
+/* -*- c -*- */
+/*
+**    This file is part of AASM.
+**
+**    AASM is free software; you can redistribute it and/or modify
+**    it under the terms of the GNU General Public License as published by
+**    the Free Software Foundation; either version 2 of the License, or
+**    (at your option) any later version.
+**
+**    AASM is distributed in the hope that it will be useful,
+**    but WITHOUT ANY WARRANTY; without even the implied warranty of
+**    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+**    GNU General Public License for more details.
+**
+**    You should have received a copy of the GNU General Public License
+**    along with AASM; if not, write to the Free Software
+**    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+**
+**    Copyright Alexandre Becoulet, 2002
+**    contact : alexandre.becoulet@free.fr
+*/
+
+#include <string.h>
+
+#include "aasm/instr.h"
+#include "aasm/object.h"
+#include "aasm/error.h"
+#include "aasm/section.h"
+
+#include "flags.h"
+#include "asm.h"
+
+%space \x20 \t
+
+static void	asm_x86_directive_cpu(struct section_s		*section,
+				      const char		*param)
+{
+%select param
+%skipspace
+
+%word 386
+   section->asm_flag &= ~I_ALL_X86;
+   section->asm_flag |= I_386O;
+
+%word 486
+   section->asm_flag &= ~I_ALL_X86;
+   section->asm_flag |= I_486O;
+
+%word 586
+   section->asm_flag &= ~I_ALL_X86;
+   section->asm_flag |= I_586O;
+
+%word 686
+   section->asm_flag &= ~I_ALL_X86;
+   section->asm_flag |= I_686O;
+
+%nomatch
+   error(ERRTYP_ERROR, "x86: unknown cpu", 0);
+
+%global
+   return;
+}
+
+static void	asm_x86_directive_ext(struct section_s		*section,
+				      const char		*param)
+{
+
+%select param
+%skipspace
+
+%word fpu
+   section->asm_flag |= I_FPU;
+
+%word mmx
+   section->asm_flag |= I_MMX;
+
+%word mmxext
+   section->asm_flag |= I_MMX_EXT;
+
+%word 3dnow
+   section->asm_flag |= I_3DNOW;
+
+%word 3dnowext
+   section->asm_flag |= I_3DNOW_EXT;
+
+%word sse
+   section->asm_flag |= I_SSE;
+
+%word sse2
+   section->asm_flag |= I_SSE2;
+
+%word none
+   section->asm_flag &=	~I_ALL_EXT;
+
+%nomatch
+   error(ERRTYP_ERROR, "x86: unknown cpu extension", 0);
+
+%global
+   return;
+}
+
+static void	asm_x86_directive_mode(struct section_s		*section,
+				       const char		*param)
+{
+
+%select param
+%skipspace
+
+%word 16bits
+   section->asm_flag |= ASM_SECTION_CODE16;
+   section->asm_flag &= ~ASM_SECTION_CODE32;
+
+%word 32bits
+   section->asm_flag |= ASM_SECTION_CODE32;
+   section->asm_flag &= ~ASM_SECTION_CODE16;
+
+%nomatch
+   error(ERRTYP_ERROR, "x86: unknown cpu mode, only 16bits/32bits are valid modes", 0);
+
+%global
+   return;
+}
+
+void		asm_x86_directive(struct object_s	*obj,
+				  const char		*param)
+{
+  if (!obj->cur_section)
+    {
+      error(ERRTYP_ERROR, "x86: no section defined before .mod_asm directive", 0);
+      return;
+    }
+
+%select param
+%skipspace
+
+%word mode
+   asm_x86_directive_mode(obj->cur_section, param);
+
+%word cpu
+   asm_x86_directive_cpu(obj->cur_section, param);
+
+%word ext
+   asm_x86_directive_ext(obj->cur_section, param);
+
+%nomatch
+  error(ERRTYP_ERROR, "x86: unknown .mod_asm directive for x86 module", 0);
+
+%global
+   return;
+}

@@ -1,0 +1,35 @@
+
+
+.mod_load asm-sparc
+
+.include sparc/v8.def
+
+.section code .text
+
+	.section_align 4
+	.mod_asm opcodes v8
+
+	.proc main
+		.export main
+		.extern printf
+
+		save sp, -104, sp
+
+		@set .rodata:msg, o0
+
+		call printf
+		nop
+
+		ret
+		restore
+
+	.endp
+
+.ends
+
+.section rodata .rodata
+
+	.string msg "hello world\n\0"
+
+.ends
+

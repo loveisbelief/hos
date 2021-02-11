@@ -1,0 +1,247 @@
+%{ /* -*- c -*- */
+
+/*
+**    This file is part of AASM.
+**
+**    AASM is free software; you can redistribute it and/or modify
+**    it under the terms of the GNU General Public License as published by
+**    the Free Software Foundation; either version 2 of the License, or
+**    (at your option) any later version.
+**
+**    AASM is distributed in the hope that it will be useful,
+**    but WITHOUT ANY WARRANTY; without even the implied warranty of
+**    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+**    GNU General Public License for more details.
+**
+**    You should have received a copy of the GNU General Public License
+**    along with AASM; if not, write to the Free Software
+**    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+**
+**    Copyright:
+**    contact  :
+*/
+
+/*
++options+-N asm_sparc_get_reg -L ANSI-C -k* -c -D -t
+*/
+
+#include <string.h>
+
+#include "aasm/size.h"
+
+#include "asm.h"
+#include "fields.h"
+
+static unsigned int
+hash			(const char			*str,
+			 unsigned int			len);
+
+
+/*
+** EXPORTED FUNCTION
+** Return register info struct from reg name
+*/
+
+struct register_s	*
+asm_sparc_get_reg	(const char			*str,
+			 unsigned int			len);
+
+/*
+** Registers list with info fields
+*/
+
+#define SZ_32		SIZE_FLAG_DWORD
+#define SZ_64		SIZE_FLAG_QWORD
+#define SZ_128		SIZE_FLAG_OWORD
+
+%}
+struct register_s
+;
+%%
+g0,	0,  SZ_64 | SZ_32,		OP_RREG(0), FLG_V8 | FLG_V9
+g1,	1,  SZ_64 | SZ_32,		OP_RREG(0), FLG_V8 | FLG_V9
+g2,	2,  SZ_64 | SZ_32,		OP_RREG(0), FLG_V8 | FLG_V9
+g3,	3,  SZ_64 | SZ_32,		OP_RREG(0), FLG_V8 | FLG_V9
+g4,	4,  SZ_64 | SZ_32,		OP_RREG(0), FLG_V8 | FLG_V9
+g5,	5,  SZ_64 | SZ_32,		OP_RREG(0), FLG_V8 | FLG_V9
+g6,	6,  SZ_64 | SZ_32,		OP_RREG(0), FLG_V8 | FLG_V9
+g7,	7,  SZ_64 | SZ_32,		OP_RREG(0), FLG_V8 | FLG_V9
+o0,	8,  SZ_64 | SZ_32,		OP_RREG(0), FLG_V8 | FLG_V9
+o1,	9,  SZ_64 | SZ_32,		OP_RREG(0), FLG_V8 | FLG_V9
+o2,	10, SZ_64 | SZ_32,		OP_RREG(0), FLG_V8 | FLG_V9
+o3,	11, SZ_64 | SZ_32,		OP_RREG(0), FLG_V8 | FLG_V9
+o4,	12, SZ_64 | SZ_32,		OP_RREG(0), FLG_V8 | FLG_V9
+o5,	13, SZ_64 | SZ_32,		OP_RREG(0), FLG_V8 | FLG_V9
+o6,	14, SZ_64 | SZ_32,		OP_RREG(0), FLG_V8 | FLG_V9
+sp,	14, SZ_64 | SZ_32,		OP_RREG(0), FLG_V8 | FLG_V9
+o7,	15, SZ_64 | SZ_32,		OP_RREG(0), FLG_V8 | FLG_V9
+l0,	16, SZ_64 | SZ_32,		OP_RREG(0), FLG_V8 | FLG_V9
+l1,	17, SZ_64 | SZ_32,		OP_RREG(0), FLG_V8 | FLG_V9
+l2,	18, SZ_64 | SZ_32,		OP_RREG(0), FLG_V8 | FLG_V9
+l3,	19, SZ_64 | SZ_32,		OP_RREG(0), FLG_V8 | FLG_V9
+l4,	20, SZ_64 | SZ_32,		OP_RREG(0), FLG_V8 | FLG_V9
+l5,	21, SZ_64 | SZ_32,		OP_RREG(0), FLG_V8 | FLG_V9
+l6,	22, SZ_64 | SZ_32,		OP_RREG(0), FLG_V8 | FLG_V9
+l7,	23, SZ_64 | SZ_32,		OP_RREG(0), FLG_V8 | FLG_V9
+i0,	24, SZ_64 | SZ_32,		OP_RREG(0), FLG_V8 | FLG_V9
+i1,	25, SZ_64 | SZ_32,		OP_RREG(0), FLG_V8 | FLG_V9
+i2,	26, SZ_64 | SZ_32,		OP_RREG(0), FLG_V8 | FLG_V9
+i3,	27, SZ_64 | SZ_32,		OP_RREG(0), FLG_V8 | FLG_V9
+i4,	28, SZ_64 | SZ_32,		OP_RREG(0), FLG_V8 | FLG_V9
+i5,	29, SZ_64 | SZ_32,		OP_RREG(0), FLG_V8 | FLG_V9
+i6,	30, SZ_64 | SZ_32,		OP_RREG(0), FLG_V8 | FLG_V9
+fp,	30, SZ_64 | SZ_32,		OP_RREG(0), FLG_V8 | FLG_V9
+i7,	31, SZ_64 | SZ_32,		OP_RREG(0), FLG_V8 | FLG_V9
+f0,	0,  SZ_128 | SZ_64 | SZ_32,	OP_FREG(0), FLG_V8 | FLG_V9
+f1,	1,  SZ_32,			OP_FSREG(0), FLG_V8 | FLG_V9
+f2,	2,  SZ_64 | SZ_32,		OP_FSREG(0) | OP_FDREG(0), FLG_V8 | FLG_V9
+f3,	3,  SZ_32,			OP_FSREG(0), FLG_V8 | FLG_V9
+f4,	4,  SZ_128 | SZ_64 | SZ_32,	OP_FREG(0), FLG_V8 | FLG_V9
+f5,	5,  SZ_32,			OP_FSREG(0), FLG_V8 | FLG_V9
+f6,	6,  SZ_64 | SZ_32,		OP_FREG(0) | OP_FDREG(0), FLG_V8 | FLG_V9
+f7,	7,  SZ_32,			OP_FSREG(0), FLG_V8 | FLG_V9
+f8,	8,  SZ_128 | SZ_64 | SZ_32,	OP_FREG(0), FLG_V8 | FLG_V9
+f9,	9,  SZ_32,			OP_FSREG(0), FLG_V8 | FLG_V9
+f10,	10, SZ_64 | SZ_32,		OP_FREG(0) | OP_FDREG(0), FLG_V8 | FLG_V9
+f11,	11, SZ_32,			OP_FSREG(0), FLG_V8 | FLG_V9
+f12,	12, SZ_128 | SZ_64 | SZ_32,	OP_FREG(0), FLG_V8 | FLG_V9
+f13,	13, SZ_32,			OP_FSREG(0), FLG_V8 | FLG_V9
+f14,	14, SZ_64 | SZ_32,		OP_FREG(0) | OP_FDREG(0), FLG_V8 | FLG_V9
+f15,	15, SZ_32,			OP_FSREG(0), FLG_V8 | FLG_V9
+f16,	16, SZ_128 | SZ_64 | SZ_32,	OP_FREG(0), FLG_V8 | FLG_V9
+f17,	17, SZ_32,			OP_FSREG(0), FLG_V8 | FLG_V9
+f18,	18, SZ_64 | SZ_32,		OP_FREG(0) | OP_FDREG(0), FLG_V8 | FLG_V9
+f19,	19, SZ_32,			OP_FSREG(0), FLG_V8 | FLG_V9
+f20,	20, SZ_128 | SZ_64 | SZ_32,	OP_FREG(0), FLG_V8 | FLG_V9
+f21,	21, SZ_32,			OP_FSREG(0), FLG_V8 | FLG_V9
+f22,	22, SZ_64 | SZ_32,		OP_FREG(0) | OP_FDREG(0), FLG_V8 | FLG_V9
+f23,	23, SZ_32,			OP_FSREG(0), FLG_V8 | FLG_V9
+f24,	24, SZ_128 | SZ_64 | SZ_32,	OP_FREG(0), FLG_V8 | FLG_V9
+f25,	25, SZ_32,			OP_FSREG(0), FLG_V8 | FLG_V9
+f26,	26, SZ_64 | SZ_32,		OP_FREG(0) | OP_FDREG(0), FLG_V8 | FLG_V9
+f27,	27, SZ_32,			OP_FSREG(0), FLG_V8 | FLG_V9
+f28,	28, SZ_128 | SZ_64 | SZ_32,	OP_FREG(0), FLG_V8 | FLG_V9
+f29,	29, SZ_32,			OP_FSREG(0), FLG_V8 | FLG_V9
+f30,	30, SZ_64 | SZ_32,		OP_FREG(0) | OP_FDREG(0), FLG_V8 | FLG_V9
+f31,	31, SZ_32,			OP_FSREG(0), FLG_V8 | FLG_V9
+f32,	1, SZ_128 | SZ_64,		OP_FDREG(0) | OP_FQREG(0), FLG_V9
+f34,	3, SZ_64,			OP_FDREG(0), FLG_V9
+f36,	5, SZ_128 | SZ_64,		OP_FDREG(0) | OP_FQREG(0), FLG_V9
+f38,	7, SZ_64,			OP_FDREG(0), FLG_V9
+f40,	9, SZ_128 | SZ_64,		OP_FDREG(0) | OP_FQREG(0), FLG_V9
+f42,	11, SZ_64,			OP_FDREG(0), FLG_V9
+f44,	13, SZ_128 | SZ_64,		OP_FDREG(0) | OP_FQREG(0), FLG_V9
+f46,	15, SZ_64,			OP_FDREG(0), FLG_V9
+f48,	17, SZ_128 | SZ_64,		OP_FDREG(0) | OP_FQREG(0), FLG_V9
+f50,	19, SZ_64,			OP_FDREG(0), FLG_V9
+f52,	21, SZ_128 | SZ_64,		OP_FDREG(0) | OP_FQREG(0), FLG_V9
+f54,	23, SZ_64,			OP_FDREG(0), FLG_V9
+f56,	25, SZ_128 | SZ_64,		OP_FDREG(0) | OP_FQREG(0), FLG_V9
+f58,	27, SZ_64,			OP_FDREG(0), FLG_V9
+f60,	29, SZ_128 | SZ_64,		OP_FDREG(0) | OP_FQREG(0), FLG_V9
+f62,	31, SZ_64,			OP_FDREG(0), FLG_V9
+fsr,	0, SZ_32,			OP_REGOTHER(0), FLG_V8 | FLG_V9,	REG_OTHER_FSR
+psr,	0, SZ_32,			OP_REGOTHER(0), FLG_V8,			REG_OTHER_PSR
+fq,	0, SZ_64,			OP_REGOTHER(0), FLG_V8 | FLG_V9,	REG_OTHER_FQ
+cq,	0, SZ_64,			OP_REGOTHER(0), FLG_V8 | FLG_V9,	REG_OTHER_CQ
+csr,	0, SZ_32,			OP_REGOTHER(0), FLG_V8 | FLG_V9,	REG_OTHER_CSR
+wim,	0, SZ_32,			OP_REGOTHER(0), FLG_V8,			REG_OTHER_WIM
+tbr,	0, SZ_32,			OP_REGOTHER(0), FLG_V8,			REG_OTHER_TBR
+fcc0,	0, 0,				OP_REGOTHER(0), FLG_V9,			REG_OTHER_FCC
+fcc1,	1, 0,				OP_REGOTHER(0), FLG_V9,			REG_OTHER_FCC
+fcc2,	2, 0,				OP_REGOTHER(0), FLG_V9,			REG_OTHER_FCC
+fcc3,	3, 0,				OP_REGOTHER(0), FLG_V9,			REG_OTHER_FCC
+y,	0, SZ_32,			OP_REGOTHER(0), FLG_V8 | FLG_V9,	REG_OTHER_ASR
+ccr,	2, SZ_32,			OP_REGOTHER(0), FLG_V9,			REG_OTHER_ASR
+asi,	3, SZ_32,			OP_REGOTHER(0), FLG_V9,			REG_OTHER_ASR
+tick,	4, SZ_32,			OP_REGOTHER(0), FLG_V9,			REG_OTHER_ASR
+pc,	5, SZ_32,			OP_REGOTHER(0), FLG_V9,			REG_OTHER_ASR
+fprs,	6, SZ_32,			OP_REGOTHER(0), FLG_V9,			REG_OTHER_ASR
+c0,	0, SZ_32,			OP_CREG(0), FLG_V8 | FLG_V9
+c1,	1, SZ_32,			OP_CREG(0), FLG_V8 | FLG_V9
+c2,	2, SZ_32,			OP_CREG(0), FLG_V8 | FLG_V9
+c3,	3, SZ_32,			OP_CREG(0), FLG_V8 | FLG_V9
+c4,	4, SZ_32,			OP_CREG(0), FLG_V8 | FLG_V9
+c5,	5, SZ_32,			OP_CREG(0), FLG_V8 | FLG_V9
+c6,	6, SZ_32,			OP_CREG(0), FLG_V8 | FLG_V9
+c7,	7, SZ_32,			OP_CREG(0), FLG_V8 | FLG_V9
+c8,	8, SZ_32,			OP_CREG(0), FLG_V8 | FLG_V9
+c9,	9, SZ_32,			OP_CREG(0), FLG_V8 | FLG_V9
+c10,	10, SZ_32,			OP_CREG(0), FLG_V8 | FLG_V9
+c11,	11, SZ_32,			OP_CREG(0), FLG_V8 | FLG_V9
+c12,	12, SZ_32,			OP_CREG(0), FLG_V8 | FLG_V9
+c13,	13, SZ_32,			OP_CREG(0), FLG_V8 | FLG_V9
+c14,	14, SZ_32,			OP_CREG(0), FLG_V8 | FLG_V9
+c15,	15, SZ_32,			OP_CREG(0), FLG_V8 | FLG_V9
+c16,	16, SZ_32,			OP_CREG(0), FLG_V8 | FLG_V9
+c17,	17, SZ_32,			OP_CREG(0), FLG_V8 | FLG_V9
+c18,	18, SZ_32,			OP_CREG(0), FLG_V8 | FLG_V9
+c19,	19, SZ_32,			OP_CREG(0), FLG_V8 | FLG_V9
+c20,	20, SZ_32,			OP_CREG(0), FLG_V8 | FLG_V9
+c21,	21, SZ_32,			OP_CREG(0), FLG_V8 | FLG_V9
+c22,	22, SZ_32,			OP_CREG(0), FLG_V8 | FLG_V9
+c23,	23, SZ_32,			OP_CREG(0), FLG_V8 | FLG_V9
+c24,	24, SZ_32,			OP_CREG(0), FLG_V8 | FLG_V9
+c25,	25, SZ_32,			OP_CREG(0), FLG_V8 | FLG_V9
+c26,	26, SZ_32,			OP_CREG(0), FLG_V8 | FLG_V9
+c27,	27, SZ_32,			OP_CREG(0), FLG_V8 | FLG_V9
+c28,	28, SZ_32,			OP_CREG(0), FLG_V8 | FLG_V9
+c29,	29, SZ_32,			OP_CREG(0), FLG_V8 | FLG_V9
+c30,	30, SZ_32,			OP_CREG(0), FLG_V8 | FLG_V9
+c31,	31, SZ_32,			OP_CREG(0), FLG_V8 | FLG_V9
+asr0,	0, SZ_32,			OP_ASRREG(0), FLG_V8 | FLG_V9
+asr1,	1, SZ_32,			OP_ASRREG(0), FLG_V8 | FLG_V9
+asr2,	2, SZ_32,			OP_ASRREG(0), FLG_V8 | FLG_V9
+asr3,	3, SZ_32,			OP_ASRREG(0), FLG_V8 | FLG_V9
+asr4,	4, SZ_32,			OP_ASRREG(0), FLG_V8 | FLG_V9
+asr5,	5, SZ_32,			OP_ASRREG(0), FLG_V8 | FLG_V9
+asr6,	6, SZ_32,			OP_ASRREG(0), FLG_V8 | FLG_V9
+asr7,	7, SZ_32,			OP_ASRREG(0), FLG_V8 | FLG_V9
+asr8,	8, SZ_32,			OP_ASRREG(0), FLG_V8 | FLG_V9
+asr9,	9, SZ_32,			OP_ASRREG(0), FLG_V8 | FLG_V9
+asr10,	10, SZ_32,			OP_ASRREG(0), FLG_V8 | FLG_V9
+asr11,	11, SZ_32,			OP_ASRREG(0), FLG_V8 | FLG_V9
+asr12,	12, SZ_32,			OP_ASRREG(0), FLG_V8 | FLG_V9
+asr13,	13, SZ_32,			OP_ASRREG(0), FLG_V8 | FLG_V9
+asr14,	14, SZ_32,			OP_ASRREG(0), FLG_V8 | FLG_V9
+asr15,	15, SZ_32,			OP_ASRREG(0), FLG_V8 | FLG_V9
+asr16,	16, SZ_32,			OP_ASRREG(0), FLG_V8 | FLG_V9
+asr17,	17, SZ_32,			OP_ASRREG(0), FLG_V8 | FLG_V9
+asr18,	18, SZ_32,			OP_ASRREG(0), FLG_V8 | FLG_V9
+asr19,	19, SZ_32,			OP_ASRREG(0), FLG_V8 | FLG_V9
+asr20,	20, SZ_32,			OP_ASRREG(0), FLG_V8 | FLG_V9
+asr21,	21, SZ_32,			OP_ASRREG(0), FLG_V8 | FLG_V9
+asr22,	22, SZ_32,			OP_ASRREG(0), FLG_V8 | FLG_V9
+asr23,	23, SZ_32,			OP_ASRREG(0), FLG_V8 | FLG_V9
+asr24,	24, SZ_32,			OP_ASRREG(0), FLG_V8 | FLG_V9
+asr25,	25, SZ_32,			OP_ASRREG(0), FLG_V8 | FLG_V9
+asr26,	26, SZ_32,			OP_ASRREG(0), FLG_V8 | FLG_V9
+asr27,	27, SZ_32,			OP_ASRREG(0), FLG_V8 | FLG_V9
+asr28,	28, SZ_32,			OP_ASRREG(0), FLG_V8 | FLG_V9
+asr29,	29, SZ_32,			OP_ASRREG(0), FLG_V8 | FLG_V9
+asr30,	30, SZ_32,			OP_ASRREG(0), FLG_V8 | FLG_V9
+asr31,	31, SZ_32,			OP_ASRREG(0), FLG_V8 | FLG_V9
+%%
+
+/*
+** EXPORTED FUNCTION
+** Return register size flag from info struct
+*/
+
+unsigned int
+asm_sparc_reg_size	(const struct register_s	*reg)
+{
+  return (reg->size);
+}
+
+/*
+** EXPORTED FUNCTION
+** Return register name from info structure
+*/
+
+const char		*
+asm_sparc_reg_name	(const struct register_s	*reg)
+{
+  return (reg->name);
+}
+

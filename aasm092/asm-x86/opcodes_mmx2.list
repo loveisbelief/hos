@@ -1,0 +1,139 @@
+name		maskmovq
+opcode
+i_size		{OP_SIZE_64BITS, OP_SIZE_64BITS}
+i_type		{OP_TYPE_MMX, OP_TYPE_MMX}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_MMX_EXT
+fix		{0x0f, 0xf7}
+instr_asm	&asm_i_2rm
+name		movntq
+opcode
+i_size		{OP_SIZE_64BITS, OP_SIZE_64BITS}
+i_type		{OP_TYPE_MEM, OP_TYPE_MMX}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_MMX_EXT
+fix		{0x0f, 0xe7}
+instr_asm	&asm_i_2rm
+name		pavgb
+opcode
+i_size		{OP_SIZE_64BITS, OP_SIZE_64BITS}
+i_type		{OP_TYPE_MMX, OP_TYPE_MMX | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_MMX_EXT
+fix		{0x0f, 0xe0}
+instr_asm	&asm_i_2rm
+name		pavgw
+opcode
+i_size		{OP_SIZE_64BITS, OP_SIZE_64BITS}
+i_type		{OP_TYPE_MMX, OP_TYPE_MMX | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_MMX_EXT
+fix		{0x0f, 0xe3}
+instr_asm	&asm_i_2rm
+name		pextrw
+opcode
+i_size		{OP_SIZE_32BITS, OP_SIZE_64BITS, OP_SIZE_8BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MMX, OP_TYPE_IM}
+i_flag		I_PREBYTE | I_OP_COUNT_3 | I_INVERT_DIR | I_NO_DIRECTION_FLAG | I_MMX_EXT
+fix		{0x0f, 0xc5}
+instr_asm	&asm_i_2rm
+name		pinsrw
+opcode
+i_size		{OP_SIZE_64BITS, OP_SIZE_32BITS, OP_SIZE_8BITS}
+i_type		{OP_TYPE_MMX, OP_TYPE_WORK, OP_TYPE_IM}
+i_flag		I_PREBYTE | I_OP_COUNT_3 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_MMX_EXT
+fix		{0x0f, 0xc4}
+instr_asm	&asm_i_2rm
+opcode
+i_size		{OP_SIZE_64BITS, OP_SIZE_16BITS, OP_SIZE_8BITS}
+i_type		{OP_TYPE_MMX, OP_TYPE_MEM, OP_TYPE_IM}
+i_flag		I_PREBYTE | I_OP_COUNT_3 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_MMX_EXT
+fix		{0x0f, 0xc4}
+instr_asm	&asm_i_2rm
+name		pmaxsw
+opcode
+i_size		{OP_SIZE_64BITS, OP_SIZE_64BITS}
+i_type		{OP_TYPE_MMX, OP_TYPE_MMX | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_MMX_EXT
+fix		{0x0f, 0xee}
+instr_asm	&asm_i_2rm
+name		pmaxub
+opcode
+i_size		{OP_SIZE_64BITS, OP_SIZE_64BITS}
+i_type		{OP_TYPE_MMX, OP_TYPE_MMX | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_MMX_EXT
+fix		{0x0f, 0xde}
+instr_asm	&asm_i_2rm
+name		pminsw
+opcode
+i_size		{OP_SIZE_64BITS, OP_SIZE_64BITS}
+i_type		{OP_TYPE_MMX, OP_TYPE_MMX | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_MMX_EXT
+fix		{0x0f, 0xea}
+instr_asm	&asm_i_2rm
+name		pminub
+opcode
+i_size		{OP_SIZE_64BITS, OP_SIZE_64BITS}
+i_type		{OP_TYPE_MMX, OP_TYPE_MMX | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_MMX_EXT
+fix		{0x0f, 0xda}
+instr_asm	&asm_i_2rm
+name		pmovmskb
+opcode
+i_size		{OP_SIZE_32BITS, OP_SIZE_64BITS}
+i_type		{OP_TYPE_WORK, OP_TYPE_MMX}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_INVERT_DIR | I_NO_DIRECTION_FLAG | I_MMX_EXT
+fix		{0x0f, 0xd7}
+instr_asm	&asm_i_2rm
+name		pmulhuw
+opcode
+i_size		{OP_SIZE_64BITS, OP_SIZE_64BITS}
+i_type		{OP_TYPE_MMX, OP_TYPE_MMX | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_MMX_EXT
+fix		{0x0f, 0xe4}
+instr_asm	&asm_i_2rm
+name		prefetch0
+opcode
+i_size		{OP_SIZE_MASK}
+i_type		{OP_TYPE_MEM}
+i_flag		I_NO_PREFIXE | I_PREBYTE | I_OP_COUNT_1 | I_MMX_EXT
+fix		{0x0f, 0x18, 0x08}
+instr_asm	&asm_i_1rm
+name		prefetch1
+opcode
+i_size		{OP_SIZE_MASK}
+i_type		{OP_TYPE_MEM}
+i_flag		I_NO_PREFIXE | I_PREBYTE | I_OP_COUNT_1 | I_MMX_EXT
+fix		{0x0f, 0x18, 0x10}
+instr_asm	&asm_i_1rm
+name		prefetch2
+opcode
+i_size		{OP_SIZE_MASK}
+i_type		{OP_TYPE_MEM}
+i_flag		I_NO_PREFIXE | I_PREBYTE | I_OP_COUNT_1 | I_MMX_EXT
+fix		{0x0f, 0x18, 0x18}
+instr_asm	&asm_i_1rm
+name		prefetchnta
+opcode
+i_size		{OP_SIZE_MASK}
+i_type		{OP_TYPE_MEM}
+i_flag		I_NO_PREFIXE | I_PREBYTE | I_OP_COUNT_1 | I_MMX_EXT
+fix		{0x0f, 0x18, 0x00}
+instr_asm	&asm_i_1rm
+name		psadbw
+opcode
+i_size		{OP_SIZE_64BITS, OP_SIZE_64BITS}
+i_type		{OP_TYPE_MMX, OP_TYPE_MMX | OP_TYPE_MEM}
+i_flag		I_PREBYTE | I_OP_COUNT_2 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_MMX_EXT
+fix		{0x0f, 0xf6}
+instr_asm	&asm_i_2rm
+name		pshufw
+opcode
+i_size		{OP_SIZE_64BITS, OP_SIZE_64BITS, OP_SIZE_8BITS}
+i_type		{OP_TYPE_MMX, OP_TYPE_MMX | OP_TYPE_MEM, OP_TYPE_IM}
+i_flag		I_PREBYTE | I_OP_COUNT_3 | I_NO_DIRECTION_FLAG | I_INVERT_DIR | I_MMX_EXT
+fix		{0x0f, 0x70}
+instr_asm	&asm_i_2rm
+name		sfence
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		 I_PREBYTE | I_SUFIXE | I_MMX_EXT
+fix		{0x0f, 0xae, 0xf8}
+instr_asm	&asm_i_void

@@ -14,3 +14,8 @@ as -o bootpack.obj bootpack.s
 6关于保护模式
 GDT,LDT,GDTR,LDTR 详解,包你理解透彻 | 技术部落
 https://www.techbulo.com/708.html
+7c语言调用汇编
+汇编写的函数要在c语言调用的名称前多加一个"_"下划线符号。
+8汇编语言调用c
+汇编语言调用c语言的函数，竟然也要在前面加上下划线。
+7、8两条，我是Windowsxp平台下。不然，会有出错提示，不能生成可执行文件。

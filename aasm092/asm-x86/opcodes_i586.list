@@ -1,0 +1,28 @@
+name		cmpxchg8b
+opcode
+i_size		{OP_SIZE_64BITS}
+i_type		{OP_TYPE_MEM}
+i_flag		 I_PREBYTE | I_FLAG_OP_SAME_SIZE | I_OP_COUNT_1 | I_586
+fix		{0x0f, 0xc7, 0x08}
+instr_asm	&asm_i_1rm
+name		rdmsr
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_586
+fix		{0x0f, 0x32}
+instr_asm	&asm_i_void
+name		rdtsc
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_586
+fix		{0x0f, 0x31}
+instr_asm	&asm_i_void
+name		wrmsr
+opcode
+i_size		{ 0 }
+i_type		{ 0 }
+i_flag		I_PREBYTE | I_586
+fix		{0x0f, 0x30}
+instr_asm	&asm_i_void

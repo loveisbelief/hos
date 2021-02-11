@@ -1,0 +1,652 @@
+%{ /* -*- c -*- */
+
+/*
+**    This file is part of AASM.
+**
+**    AASM is free software; you can redistribute it and/or modify
+**    it under the terms of the GNU General Public License as published by
+**    the Free Software Foundation; either version 3 of the License, or
+**    (at your option) any later version.
+**
+**    AASM is distributed in the hope that it will be useful,
+**    but WITHOUT ANY WARRANTY; without even the implied warranty of
+**    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+**    GNU General Public License for more details.
+**
+**    You should have received a copy of the GNU General Public License
+**    along with AASM; if not, write to the Free Software
+**    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+**
+**    Copyright:
+**    contact  :
+*/
+
+/*
++options+ -N asm_sparc_get_instr_perf -L ANSI-C -k* -c -D -t
+*/
+
+#include <string.h>
+
+#include "aasm/instr.h"
+#include "aasm/expr.h"
+#include "aasm/error.h"
+
+#include "asm.h"
+#include "fields.h"
+
+#include "opcodes_id.h"
+
+static void
+asm_opcode_write	(opcode_bin_t		opcode,
+			 aasm_u8_t		*bin)
+{
+  bin[0] = (opcode >> 24) & 0xff;
+  bin[1] = (opcode >> 16) & 0xff;
+  bin[2] = (opcode >> 8) & 0xff;
+  bin[3] = opcode & 0xff;
+}
+
+/* FIXME use expr_dup on expr->right for relocation ? */
+
+static opcode_bin_t
+asm_get_memop		(struct instr_s		*instr,
+			 struct section_s	*sec,
+			 struct expr_s		*expr,
+			 unsigned int		imm_size)
+{
+  switch (expr->flag & EXPR_TYPE_MASK)
+    {
+      /* [imm] */
+    case (EXPR_TYPE_NUM):
+      return (FLD_IBIT(1)
+	      | asm_set_simm(instr, imm_size, 0, sec, &expr));
+
+      /* [reg] */
+    case (EXPR_TYPE_REGISTER):
+      return (FLD_RS1(expr->val.reg->num));
+
+    case (EXPR_TYPE_OPERATION):
+      if (expr->val.op == &oper_b_add)
+	{
+	  /* [? + ?] */
+
+	  if (expr->right->flag & expr->left->flag & EXPR_TYPE_REGISTER)
+	    {
+	      /* [reg + reg] */
+	      
+	      return (FLD_RS1(expr->left->val.reg->num)
+		      | FLD_RS2(expr->right->val.reg->num));
+	    }
+
+	  /* [reg + ?] */
+	  if (expr->right->flag & EXPR_TYPE_REGISTER)
+	    return (FLD_RS1(expr->right->val.reg->num) | FLD_IBIT(1)
+		    | asm_set_simm(instr, imm_size, 0, sec, &expr->left));
+
+	  /* [? + reg] */
+	  if (expr->left->flag & EXPR_TYPE_REGISTER)
+	    return (FLD_RS1(expr->left->val.reg->num) | FLD_IBIT(1)
+		    | asm_set_simm(instr, imm_size, 0, sec, &expr->right));
+	}
+
+    default:
+      /* handle mem relocation here */
+      error(ERRTYP_ERROR, "sparc: invalid address expression", expr->location);
+    }
+  return (0);
+}
+
+/*
+** void
+*/
+
+static void
+asm_format_void		(ASM_INSTR_PARAMS)
+{
+  const struct instr_info_s	*info = instr->info;
+
+  asm_opcode_write(info->fix, instr->val.bin);
+  instr_set_asm(instr, sizeof (opcode_bin_t));
+}
+
+/*
+** 1A
+** label (disp30)
+*/
+
+static void
+asm_format_I30		(ASM_INSTR_PARAMS)
+{
+  const struct instr_info_s	*info = instr->info;
+  opcode_bin_t			opcode = info->fix;
+
+  opcode |= asm_set_rimm(instr, 30, 0, sec, &instr->operands[0]);
+
+  asm_opcode_write(opcode, instr->val.bin);
+  instr_set_asm(instr, sizeof (opcode_bin_t));
+}
+
+/*
+** 2A
+** const22 , reg
+*/
+
+static void
+asm_format_I22Rd		(ASM_INSTR_PARAMS)
+{
+  const struct instr_info_s	*info = instr->info;
+  opcode_bin_t			opcode = info->fix;
+
+  opcode
+    |= FLD_RD(instr->operands[1]->val.reg->num)
+    | asm_set_imm(instr, 22, 0, sec, &instr->operands[0]);
+
+  asm_opcode_write(opcode, instr->val.bin);
+  instr_set_asm(instr, sizeof (opcode_bin_t));
+}
+
+/*
+** 2B
+** label (disp22)
+*/
+
+static void
+asm_format_I22		(ASM_INSTR_PARAMS)
+{
+  const struct instr_info_s	*info = instr->info;
+  opcode_bin_t			opcode = info->fix;
+
+  opcode |= asm_set_rimm(instr, 22, 0, sec, &instr->operands[0]);
+
+  asm_opcode_write(opcode, instr->val.bin);
+  instr_set_asm(instr, sizeof (opcode_bin_t));
+}
+
+/*
+** 3A
+** [addr], reg
+*/
+
+static void
+asm_format_M13Rd		(ASM_INSTR_PARAMS)
+{
+  const struct instr_info_s	*info = instr->info;
+  opcode_bin_t			opcode = info->fix;
+
+  opcode |= FLD_RD(instr->operands[1]->val.reg->num)
+    | asm_get_memop(instr, sec, instr->operands[0]->right, 13);
+
+  asm_opcode_write(opcode, instr->val.bin);
+  instr_set_asm(instr, sizeof (opcode_bin_t));
+}
+
+/*
+** 3A short
+** [addr]
+*/
+
+static void
+asm_format_M13		(ASM_INSTR_PARAMS)
+{
+  const struct instr_info_s	*info = instr->info;
+  opcode_bin_t			opcode = info->fix;
+
+  opcode |= asm_get_memop(instr, sec, instr->operands[0]->right, 13);
+
+  asm_opcode_write(opcode, instr->val.bin);
+  instr_set_asm(instr, sizeof (opcode_bin_t));
+}
+
+/*
+** 3A ADDR
+** addr, reg
+*/
+
+static void
+asm_format_A13Rd	(ASM_INSTR_PARAMS)
+{
+  const struct instr_info_s	*info = instr->info;
+  opcode_bin_t			opcode = info->fix;
+
+  opcode |= FLD_RD(instr->operands[1]->val.reg->num)
+    | asm_get_memop(instr, sec, instr->operands[0], 13);
+
+  asm_opcode_write(opcode, instr->val.bin);
+  instr_set_asm(instr, sizeof (opcode_bin_t));
+}
+
+/*
+** 3AR
+** reg, [addr]
+*/
+
+static void
+asm_format_RdM13		(ASM_INSTR_PARAMS)
+{
+  const struct instr_info_s	*info = instr->info;
+  opcode_bin_t			opcode = info->fix;
+
+  opcode |= FLD_RD(instr->operands[0]->val.reg->num)
+    | asm_get_memop(instr, sec, instr->operands[1]->right, 13);
+
+  asm_opcode_write(opcode, instr->val.bin);
+  instr_set_asm(instr, sizeof (opcode_bin_t));
+}
+
+/*
+** 3B
+** [reg], ASI, reg
+*/
+
+static void
+asm_format_Rs1I8Rd		(ASM_INSTR_PARAMS)
+{
+  const struct instr_info_s	*info = instr->info;
+  opcode_bin_t			opcode = info->fix;
+
+  opcode 
+    |= FLD_RD(instr->operands[2]->val.reg->num)
+    |  FLD_RS1(instr->operands[0]->right->val.reg->num)
+    |  asm_set_imm(instr, 8, 5, sec, &instr->operands[1]);
+
+  asm_opcode_write(opcode, instr->val.bin);
+  instr_set_asm(instr, sizeof (opcode_bin_t));
+}
+
+/*
+** 3BR
+** reg, [reg], ASI
+*/
+
+static void
+asm_format_RdRs1I8		(ASM_INSTR_PARAMS)
+{
+  const struct instr_info_s	*info = instr->info;
+  opcode_bin_t			opcode = info->fix;
+
+  opcode 
+    |= FLD_RD(instr->operands[0]->val.reg->num)
+    |  FLD_RS1(instr->operands[1]->right->val.reg->num)
+    |  asm_set_imm(instr, 8, 5, sec, &instr->operands[2]);
+
+  asm_opcode_write(opcode, instr->val.bin);
+  instr_set_asm(instr, sizeof (opcode_bin_t));
+}
+
+/*
+** 3CR
+** regother, [addr]
+*/
+
+static void
+asm_format__M13		(ASM_INSTR_PARAMS)
+{
+  const struct instr_info_s	*info = instr->info;
+  opcode_bin_t			opcode = info->fix;
+
+  opcode |= asm_get_memop(instr, sec, instr->operands[1]->right, 13);
+
+  asm_opcode_write(opcode, instr->val.bin);
+  instr_set_asm(instr, sizeof (opcode_bin_t));
+}
+
+/*
+** 3G
+** regother, reg
+*/
+
+static void
+asm_format__Rd		(ASM_INSTR_PARAMS)
+{
+  const struct instr_info_s	*info = instr->info;
+  opcode_bin_t			opcode = info->fix;
+
+  opcode |= FLD_RD(instr->operands[1]->val.reg->num);
+
+  asm_opcode_write(opcode, instr->val.bin);
+  instr_set_asm(instr, sizeof (opcode_bin_t));
+}
+
+/*
+** 3D
+** reg, reg , reg
+*/
+
+static void
+asm_format_Rs1Rs2Rd		(ASM_INSTR_PARAMS)
+{
+  const struct instr_info_s	*info = instr->info;
+  opcode_bin_t			opcode = info->fix;
+
+  opcode
+    |= FLD_RD(instr->operands[2]->val.reg->num)
+    | FLD_RS2(instr->operands[1]->val.reg->num)
+    | FLD_RS1(instr->operands[0]->val.reg->num);
+
+  asm_opcode_write(opcode, instr->val.bin);
+  instr_set_asm(instr, sizeof (opcode_bin_t));
+}
+
+/*
+** 3D short rd
+** regrd, reg , regrd
+*/
+
+static void
+asm_format_Rs2Rds1		(ASM_INSTR_PARAMS)
+{
+  const struct instr_info_s	*info = instr->info;
+  opcode_bin_t			opcode = info->fix;
+
+  opcode
+    |= FLD_RD(instr->operands[1]->val.reg->num)
+    | FLD_RS2(instr->operands[0]->val.reg->num)
+    | FLD_RS1(instr->operands[1]->val.reg->num);
+
+  asm_opcode_write(opcode, instr->val.bin);
+  instr_set_asm(instr, sizeof (opcode_bin_t));
+}
+
+/*
+** 3D short rd
+** reg
+*/
+
+static void
+asm_format_Rd		(ASM_INSTR_PARAMS)
+{
+  const struct instr_info_s	*info = instr->info;
+  opcode_bin_t			opcode = info->fix;
+
+  opcode |= FLD_RD(instr->operands[0]->val.reg->num);
+
+  asm_opcode_write(opcode, instr->val.bin);
+  instr_set_asm(instr, sizeof (opcode_bin_t));
+}
+
+/*
+** 3D short
+** reg, reg
+*/
+
+static void
+asm_format_Rs1Rs2		(ASM_INSTR_PARAMS)
+{
+  const struct instr_info_s	*info = instr->info;
+  opcode_bin_t			opcode = info->fix;
+
+  opcode
+    |= FLD_RS2(instr->operands[1]->val.reg->num)
+    | FLD_RS1(instr->operands[0]->val.reg->num);
+
+  asm_opcode_write(opcode, instr->val.bin);
+  instr_set_asm(instr, sizeof (opcode_bin_t));
+}
+
+/*
+** 3D reg other
+** regother, reg, reg
+*/
+
+static void
+asm_format_RdRs1Rs2		(ASM_INSTR_PARAMS)
+{
+  const struct instr_info_s	*info = instr->info;
+  opcode_bin_t			opcode = info->fix;
+
+  opcode
+    |= FLD_RS2(instr->operands[2]->val.reg->num)
+    | FLD_RS1(instr->operands[1]->val.reg->num)
+    | FLD_RD(instr->operands[0]->val.reg->num);
+
+  asm_opcode_write(opcode, instr->val.bin);
+  instr_set_asm(instr, sizeof (opcode_bin_t));
+}
+
+/*
+** 3D short rs2
+** reg
+*/
+
+static void
+asm_format_Rs2		(ASM_INSTR_PARAMS)
+{
+  const struct instr_info_s	*info = instr->info;
+  opcode_bin_t			opcode = info->fix;
+
+  opcode |= FLD_RS2(instr->operands[0]->val.reg->num);
+
+  asm_opcode_write(opcode, instr->val.bin);
+  instr_set_asm(instr, sizeof (opcode_bin_t));
+}
+
+/*
+** 3D short rs1, rd
+** reg (, reg)
+*/
+
+static void
+asm_format_Rs1Rd		(ASM_INSTR_PARAMS)
+{
+  const struct instr_info_s	*info = instr->info;
+  opcode_bin_t			opcode = info->fix;
+
+  opcode
+    |= FLD_RD(instr->operands[1]->val.reg->num)
+    | FLD_RS1(instr->operands[0]->val.reg->num);
+
+  asm_opcode_write(opcode, instr->val.bin);
+  instr_set_asm(instr, sizeof (opcode_bin_t));
+}
+
+static void
+asm_format_Rds1			(ASM_INSTR_PARAMS)
+{
+  const struct instr_info_s	*info = instr->info;
+  opcode_bin_t			opcode = info->fix;
+
+  opcode
+    |= FLD_RD(instr->operands[0]->val.reg->num)
+    | FLD_RS1(instr->operands[0]->val.reg->num);
+
+  asm_opcode_write(opcode, instr->val.bin);
+  instr_set_asm(instr, sizeof (opcode_bin_t));
+}
+
+/*
+** 3D short rs2, rd
+** reg (, reg)
+*/
+
+static void
+asm_format_Rs2Rd		(ASM_INSTR_PARAMS)
+{
+  const struct instr_info_s	*info = instr->info;
+  opcode_bin_t			opcode = info->fix;
+
+  opcode
+    |= FLD_RD(instr->operands[1]->val.reg->num)
+    | FLD_RS2(instr->operands[0]->val.reg->num);
+
+  asm_opcode_write(opcode, instr->val.bin);
+  instr_set_asm(instr, sizeof (opcode_bin_t));
+}
+
+static void
+asm_format_Rds2			(ASM_INSTR_PARAMS)
+{
+  const struct instr_info_s	*info = instr->info;
+  opcode_bin_t			opcode = info->fix;
+
+  opcode
+    |= FLD_RD(instr->operands[0]->val.reg->num)
+    | FLD_RS2(instr->operands[0]->val.reg->num);
+
+  asm_opcode_write(opcode, instr->val.bin);
+  instr_set_asm(instr, sizeof (opcode_bin_t));
+}
+
+/*
+** 3E
+** reg, imm , reg
+*/
+
+static void
+asm_format_Rs1I13Rd		(ASM_INSTR_PARAMS)
+{
+  const struct instr_info_s	*info = instr->info;
+  opcode_bin_t			opcode = info->fix;
+
+  opcode
+    |= FLD_RD(instr->operands[2]->val.reg->num)
+    | FLD_RS1(instr->operands[0]->val.reg->num)
+    | asm_set_simm(instr, 13, 0, sec, &instr->operands[1]);
+
+  asm_opcode_write(opcode, instr->val.bin);
+  instr_set_asm(instr, sizeof (opcode_bin_t));
+}
+
+/*
+** 3E short rd
+** imm, reg
+*/
+
+static void
+asm_format_I13Rds1		(ASM_INSTR_PARAMS)
+{
+  const struct instr_info_s	*info = instr->info;
+  opcode_bin_t			opcode = info->fix;
+
+  opcode
+    |= FLD_RD(instr->operands[1]->val.reg->num)
+    | FLD_RS1(instr->operands[1]->val.reg->num)
+    | asm_set_simm(instr, 13, 0, sec, &instr->operands[0]);
+
+  asm_opcode_write(opcode, instr->val.bin);
+  instr_set_asm(instr, sizeof (opcode_bin_t));
+}
+
+/*
+** 3E short g0
+** reg, imm, g0
+*/
+
+static void
+asm_format_Rs1I13		(ASM_INSTR_PARAMS)
+{
+  const struct instr_info_s	*info = instr->info;
+  opcode_bin_t			opcode = info->fix;
+
+  opcode
+    |= FLD_RS1(instr->operands[0]->val.reg->num)
+    | asm_set_simm(instr, 13, 0, sec, &instr->operands[1]);
+
+  asm_opcode_write(opcode, instr->val.bin);
+  instr_set_asm(instr, sizeof (opcode_bin_t));
+}
+
+/*
+** 3E short g0
+** g0, reg, imm
+*/
+
+static void
+asm_format_I13Rd		(ASM_INSTR_PARAMS)
+{
+  const struct instr_info_s	*info = instr->info;
+  opcode_bin_t			opcode = info->fix;
+
+  opcode
+    |= FLD_RD(instr->operands[1]->val.reg->num)
+    | asm_set_simm(instr, 13, 0, sec, &instr->operands[0]);
+
+  asm_opcode_write(opcode, instr->val.bin);
+  instr_set_asm(instr, sizeof (opcode_bin_t));
+}
+
+/*
+** 3E short g0
+** imm, reg, g0
+*/
+
+static void
+asm_format_I13Rs1		(ASM_INSTR_PARAMS)
+{
+  const struct instr_info_s	*info = instr->info;
+  opcode_bin_t			opcode = info->fix;
+
+  opcode
+    |= FLD_RS1(instr->operands[1]->val.reg->num)
+    | asm_set_simm(instr, 13, 0, sec, &instr->operands[0]);
+
+  asm_opcode_write(opcode, instr->val.bin);
+  instr_set_asm(instr, sizeof (opcode_bin_t));
+}
+
+/*
+** 3F ADDR
+** addr
+*/
+
+static void
+asm_format_A13		(ASM_INSTR_PARAMS)
+{
+  const struct instr_info_s	*info = instr->info;
+  opcode_bin_t			opcode = info->fix;
+
+  opcode |= asm_get_memop(instr, sec, instr->operands[0], 13);
+
+  asm_opcode_write(opcode, instr->val.bin);
+  instr_set_asm(instr, sizeof (opcode_bin_t));
+}
+
+/*
+** 3POP
+** imm9, reg, reg , reg
+*/
+
+static void
+asm_format_I9Rs1Rs2Rd		(ASM_INSTR_PARAMS)
+{
+  const struct instr_info_s	*info = instr->info;
+  opcode_bin_t			opcode = info->fix;
+
+  opcode
+    |= FLD_RD(instr->operands[3]->val.reg->num)
+    | FLD_RS2(instr->operands[2]->val.reg->num)
+    | FLD_RS1(instr->operands[1]->val.reg->num)
+    | asm_set_imm(instr, 9, 5, sec, &instr->operands[0]);
+
+  asm_opcode_write(opcode, instr->val.bin);
+  instr_set_asm(instr, sizeof (opcode_bin_t));
+}
+
+static void
+asm_format_A7	(ASM_INSTR_PARAMS)
+{
+  const struct instr_info_s	*info = instr->info;
+  opcode_bin_t			opcode = info->fix;
+
+  opcode |= asm_get_memop(instr, sec, instr->operands[0], 7);
+
+  asm_opcode_write(opcode, instr->val.bin);
+  instr_set_asm(instr, sizeof (opcode_bin_t));
+}
+
+#include "opcodes.h"
+
+static unsigned int	
+hash			(const char		*str,
+			 unsigned int		len);
+
+struct instr_perf_s	*
+asm_sparc_get_instr_perf(const char		*str,
+			 unsigned int		len);
+
+/*
+** Instruction list with pointer to info struct
+*/
+
+%}
+struct instr_perf_s
+;

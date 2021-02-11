@@ -1,0 +1,1222 @@
+#
+# BRANCH INSTRUCTIONS
+#
+
+###############################################################################
+#name		ba
+
+#opcode
+#fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0x8) | FLD_OP2(0x2)
+#op_type		OP_IMM(0)
+#flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+#asm_instr	&asm_format_I22
+
+name		b
+alias		ba
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0x8) | FLD_OP2(0x2)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		bn
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0x0) | FLD_OP2(0x2)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		bne
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0x9) | FLD_OP2(0x2)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+name		bnz
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0x9) | FLD_OP2(0x2)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		be
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0x1) | FLD_OP2(0x2)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+name		bz
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0x1) | FLD_OP2(0x2)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		bg
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0xa) | FLD_OP2(0x2)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		ble
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0x2) | FLD_OP2(0x2)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		bge
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0xb) | FLD_OP2(0x2)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		bl
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0x3) | FLD_OP2(0x2)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		bgu
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0xc) | FLD_OP2(0x2)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		bleu
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0x4) | FLD_OP2(0x2)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		bcc
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0xd) | FLD_OP2(0x2)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+name		bgeu
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0xd) | FLD_OP2(0x2)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		bcs
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0x5) | FLD_OP2(0x2)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+name		blu
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0x5) | FLD_OP2(0x2)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		bpos
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0xe) | FLD_OP2(0x2)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		bneg
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0x6) | FLD_OP2(0x2)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		bvc
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0xf) | FLD_OP2(0x2)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		bvs
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0x7) | FLD_OP2(0x2)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		ba,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0x8) | FLD_OP2(0x2)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+name		b,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0x8) | FLD_OP2(0x2)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		bn,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0x0) | FLD_OP2(0x2)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		bne,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0x9) | FLD_OP2(0x2)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+name		bnz,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0x9) | FLD_OP2(0x2)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		be,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0x1) | FLD_OP2(0x2)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+name		bz,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0x1) | FLD_OP2(0x2)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		bg,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0xa) | FLD_OP2(0x2)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		ble,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0x2) | FLD_OP2(0x2)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		bge,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0xb) | FLD_OP2(0x2)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		bl,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0x3) | FLD_OP2(0x2)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		bgu,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0xc) | FLD_OP2(0x2)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		bleu,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0x4) | FLD_OP2(0x2)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		bcc,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0xd) | FLD_OP2(0x2)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+name		bgeu,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0xd) | FLD_OP2(0x2)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		bcs,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0x5) | FLD_OP2(0x2)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+name		blu,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0x5) | FLD_OP2(0x2)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		bpos,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0xe) | FLD_OP2(0x2)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		bneg,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0x6) | FLD_OP2(0x2)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		bvc,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0xf) | FLD_OP2(0x2)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		bvs,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0x7) | FLD_OP2(0x2)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		fba
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0x8) | FLD_OP2(0x6)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+name		fb
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0x8) | FLD_OP2(0x6)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		fbn
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0x0) | FLD_OP2(0x6)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		fbu
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0x7) | FLD_OP2(0x6)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		fbg
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0x6) | FLD_OP2(0x6)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		fbug
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0x5) | FLD_OP2(0x6)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		fbl
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0x4) | FLD_OP2(0x6)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		fbul
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0x3) | FLD_OP2(0x6)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		fblg
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0x2) | FLD_OP2(0x6)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		fbne
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0x1) | FLD_OP2(0x6)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		fbe
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0x9) | FLD_OP2(0x6)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		fbue
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0xa) | FLD_OP2(0x6)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		fbge
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0xb) | FLD_OP2(0x6)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		fbuge
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0xc) | FLD_OP2(0x6)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		fble
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0xd) | FLD_OP2(0x6)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		fbule
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0xe) | FLD_OP2(0x6)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		fbo
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0xf) | FLD_OP2(0x6)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		fba,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0x8) | FLD_OP2(0x6)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+name		fb,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0x8) | FLD_OP2(0x6)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		fbn,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0x0) | FLD_OP2(0x6)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		fbu,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0x7) | FLD_OP2(0x6)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		fbg,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0x6) | FLD_OP2(0x6)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		fbug,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0x5) | FLD_OP2(0x6)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		fbl,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0x4) | FLD_OP2(0x6)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		fbul,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0x3) | FLD_OP2(0x6)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		fblg,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0x2) | FLD_OP2(0x6)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		fbne,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0x1) | FLD_OP2(0x6)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		fbe,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0x9) | FLD_OP2(0x6)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		fbue,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0xa) | FLD_OP2(0x6)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		fbge,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0xb) | FLD_OP2(0x6)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		fbuge,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0xc) | FLD_OP2(0x6)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		fble,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0xd) | FLD_OP2(0x6)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		fbule,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0xe) | FLD_OP2(0x6)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		fbo,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0xf) | FLD_OP2(0x6)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		cba
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0x8) | FLD_OP2(0x7)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+name		cb
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0x8) | FLD_OP2(0x7)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		cbn
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0x0) | FLD_OP2(0x7)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		cb3
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0x7) | FLD_OP2(0x7)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		cb2
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0x6) | FLD_OP2(0x7)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		cb23
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0x5) | FLD_OP2(0x7)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		cb1
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0x4) | FLD_OP2(0x7)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		cb13
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0x3) | FLD_OP2(0x7)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		cb12
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0x2) | FLD_OP2(0x7)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		cb123
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0x1) | FLD_OP2(0x7)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		cb0
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0x9) | FLD_OP2(0x7)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		cb03
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0xa) | FLD_OP2(0x7)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		cb02
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0xb) | FLD_OP2(0x7)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		cb023
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0xc) | FLD_OP2(0x7)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		cb01
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0xd) | FLD_OP2(0x7)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		cb013
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0xe) | FLD_OP2(0x7)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		cb012
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(0) | FLD_OPCOND(0xf) | FLD_OP2(0x7)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		cba,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0x8) | FLD_OP2(0x7)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+name		cb,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0x8) | FLD_OP2(0x7)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		cbn,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0x0) | FLD_OP2(0x7)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		cb3,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0x7) | FLD_OP2(0x7)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		cb2,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0x6) | FLD_OP2(0x7)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		cb23,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0x5) | FLD_OP2(0x7)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		cb1,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0x4) | FLD_OP2(0x7)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		cb13,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0x3) | FLD_OP2(0x7)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		cb12,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0x2) | FLD_OP2(0x7)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		cb123,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0x1) | FLD_OP2(0x7)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		cb0,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0x9) | FLD_OP2(0x7)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		cb03,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0xa) | FLD_OP2(0x7)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		cb02,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0xb) | FLD_OP2(0x7)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		cb023,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0xc) | FLD_OP2(0x7)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		cb01,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0xd) | FLD_OP2(0x7)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		cb013,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0xe) | FLD_OP2(0x7)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		cb012,a
+
+opcode
+fix		FLD_OP(0x0) | FLD_ANNUL(1) | FLD_OPCOND(0xf) | FLD_OP2(0x7)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_I22
+
+###############################################################################
+name		call
+
+opcode
+fix		FLD_OP(0x01)
+op_type		OP_IMM(0)
+flags		FLG_V8 | FLG_V9 | FLG_SYNTHETIC | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_I30
+
+###############################################################################
+name		jmpl
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x38)
+op_type		OP_ADDR(0) | OP_RREG(1)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(2) | FLG_DELAY_SLOT
+asm_instr	&asm_format_A13Rd
+
+# synthetic jmpl form
+name		jmp
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x38) | FLD_RD(REG_G(0))
+op_type		OP_ADDR(0)
+flags		FLG_V8 | FLG_V9 | FLG_SYNTHETIC | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_A13
+
+name		calla
+
+# synthetic jmpl form
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x38) | FLD_RD(REG_O(7))
+op_type		OP_ADDR(0)
+flags		FLG_V8 | FLG_V9 | FLG_SYNTHETIC | FLG_OPCOUNT(1) | FLG_DELAY_SLOT
+asm_instr	&asm_format_A13
+
+name		ret
+
+# synthetic jmpl form
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x38) | FLD_RD(REG_G(0)) | FLD_RS1(REG_I(7)) | FLD_IBIT(1) | 8
+flags		FLG_V8 | FLG_V9 | FLG_SYNTHETIC | FLG_OPCOUNT(0) | FLG_DELAY_SLOT
+asm_instr	&asm_format_void
+
+name		retl
+
+# synthetic jmpl form
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x38) | FLD_RD(REG_G(0)) | FLD_RS1(REG_O(7)) | FLD_IBIT(1) | 8
+flags		FLG_V8 | FLG_V9 | FLG_SYNTHETIC | FLG_OPCOUNT(0) | FLG_DELAY_SLOT
+asm_instr	&asm_format_void
+
+###############################################################################
+name		rett
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x39)
+op_type		OP_ADDR(0)
+flags		FLG_V8 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_A13
+
+###############################################################################
+name		ta
+
+opcode
+fix		FLD_OP(0x2) | FLD_OPCOND(0x8) | FLD_OP3(0x3a)
+op_type		OP_ADDR(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_A7
+
+###############################################################################
+name		tn
+
+opcode
+fix		FLD_OP(0x2) | FLD_OPCOND(0x0) | FLD_OP3(0x3a)
+op_type		OP_ADDR(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_A7
+
+###############################################################################
+name		tne
+
+opcode
+fix		FLD_OP(0x2) | FLD_OPCOND(0x9) | FLD_OP3(0x3a)
+op_type		OP_ADDR(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_A7
+
+###############################################################################
+name		te
+
+opcode
+fix		FLD_OP(0x2) | FLD_OPCOND(0x1) | FLD_OP3(0x3a)
+op_type		OP_ADDR(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_A7
+
+###############################################################################
+name		tnz
+
+opcode
+fix		FLD_OP(0x2) | FLD_OPCOND(0x9) | FLD_OP3(0x3a)
+op_type		OP_ADDR(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_A7
+
+###############################################################################
+name		tz
+
+opcode
+fix		FLD_OP(0x2) | FLD_OPCOND(0x1) | FLD_OP3(0x3a)
+op_type		OP_ADDR(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_A7
+
+###############################################################################
+name		tg
+
+opcode
+fix		FLD_OP(0x2) | FLD_OPCOND(0xa) | FLD_OP3(0x3a)
+op_type		OP_ADDR(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_A7
+
+###############################################################################
+name		tle
+
+opcode
+fix		FLD_OP(0x2) | FLD_OPCOND(0x2) | FLD_OP3(0x3a)
+op_type		OP_ADDR(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_A7
+
+###############################################################################
+name		tge
+
+opcode
+fix		FLD_OP(0x2) | FLD_OPCOND(0xb) | FLD_OP3(0x3a)
+op_type		OP_ADDR(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_A7
+
+###############################################################################
+name		tl
+
+opcode
+fix		FLD_OP(0x2) | FLD_OPCOND(0x3) | FLD_OP3(0x3a)
+op_type		OP_ADDR(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_A7
+
+###############################################################################
+name		tgu
+
+opcode
+fix		FLD_OP(0x2) | FLD_OPCOND(0xc) | FLD_OP3(0x3a)
+op_type		OP_ADDR(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_A7
+
+###############################################################################
+name		tleu
+
+opcode
+fix		FLD_OP(0x2) | FLD_OPCOND(0x4) | FLD_OP3(0x3a)
+op_type		OP_ADDR(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_A7
+
+###############################################################################
+name		tcc
+
+opcode
+fix		FLD_OP(0x2) | FLD_OPCOND(0xd) | FLD_OP3(0x3a)
+op_type		OP_ADDR(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_A7
+
+###############################################################################
+name		tcs
+
+opcode
+fix		FLD_OP(0x2) | FLD_OPCOND(0x5) | FLD_OP3(0x3a)
+op_type		OP_ADDR(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_A7
+
+###############################################################################
+name		tgeu
+
+opcode
+fix		FLD_OP(0x2) | FLD_OPCOND(0xd) | FLD_OP3(0x3a)
+op_type		OP_ADDR(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_A7
+
+###############################################################################
+name		tlu
+
+opcode
+fix		FLD_OP(0x2) | FLD_OPCOND(0x5) | FLD_OP3(0x3a)
+op_type		OP_ADDR(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_A7
+
+###############################################################################
+name		tpos
+
+opcode
+fix		FLD_OP(0x2) | FLD_OPCOND(0xe) | FLD_OP3(0x3a)
+op_type		OP_ADDR(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_A7
+
+###############################################################################
+name		tneg
+
+opcode
+fix		FLD_OP(0x2) | FLD_OPCOND(0x6) | FLD_OP3(0x3a)
+op_type		OP_ADDR(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_A7
+
+###############################################################################
+name		tvc
+
+opcode
+fix		FLD_OP(0x2) | FLD_OPCOND(0xf) | FLD_OP3(0x3a)
+op_type		OP_ADDR(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_A7
+
+###############################################################################
+name		tvs
+
+opcode
+fix		FLD_OP(0x2) | FLD_OPCOND(0x7) | FLD_OP3(0x3a)
+op_type		OP_ADDR(0)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(1)
+asm_instr	&asm_format_A7
+

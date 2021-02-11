@@ -1,0 +1,407 @@
+#
+# LOGICAL INSTRUCTIONS
+#
+
+###############################################################################
+name		add
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x00)
+op_type		OP_RREG(0) | OP_RREG(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1Rs2Rd
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x00) | FLD_IBIT(1)
+op_type		OP_RREG(0) | OP_IMM(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1I13Rd
+
+name		inc
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x00) | FLD_IBIT(1) | 1
+op_type		OP_RREG(0)
+flags		FLG_V8 | FLG_V9 | FLG_SYNTHETIC | FLG_OPCOUNT(1)
+asm_instr	&asm_format_Rds1
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x00) | FLD_IBIT(1)
+op_type		OP_IMM(0) | OP_RREG(1)
+flags		FLG_V8 | FLG_V9 | FLG_SYNTHETIC | FLG_OPCOUNT(2)
+asm_instr	&asm_format_I13Rds1
+
+###############################################################################
+name		addcc
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x10)
+op_type		OP_RREG(0) | OP_RREG(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1Rs2Rd
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x10) | FLD_IBIT(1)
+op_type		OP_RREG(0) | OP_IMM(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1I13Rd
+
+name		inccc
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x10) | FLD_IBIT(1) | 1
+op_type		OP_RREG(0)
+flags		FLG_V8 | FLG_V9 | FLG_SYNTHETIC | FLG_OPCOUNT(1)
+asm_instr	&asm_format_Rds1
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x10) | FLD_IBIT(1)
+op_type		OP_IMM(0) | OP_RREG(1)
+flags		FLG_V8 | FLG_V9 | FLG_SYNTHETIC | FLG_OPCOUNT(2)
+asm_instr	&asm_format_I13Rds1
+
+###############################################################################
+name		addx
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x08)
+op_type		OP_RREG(0) | OP_RREG(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1Rs2Rd
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x08) | FLD_IBIT(1)
+op_type		OP_RREG(0) | OP_IMM(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1I13Rd
+
+###############################################################################
+name		addxcc
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x18)
+op_type		OP_RREG(0) | OP_RREG(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1Rs2Rd
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x18) | FLD_IBIT(1)
+op_type		OP_RREG(0) | OP_IMM(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1I13Rd
+
+###############################################################################
+name		taddcc
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x20)
+op_type		OP_RREG(0) | OP_RREG(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1Rs2Rd
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x20) | FLD_IBIT(1)
+op_type		OP_RREG(0) | OP_IMM(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1I13Rd
+
+###############################################################################
+name		taddcctv
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x22)
+op_type		OP_RREG(0) | OP_RREG(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1Rs2Rd
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x22) | FLD_IBIT(1)
+op_type		OP_RREG(0) | OP_IMM(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1I13Rd
+
+###############################################################################
+name		sub
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x04)
+op_type		OP_RREG(0) | OP_RREG(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1Rs2Rd
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x04) | FLD_IBIT(1)
+op_type		OP_RREG(0) | OP_IMM(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1I13Rd
+
+# synthetic sub form
+name		neg
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x04)
+op_type		OP_RREG(0) | OP_RREG(1)
+flags		FLG_V8 | FLG_V9 | FLG_SYNTHETIC | FLG_OPCOUNT(2)
+asm_instr	&asm_format_Rs2Rd
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x04)
+op_type		OP_RREG(0)
+flags		FLG_V8 | FLG_V9 | FLG_SYNTHETIC | FLG_OPCOUNT(1)
+asm_instr	&asm_format_Rds2
+
+# synthetic sub form
+name		dec
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x04) | FLD_IBIT(1) | 1
+op_type		OP_RREG(0)
+flags		FLG_V8 | FLG_V9 | FLG_SYNTHETIC | FLG_OPCOUNT(1)
+asm_instr	&asm_format_Rds1
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x04) | FLD_IBIT(1)
+op_type		OP_IMM(0) | OP_RREG(1)
+flags		FLG_V8 | FLG_V9 | FLG_SYNTHETIC | FLG_OPCOUNT(2)
+asm_instr	&asm_format_I13Rds1
+
+###############################################################################
+name		subcc
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x14)
+op_type		OP_RREG(0) | OP_RREG(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1Rs2Rd
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x14) | FLD_IBIT(1)
+op_type		OP_RREG(0) | OP_IMM(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1I13Rd
+
+# synthetic subcc form
+name		cmp
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x14)
+op_type		OP_RREG(0) | OP_RREG(1)
+flags		FLG_V8 | FLG_V9 | FLG_SYNTHETIC | FLG_OPCOUNT(2)
+asm_instr	&asm_format_Rs1Rs2
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x14) | FLD_IBIT(1)
+op_type		OP_RREG(0) | OP_IMM(1)
+flags		FLG_V8 | FLG_V9 | FLG_SYNTHETIC | FLG_OPCOUNT(2)
+asm_instr	&asm_format_Rs1I13
+
+# synthetic subcc form
+name		deccc
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x14) | FLD_IBIT(1) | 1
+op_type		OP_RREG(0)
+flags		FLG_V8 | FLG_V9 | FLG_SYNTHETIC | FLG_OPCOUNT(1)
+asm_instr	&asm_format_Rds1
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x14) | FLD_IBIT(1)
+op_type		OP_IMM(0) | OP_RREG(1)
+flags		FLG_V8 | FLG_V9 | FLG_SYNTHETIC | FLG_OPCOUNT(2)
+asm_instr	&asm_format_I13Rds1
+
+###############################################################################
+name		subx
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x0c)
+op_type		OP_RREG(0) | OP_RREG(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1Rs2Rd
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x0c) | FLD_IBIT(1)
+op_type		OP_RREG(0) | OP_IMM(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1I13Rd
+
+###############################################################################
+name		subxcc
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x1c)
+op_type		OP_RREG(0) | OP_RREG(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1Rs2Rd
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x1c) | FLD_IBIT(1)
+op_type		OP_RREG(0) | OP_IMM(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1I13Rd
+
+###############################################################################
+name		tsubcc
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x21)
+op_type		OP_RREG(0) | OP_RREG(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1Rs2Rd
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x21) | FLD_IBIT(1)
+op_type		OP_RREG(0) | OP_IMM(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1I13Rd
+
+###############################################################################
+name		tsubcctv
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x23)
+op_type		OP_RREG(0) | OP_RREG(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1Rs2Rd
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x23) | FLD_IBIT(1)
+op_type		OP_RREG(0) | OP_IMM(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1I13Rd
+
+###############################################################################
+name		mulscc
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x24)
+op_type		OP_RREG(0) | OP_RREG(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1Rs2Rd
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x24) | FLD_IBIT(1)
+op_type		OP_RREG(0) | OP_IMM(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1I13Rd
+
+###############################################################################
+name		umul
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x0a)
+op_type		OP_RREG(0) | OP_RREG(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1Rs2Rd
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x0a) | FLD_IBIT(1)
+op_type		OP_RREG(0) | OP_IMM(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1I13Rd
+
+###############################################################################
+name		smul
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x0b)
+op_type		OP_RREG(0) | OP_RREG(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1Rs2Rd
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x0b) | FLD_IBIT(1)
+op_type		OP_RREG(0) | OP_IMM(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1I13Rd
+
+###############################################################################
+name		umulcc
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x1a)
+op_type		OP_RREG(0) | OP_RREG(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1Rs2Rd
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x1a) | FLD_IBIT(1)
+op_type		OP_RREG(0) | OP_IMM(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1I13Rd
+
+###############################################################################
+name		smulcc
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x1b)
+op_type		OP_RREG(0) | OP_RREG(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1Rs2Rd
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x1b) | FLD_IBIT(1)
+op_type		OP_RREG(0) | OP_IMM(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1I13Rd
+
+###############################################################################
+name		udiv
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x0e)
+op_type		OP_RREG(0) | OP_RREG(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1Rs2Rd
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x0e) | FLD_IBIT(1)
+op_type		OP_RREG(0) | OP_IMM(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1I13Rd
+
+###############################################################################
+name		sdiv
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x0f)
+op_type		OP_RREG(0) | OP_RREG(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1Rs2Rd
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x0f) | FLD_IBIT(1)
+op_type		OP_RREG(0) | OP_IMM(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1I13Rd
+
+###############################################################################
+name		udivcc
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x1e)
+op_type		OP_RREG(0) | OP_RREG(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1Rs2Rd
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x1e) | FLD_IBIT(1)
+op_type		OP_RREG(0) | OP_IMM(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1I13Rd
+
+###############################################################################
+name		sdivcc
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x1f)
+op_type		OP_RREG(0) | OP_RREG(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1Rs2Rd
+
+opcode
+fix		FLD_OP(0x2) | FLD_OP3(0x1f) | FLD_IBIT(1)
+op_type		OP_RREG(0) | OP_IMM(1) | OP_RREG(2)
+flags		FLG_V8 | FLG_V9 | FLG_OPCOUNT(3)
+asm_instr	&asm_format_Rs1I13Rd
+
